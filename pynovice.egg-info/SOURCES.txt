@@ -1,0 +1,8 @@
+README.md
+setup.py
+pynovice/__init__.py
+pynovice.egg-info/PKG-INFO
+pynovice.egg-info/SOURCES.txt
+pynovice.egg-info/dependency_links.txt
+pynovice.egg-info/not-zip-safe
+pynovice.egg-info/top_level.txt

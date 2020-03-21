@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-	name='novice',
+	name='pynovice',
 	version='0.0.1',
 	description='data mining for novice and expert',
 	url='https://github.com/wqwangchn/novice',
