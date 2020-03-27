@@ -1,6 +1,7 @@
 README.md
 setup.py
 pynovice/__init__.py
+pynovice/util.py
 pynovice.egg-info/PKG-INFO
 pynovice.egg-info/SOURCES.txt
 pynovice.egg-info/dependency_links.txt
