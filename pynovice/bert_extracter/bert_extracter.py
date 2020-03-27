@@ -21,8 +21,8 @@ from util import progress_bar
 CUR_PASTH = os.path.dirname(os.path.abspath(__file__))
 
 class ExtractBertFeatures:
-    def __init__(self):
-        bert_model_dir = os.path.join(CUR_PASTH,'data','uncased_L-2_H-128_A-2')
+    def __init__(self,model_name = 'uncased_L-4_H-256_A-4'):
+        bert_model_dir = os.path.join(CUR_PASTH,'data',model_name)
         self.load_model(model_dir=bert_model_dir)
         pass
 
@@ -39,7 +39,7 @@ class ExtractBertFeatures:
         return features
 
 class DownloadBertModel:
-    def __init__(self,url='https://storage.googleapis.com/bert_models/2020_02_20/uncased_L-2_H-128_A-2.zip'):
+    def __init__(self,url='https://storage.googleapis.com/bert_models/2020_02_20/uncased_L-4_H-256_A-4.zip'):
         self.model_url = url
         self.name = url.split('/')[-1].split('.')[0]
         self.save_parh = os.path.join(CUR_PASTH, 'data', self.name)
