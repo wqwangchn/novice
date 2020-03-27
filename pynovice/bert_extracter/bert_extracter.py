@@ -12,11 +12,9 @@ from bert4keras.models import build_transformer_model
 from bert4keras.tokenizers import Tokenizer
 import numpy as np
 import os
-import sys
 import requests
 import zipfile
-sys.path.append(os.path.abspath('../'))
-from util import progress_bar
+from pynovice.util import progress_bar
 
 CUR_PASTH = os.path.dirname(os.path.abspath(__file__))
 
