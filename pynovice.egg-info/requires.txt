@@ -1,2 +1,0 @@
-wordninja>=2.0.0
-bert4keras>=0.6.5
