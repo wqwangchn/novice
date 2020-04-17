@@ -14,6 +14,7 @@ setuptools.setup(
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	packages=setuptools.find_packages(),
+	include_package_data = True,
 	install_requires = ['wordninja>=2.0.0','bert4keras>=0.6.5','tensorflow==2.1.0','reverse_geocoder==1.5.1','pyecharts==1.6.2'],
 	classifiers=[
 	"Programming Language :: Python :: 3",

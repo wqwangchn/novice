@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pynovice
+Version: 0.1.2
+Summary: data mining for novice and expert
+Home-page: https://github.com/wqwangchn/novice
+Author: wqwangchn
+Author-email: wqwangchn@163.com
+License: UNKNOWN
+Description: # novice
+        
+        1.geo_map: reverse Geocoder takes a latitude / longitude coordinate and returns the nearest town/city.
+        2.bert_extracter: load bert_vector
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown

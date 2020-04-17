@@ -1,0 +1,22 @@
+# coding=utf-8
+# /usr/bin/env python
+
+'''
+Author: wenqiangw
+Email: wenqiangw@opera.com
+Date: 2020-04-17 11:52
+Desc:
+'''
+import pandas as pd
+from pynovice.geo_map import GeoMap
+
+if __name__ == '__main__':
+    df_raw = pd.DataFrame(data= [[-0.4302744, 35.5331974],
+                                   [-1.21167  , 36.8973031],
+                                   [ 0.5217472, 35.255192 ],
+                                   [-2.2326433, 38.0769783],
+                                   [-1.0625246, 34.4734754]],
+                           columns=['latitude', 'longitude']
+                           )
+    geo_map = GeoMap()
+    geo_map.run_geo_map(df_raw,web_open=True)

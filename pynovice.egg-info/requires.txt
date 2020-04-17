@@ -1,0 +1,5 @@
+wordninja>=2.0.0
+bert4keras>=0.6.5
+tensorflow==2.1.0
+reverse_geocoder==1.5.1
+pyecharts==1.6.2
