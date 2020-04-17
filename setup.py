@@ -1,11 +1,12 @@
 import setuptools
+from version import get_git_version
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
 	name='pynovice',
-	version='0.1.0',
+	version=get_git_version(),
 	description='data mining for novice and expert',
 	url='https://github.com/wqwangchn/novice',
 	author='wqwangchn',

@@ -11,7 +11,7 @@ import pandas as pd
 from pynovice.geo_map import GeoMap
 
 if __name__ == '__main__':
-    df_raw = pd.DataFrame( data = [[-0.4302744, 35.5331974],
+    df_raw = pd.DataFrame(data= [[-0.4302744, 35.5331974],
                                    [-1.21167  , 36.8973031],
                                    [ 0.5217472, 35.255192 ],
                                    [-2.2326433, 38.0769783],
