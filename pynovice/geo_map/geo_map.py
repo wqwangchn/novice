@@ -61,15 +61,16 @@ class GeoMap:
         self.geo_dict = dict(df_geo.apply(lambda x:(x['admin1'],[x['lon'],x['lat']]),axis=1).values)
         return df_geo
 
-    def plot_geo_summary(self,_geo_data,series_name):
+    def plot_geo_summary(self,_geo_data,series_name=None,threshold_plot=None ):
         '''
         plot geo 经纬度聚类信息
         :param geo_data: geo对应的城市分布(Series)
         :return:
         '''
-        self.series_name = series_name
+        self.series_name = series_name if series_name else self.series_name
+
         geo_data = np.array(list(dict(_geo_data).items()))
-        self.threshold_plot = np.percentile(_geo_data, 80)
+        self.threshold_plot = np.percentile(_geo_data, 80) if not threshold_plot else threshold_plot
         _geo = self.get_geo_base(geo_data)
         _map = self.get_map_base(geo_data)
         table = self.get_table_base(geo_data)
