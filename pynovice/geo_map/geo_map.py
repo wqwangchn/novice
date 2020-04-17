@@ -25,6 +25,7 @@ class GeoMap:
         self.commit = "reverse Geocoder takes a latitude / longitude coordinate and returns the nearest town/city."
         self.df_geo_dict = None
         self.country = country
+        self.series_name = country
         self.html_name = os.path.abspath('geo.html')
         self.echarts_url = "https://echarts-maps.github.io/echarts-countries-js/"
         self.geo_dict = {}
@@ -60,12 +61,13 @@ class GeoMap:
         self.geo_dict = dict(df_geo.apply(lambda x:(x['admin1'],[x['lon'],x['lat']]),axis=1).values)
         return df_geo
 
-    def plot_geo_summary(self,_geo_data):
+    def plot_geo_summary(self,_geo_data,series_name):
         '''
         plot geo 经纬度聚类信息
         :param geo_data: geo对应的城市分布(Series)
         :return:
         '''
+        self.series_name = series_name
         geo_data = np.array(list(dict(_geo_data).items()))
         self.threshold_plot = np.percentile(_geo_data, 80)
         _geo = self.get_geo_base(geo_data)
@@ -89,7 +91,7 @@ class GeoMap:
         geo.add_schema(maptype=self.country)
         for _city,_gps in self.geo_dict.items():
             geo.add_coordinate(name=_city, longitude=_gps[0], latitude=_gps[1])
-        geo.add(series_name = self.country, data_pair = _data, type_=ChartType.HEATMAP)
+        geo.add(series_name = self.series_name, data_pair = _data, type_=ChartType.HEATMAP)
         geo.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
         geo.set_global_opts(visualmap_opts=opts.VisualMapOpts(max_= self.threshold_plot),
                             title_opts=opts.TitleOpts(title="Geo-HeatMap"))
@@ -103,7 +105,7 @@ class GeoMap:
         '''
         register_url(self.echarts_url)
         c_map = Map(init_opts=opts.InitOpts(width="1000px", height="600px", page_title='', bg_color=''))
-        c_map.add(series_name=self.country, data_pair=_data, maptype=self.country)
+        c_map.add(series_name=self.series_name, data_pair=_data, maptype=self.country)
         c_map.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
         c_map.set_global_opts(title_opts=opts.TitleOpts(title="Map-VisualMap"),
                               visualmap_opts=opts.VisualMapOpts(max_= self.threshold_plot))
