@@ -1,5 +1,5 @@
 include RELEASE-VERSION
 include version.py
-include novice/pynovice/geo_map/*
-include novice/pynovice/bert_extracterr/*
+include pynovice/geo_map/*
+include pynovice/bert_extracterr/*
 # Anything else you normally use
