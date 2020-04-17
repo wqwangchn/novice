@@ -19,7 +19,7 @@ from pyecharts.charts import Geo,Map,Tab
 from pyecharts.globals import ChartType
 import json
 from pyecharts.components import Table
-
+CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 class GeoMap:
     def __init__(self, country='肯尼亚'):
         self.commit = "reverse Geocoder takes a latitude / longitude coordinate and returns the nearest town/city."
@@ -124,7 +124,7 @@ class GeoMap:
         return table
 
     def get_city_list(self):
-        df = pd.read_csv('CITY.cg')
+        df = pd.read_csv(os.path.join(CURRENT_PATH,'CITY.cg'))
         return df
 
     def run_geo_map(self,df_raw,web_open=False):

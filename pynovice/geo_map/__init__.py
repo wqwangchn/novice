@@ -7,3 +7,4 @@ Email: wenqiangw@opera.com
 Date: 2020-04-16 16:50
 Desc:
 '''
+from .geo_map import GeoMap
