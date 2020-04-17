@@ -60,14 +60,14 @@ class GeoMap:
         self.geo_dict = dict(df_geo.apply(lambda x:(x['admin1'],[x['lon'],x['lat']]),axis=1).values)
         return df_geo
 
-    def plot_gps_summary(self,df_geo):
+    def plot_geo_summary(self,_geo_data):
         '''
         plot geo 经纬度聚类信息
-        :param geo_data: gps对应的城市分布(dataframe)
+        :param geo_data: geo对应的城市分布(Series)
         :return:
         '''
-        geo_data = np.array(list(dict(df_geo.groupby("admin1")['lon'].count()).items()))
-        self.threshold_plot = 500#np.percentile(geo_data[:,-1], 80)
+        geo_data = np.array(list(dict(_geo_data).items()))
+        self.threshold_plot = np.percentile(_geo_data, 80)
         _geo = self.get_geo_base(geo_data)
         _map = self.get_map_base(geo_data)
         table = self.get_table_base(geo_data)
@@ -129,7 +129,8 @@ class GeoMap:
 
     def run_geo_map(self,df_raw,web_open=False):
         df_gps = self.get_geo_reverse(df_raw)
-        self.plot_gps_summary(df_gps)
+        geo_data = df_gps.groupby("admin1")['lon'].count()
+        self.plot_geo_summary(geo_data)
         if web_open:
             webbrowser.open(url='file://' + self.html_name, new=0, autoraise=True)
 

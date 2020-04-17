@@ -1,0 +1,14 @@
+*.pyc
+*~
+*.class
+.project
+venv/
+*.orig
+.vscode
+.idea/*
+.tox
+build
+dist
+pynovice.egg-info
+.DS_Store
+RELEASE-VERSION
