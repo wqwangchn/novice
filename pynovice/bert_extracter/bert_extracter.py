@@ -70,8 +70,8 @@ class DownloadBertModel:
         os.remove("_tmp.zip")
 
 if __name__ == '__main__':
-    aa=DownloadBertModel()
-    aa.dump()
+    # aa=DownloadBertModel()
+    # aa.dump()
     print(CUR_PASTH)
     bb=ExtractBertFeatures()
     print(bb.predict('你好啊'))
