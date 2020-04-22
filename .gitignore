@@ -5,7 +5,7 @@
 venv/
 *.orig
 .vscode
-.idea/*
+.idea/
 .tox
 build
 dist
