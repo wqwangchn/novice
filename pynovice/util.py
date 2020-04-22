@@ -27,7 +27,8 @@ def progress_bar(portion, total):
 
     if portion >= total:
         sys.stdout.write('\n')
-    return True
+        return True
+    return False
 
 
 if __name__ == '__main__':
@@ -39,6 +40,6 @@ if __name__ == '__main__':
         sum = progress_bar(portion, total)
         if sum:
            break
-        print("ok")
+    print("ok")
 
     ##

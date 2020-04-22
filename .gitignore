@@ -12,3 +12,4 @@ dist
 pynovice.egg-info
 .DS_Store
 RELEASE-VERSION
+pynovice/data/
