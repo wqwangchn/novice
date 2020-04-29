@@ -6,5 +6,6 @@ Author: wenqiangw
 Email: wenqiangw@opera.com
 Date: 2020-04-16 16:50
 Desc:
+trans gps 到国家的城市地区,并画出geo图和热点图
 '''
 from .geo_map import GeoMap
