@@ -19,7 +19,7 @@ Desc:
     >>> df = pd.DataFrame([[1,2,3,4,5,5,5,3,3,3,2,1,5,7],[1,1,0,0,0,0,0,1,1,0,1,1,1,1]]).T
     >>> df.columns=['field','label']
     >>> df_field, df_label = df['field'],df['label']
-    >>> aa = chi_blocks(df_field, df_label, maxCases=5, dfree=4, cf=0.1, sample_threshold=2)
+    >>> aa = chi_blocks(df_field, df_label, box_num=5, dfree=4, cf=0.1)
     >>> print(aa)
     [-inf, 4.0, 5.0, inf]
 
@@ -28,7 +28,7 @@ Desc:
 import pandas as pd
 import numpy as np
 from scipy.stats import chi2
-from pynovice.score_card.data_binning.base_blocks import distince_blocks
+from pynovice.score_card.data_boxing.base_blocks import frequence_blocks
 
 def get_chi2(df_field,df_label):
     '''
@@ -153,26 +153,26 @@ def oneclass_merge(df_pos_cnt, df_except_cnt,sample_threshold=2):
         return oneclass_merge(df_pos_cnt, df_except_cnt)
     return df_pos_cnt,df_except_cnt
 
-def chi_blocks(df_field, df_label, maxCases=5, dfree=4, cf=0.1,sample_threshold=2):
+def chi_blocks(df_field, df_label, box_num=5, dfree=4, cf=0.1,max_iterations=100):
     '''
     卡方分箱
     :param df_field: 需分箱的字段 Series
     :param df_label: 样本的标签 Series
     :param dfree: 卡方分布的自由度
     :param cf: 卡方分布的显著性水平
-    :param maxCases: 最大分箱数
+    :param box_num: 最大分箱数
     :param sample_threshold:  bins中最少样本数
     :param _type:  number|category
     :return:
         分箱的eges
     '''
-    if maxCases<2:
+    if box_num<2:
         return [-np.inf,np.inf]
     chi_threshold = cal_chisqure_threshold(dfree, cf)  # 卡方阈值
     sample_threshold = df_field.shape[0] / 20  # 总体的5%(bins要大于5%)
-
-    if len(set(df_field))>100: #连续特征太多，进行初步分bins
-        init_bins = distince_blocks(x=df_field.to_list(), bins=100)
+    iterations_bins = box_num+max_iterations
+    if len(set(df_field))>iterations_bins: #连续特征太多，进行初步分bins
+        init_bins = frequence_blocks(x=df_field.to_list(), bins=iterations_bins)
         _bins = init_bins[1:-1]+[init_bins[-2]+10]
         df_field = pd.cut(df_field,bins=init_bins,labels=_bins)
 
@@ -180,7 +180,7 @@ def chi_blocks(df_field, df_label, maxCases=5, dfree=4, cf=0.1,sample_threshold=
     df_pos_cnt, df_except_cnt = oneclass_merge(pos_cnt, except_cnt,sample_threshold)
     min_chi = -np.inf
     # 如果变量区间的最小卡方值小于阈值，则继续合并直到最小值大于等于阈值
-    while (min_chi<chi_threshold and len(df_pos_cnt) >= maxCases):
+    while (min_chi<chi_threshold and len(df_pos_cnt) >= box_num):
         _pos_cnt, _except_cnt, min_chi = chi_merge(df_pos_cnt, df_except_cnt, window=2)
         df_pos_cnt, df_except_cnt = oneclass_merge(_pos_cnt, _except_cnt,sample_threshold)
 
@@ -191,5 +191,5 @@ if __name__ == '__main__':
     df = pd.DataFrame([[1,2,3,4,5,5,5,3,3,3,2,1,5,7],[1,1,0,0,0,0,0,1,1,0,1,1,1,1]]).T
     df.columns=['field','label']
     df_field, df_label = df['field'],df['label']
-    aa = chi_blocks(df_field, df_label, maxCases=5, dfree=4, cf=0.1, sample_threshold=2)
+    aa = chi_blocks(df_field, df_label, box_num=5, dfree=4, cf=0.1)
     print(aa)

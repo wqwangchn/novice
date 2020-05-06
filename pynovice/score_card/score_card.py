@@ -12,7 +12,6 @@ import numpy as np
 class ScoreCardModel:
     def __init__(self):
         self.load_score_alpha()
-        pass
 
     def load_score_alpha(self, odds=1/2, bScore=650, addScore=-20):
         '''

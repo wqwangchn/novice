@@ -10,6 +10,7 @@ Desc:
 
 import sys
 import math
+import inspect
 
 # 进度条展示 progress_bar(1, 100)
 def progress_bar(portion, total):
@@ -30,9 +31,14 @@ def progress_bar(portion, total):
         return True
     return False
 
+# 获取变量名
+def get_retrieve_name(var):
+    callers_local_vars = inspect.currentframe().f_back.f_locals.items()
+    list_name = [var_name for var_name, var_val in callers_local_vars if var_val is var]
+    return list_name
 
 if __name__ == '__main__':
-    # 进度条
+    ## 进度条
     portion = 0
     total = 254820000
     while True:
@@ -42,4 +48,10 @@ if __name__ == '__main__':
            break
     print("ok")
 
-    ##
+    ## 变量名
+    name = "bob"
+    age = "23"
+    bb = (name,age)
+    for i in bb:
+        var = get_retrieve_name(i)
+        print(var)

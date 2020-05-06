@@ -15,7 +15,7 @@ Desc:
     References
     ----------
     .. [1] http://adsabs.harvard.edu/abs/2012arXiv1207.5578S
-
+    对于时间序列
     >>> t = [23,4,1,2,3,4,3,3,34,54,34,54,34,43,45,22,34,25]
     >>> bins = bayesian_blocks(t, fitness='events', p0=0.01)
     >>> print(bins)
@@ -370,3 +370,8 @@ def bayesian_blocks(t, x=None, sigma=None,
     bins[-1] = np.inf
 
     return bins
+
+if __name__ == '__main__':
+    t = [23, 4, 1, 2, 3, 4, 3, 3, 34, 54, 34, 54, 34, 43, 45, 22, 34, 25]
+    bins = bayesian_blocks(t, fitness='events', p0=0.01)
+    print(bins)

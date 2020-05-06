@@ -15,14 +15,14 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import calinski_harabaz_score
 import numpy as np
 
-def kmeans_blocks(x,bins=3):
+def kmeans_blocks(x,box_num=3):
     '''
         聚类分箱
     :param x: dtype=[]
     :param bins: 分箱数量
     :return: 箱边界
     '''
-    len_clocks = min(bins,len(x),len(set(x))+1)
+    len_clocks = min(box_num,len(x),len(set(x))+1)
     if len_clocks<=1:
         return [-np.inf,np.inf]
     X = np.array(x).reshape([-1, 1])
@@ -36,3 +36,7 @@ def kmeans_blocks(x,bins=3):
     tb.sort()
     blocks = np.concatenate([[-np.inf],tb,[np.inf]])
     return blocks.tolist()
+
+if __name__ == '__main__':
+    aa = kmeans_blocks(x=[1, 2, 3], box_num=3)
+    print(aa)

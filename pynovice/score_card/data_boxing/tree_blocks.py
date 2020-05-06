@@ -17,6 +17,8 @@ def tree_blocks(df_field,df_label,box_num=5,criterion='entropy'):
     '''
         利用决策树获得最优分箱的边界值列表
     '''
+    if box_num<2:
+        return [-np.inf,np.inf]
     internal_nodes = box_num - 1
 
     boundary = []
@@ -51,5 +53,5 @@ if __name__ == '__main__':
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
     df.columns = ['field', 'label']
     df_field, df_label = df['field'], df['label']
-    aa = tree_blocks(df_field, df_label,box_num=3)
+    aa = tree_blocks(df_field, df_label,box_num=2)
     print(aa)
