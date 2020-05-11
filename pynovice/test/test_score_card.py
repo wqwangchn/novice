@@ -8,8 +8,11 @@ Date: 2020-04-29 15:48
 Desc:
 '''
 import pandas as pd
+import dill as pickle
 from pynovice.score_card.data_boxing import frequence_blocks,distince_blocks, kmeans_blocks, bayesian_blocks, \
     ks_blocks, chi_blocks, tree_blocks
+
+from pynovice.score_card.feature_preprocessing import FeatureGenerator
 
 def test_data_binning():
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
@@ -68,6 +71,25 @@ def test_data_binning():
     #     block_dict = cate_coder.blocks_2_catedict(block)
     #     print(i,block_dict)
 
+def test_feature_procprocessing():
+    df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7], [10, 2, 3, 42, 534, 5, 53, 6, 83, 3, 42, 21, 25, 7],
+                       [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
+    df.columns = ['field1', 'field2', 'label']
+    df_fields, df_label = df[['field1', 'field2']], df['label']
+
+    feature_generator = FeatureGenerator()
+    feature_generator.fit_transform(df_fields, df_label)
+    print(feature_generator.binning_woe_info)
+    file_name = '../data/feature_generater.pkl'
+    pickle.dump(feature_generator, open(file_name, "wb"),protocol=3)
+
+    # load
+    feature_generator= pickle.load(open(file_name, "rb"))
+    fields_json = {'field1': 4, 'field22': 5, 'aa': 9}
+    feature = feature_generator.transform(fields_json)
+    print(feature)
+
 if __name__ == '__main__':
     # 分箱
     test_data_binning()
+    test_feature_procprocessing()

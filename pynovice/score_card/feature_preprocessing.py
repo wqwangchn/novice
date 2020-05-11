@@ -11,7 +11,7 @@ Desc:
 from pynovice.score_card.category_coder import CateCoder
 from pynovice.score_card.data_binning import DataBinning
 from pynovice.score_card.data_woe import WeightOfEvidence
-
+import pandas as pd
 
 class FeatureGenerator:
     def __init__(self):
@@ -85,7 +85,6 @@ class FeatureGenerator:
 
 
 if __name__ == '__main__':
-    import pandas as pd
     import dill as pickle
     # dump
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7], [10, 2, 3, 42, 534, 5, 53, 6, 83, 3, 42, 21, 25, 7],
