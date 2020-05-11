@@ -49,6 +49,11 @@ class LRModel(ScoreCardModel):
         return final_score, base_score, field_score
 
     def transform(self,df_field):
+        '''
+        计算评分卡模型详细分数信息
+        :param df_field:
+        :return:
+        '''
         df_eval = df_field.drop_duplicates()
         _out = []
         base_score = None

@@ -18,6 +18,7 @@ class FeatureGenerator:
         self.cate_coder_dict = {}
         self.binning_dict = {}
         self.woe_dict = {}
+        self.binning_woe_info = None
         self.fields = None #特征字段
 
     def fit_transform(self, df_fields, df_label, category_fields=None, default_bins=5, bins_dict={}):
@@ -43,10 +44,11 @@ class FeatureGenerator:
 
             woe = WeightOfEvidence()
             df_field = woe.fit_transform(df_field, df_label)
-            print(df_field)
             self.woe_dict.update({field: woe})
 
             df_fields.loc[:, field] = df_field
+
+        self.binning_woe_info = self.get_binning_woe()
         return df_fields
 
     def transform(self,fields_json):
@@ -75,6 +77,13 @@ class FeatureGenerator:
     def preprocessing(self, df_fields):
         return df_fields
 
+    def get_binning_woe(self):
+        field_woe = [woe.woe_info for woe in self.woe_dict.values()]
+        df_woe = pd.concat(field_woe,axis=0)
+        return df_woe
+
+
+
 if __name__ == '__main__':
     import pandas as pd
     import dill as pickle
@@ -86,6 +95,7 @@ if __name__ == '__main__':
 
     feature_generator = FeatureGenerator()
     feature_generator.fit_transform(df_fields,df_label)
+    print(feature_generator.binning_woe_info)
 
     # file_name = '../data/feature_generater.pkl'
     # pickle.dump(feature_generator, open(file_name, "wb"),protocol=3)
