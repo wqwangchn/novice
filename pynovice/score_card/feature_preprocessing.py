@@ -21,7 +21,17 @@ class FeatureGenerator:
         self.binning_woe_info = None
         self.fields = None #特征字段
 
-    def fit_transform(self, df_fields, df_label, category_fields=None, default_bins=5, bins_dict={}):
+    def fit_transform(self, df_fields, df_label, category_fields=None, default_boxs=5, boxs_dict={},bins_dict={}):
+        '''
+            预处理+类别转换+分箱+woe编码
+        :param df_fields: 训练集pandas.DataFrame
+        :param df_label: Series
+        :param category_fields: df_fields中类别特征字段，list
+        :param default_boxs: 默认分箱数量
+        :param boxs_dict: 自定义分箱数量
+        :param bins_dict: 自定义分箱阈值，{field:[]}
+        :return:
+        '''
         if category_fields is None:
             category_fields = list()
 
@@ -37,9 +47,18 @@ class FeatureGenerator:
 
         # 3.分箱&woe编码
         for field in self.fields:
-            box_num = bins_dict.get(field,default_bins)
-            binning = DataBinning(box_num=box_num, _func='tree_blocks')
-            df_field = binning.fit_transform(df_x=df_fields[field], df_y=df_label)
+            _bins = bins_dict.get(field)
+            # 自定义分箱
+            if _bins & isinstance(_bins,list):
+                box_num = len(_bins)
+                binning = DataBinning(box_num=box_num)
+                binning.bins = _bins
+                df_field = pd.cut(df_fields[field],bins=_bins)
+            # 程序分箱
+            else:
+                box_num = boxs_dict.get(field,default_boxs)
+                binning = DataBinning(box_num=box_num, _func='tree_blocks')
+                df_field = binning.fit_transform(df_x=df_fields[field], df_y=df_label)
             self.binning_dict.update({field:binning})
 
             woe = WeightOfEvidence()
