@@ -49,7 +49,7 @@ class FeatureGenerator:
         for field in self.fields:
             _bins = bins_dict.get(field)
             # 自定义分箱
-            if _bins & isinstance(_bins,list):
+            if bool(_bins) & isinstance(_bins,list):
                 box_num = len(_bins)
                 binning = DataBinning(box_num=box_num)
                 binning.bins = _bins
