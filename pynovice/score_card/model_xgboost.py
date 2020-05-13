@@ -14,6 +14,7 @@ Desc:
 from pynovice.score_card.score_card import ScoreCardModel
 import xgboost as xgb
 import pandas as pd
+import numpy as np
 
 class XGBModel(ScoreCardModel):
     '''
@@ -59,7 +60,7 @@ class XGBModel(ScoreCardModel):
         # 学习目标参数,跟目标函数有关,控制学习的场景，例如在回归问题中会使用不同的参数控制排序
         object_param = {
             'objective': 'binary:logistic',  # [ default=reg:linear ] 定义学习任务及相应的学习目标，可选的目标函数如下,包含的函数还挺多，默认是线形的。此外你还可以选择：binary:logistic 二分类的逻辑回归，返回预测的概率(不是类别).
-            #'eval_metric':'auc',  # [默认值取决于objective参数的取值] 也就是说怎么计算目标函数值，根据你目标函数的形式来，对于回归问题，默认值是rmse，对于分类问题，默认值是error。
+            'eval_metric':['error','auc'],  # [默认值取决于objective参数的取值] 也就是说怎么计算目标函数值，根据你目标函数的形式来，对于回归问题，默认值是rmse，对于分类问题，默认值是error。
             'base_score': 0.5,  # [ default=0.5 ]
             'seed':666,  # [ default=0 ] 随机数的种子。缺省值为0
         }
@@ -68,7 +69,7 @@ class XGBModel(ScoreCardModel):
         param.update(object_param)
         return param
 
-    def train(self,train_feature, train_label, test_feature=pd.DataFrame(), test_label=pd.DataFrame()):
+    def train(self,train_feature, train_label, test_feature=pd.DataFrame(), test_label=pd.DataFrame(),eval=False):
         '''
 
         :param train_feature: pd.DataFrame
@@ -87,17 +88,35 @@ class XGBModel(ScoreCardModel):
         # 当logloss在设置early_stopping_rounds轮迭代之内，都没有提升的话，就stop。
         self.model_ = xgb.train(self.param, dtrain, num_boost_round=200, evals=evallist, early_stopping_rounds=20)
 
+        if eval:
+            # 模型评估
+            if (test_feature.empty or test_label.empty):
+                df_test = train_feature
+                df_label = train_label
+            else:
+                df_test = test_feature
+                df_label = test_label
+            df_pre, _ = self.predict(df_test)
+            self.plot_roc(df_pre, df_label, pre_target=1, save_path='.')
+            self.plot_ks(df_pre, df_label, pre_target=1, save_path='.')
+            self.plot_lift(df_pre, df_label, pre_target=1, save_path='.')
+
     def predict(self,x):
+        '''
+        :param x: list/datafame
+        :return: array([proba]),array([score_label])
+        '''
         dmatrix = xgb.DMatrix(x, feature_names=self.feature_columns, missing=-999.0)
         predict = self.model_.predict(dmatrix)
-        score_label = self.probability_to_score(bad_prob=predict)
-        return score_label
+        score_label = np.array([self.probability_to_score(bad_prob=proba_i) for proba_i in predict])
+        return predict, score_label
+
 
 if __name__ == '__main__':
-    import pandas as pd
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7],[10, 2, 3, 42, 534, 5, 53, 6, 83, 3, 42, 21, 25, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
     df.columns = ['field1', 'field2', 'label']
     df_fields, df_label = df[['field1','field2']], df['label']
     lf = XGBModel()
-    lf.train(df_fields,df_label)
-    print(lf.predict([2,3]))
+    lf.train(df_fields,df_label,eval=False)
+    print(lf.predict([[2,3]]))
+    print(lf.predict(df_fields.head()))

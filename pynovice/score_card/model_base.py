@@ -8,10 +8,12 @@ Date: 2020-04-30 14:42
 Desc:
     基于违约率的评分模型
     score = self.score_offset + self.score_factor * np.log(odds)
+    待续，未完成
 '''
 
 from pynovice.score_card.score_card import ScoreCardModel
 import numpy as np
+import pandas as pd
 
 class BaseModel(ScoreCardModel):
     '''
@@ -27,6 +29,7 @@ class BaseModel(ScoreCardModel):
         # _out
         self.base_logodds = None
         self.fields_logodds = None
+        print('待续。。。 未优化完成。。。。。。')
 
     def train(self,df_fields,df_label):
         '''
@@ -59,7 +62,6 @@ class BaseModel(ScoreCardModel):
 
 
 if __name__ == '__main__':
-    import pandas as pd
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7],[10, 2, 3, 42, 534, 5, 53, 6, 83, 3, 42, 21, 25, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
     df.columns = ['field1', 'field2', 'label']
     df_fields, df_label = df[['field1','field2']], df['label']

@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
 	name='pynovice',
-	version='0.1.11',
+	version='0.1.12',
 	description='data mining for novice and expert',
 	url='https://github.com/wqwangchn/novice',
 	author='wqwangchn',
