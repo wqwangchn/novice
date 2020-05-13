@@ -8,12 +8,12 @@ Date: 2020-04-30 14:42
 Desc:
     基于违约率的评分模型
     score = self.score_offset + self.score_factor * np.log(odds)
-    待续，未完成
 '''
 
 from pynovice.score_card.score_card import ScoreCardModel
 import numpy as np
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 class BaseModel(ScoreCardModel):
     '''
@@ -29,36 +29,89 @@ class BaseModel(ScoreCardModel):
         # _out
         self.base_logodds = None
         self.fields_logodds = None
-        print('待续。。。 未优化完成。。。。。。')
 
-    def train(self,df_fields,df_label):
+    def train(self,train_feature, train_label, test_feature=pd.DataFrame, test_label=pd.DataFrame, eval=False):
+        if (test_feature.empty or test_label.empty):
+            train_feature, test_feature, train_label, test_label = \
+                train_test_split(train_feature, train_label, test_size=0.2, random_state=0)
+
+        train_feature.reset_index(drop=True, inplace=True)
+        train_label.reset_index(drop=True, inplace=True)
+        base_bad_rate = 1.00 * (train_label == self.bad_target).sum() / train_label.size
+        self.base_logodds = max(base_bad_rate, self.eps) / max(1 - base_bad_rate, self.eps)
+
+        fields_logodds = []
+        for iname in train_feature.columns:
+            df_concat = pd.concat([train_feature[iname], train_label], axis=1)
+            _log_odds = df_concat.groupby(iname).agg(
+                lambda x: 1.00 * np.log(
+                    max(sum(x == self.bad_target), self.eps) / max(sum(x != self.bad_target), self.eps)))
+            odds_dict = dict(zip(_log_odds.index, _log_odds.values[:, 0]))
+            fields_logodds.append(odds_dict)
+        self.fields_logodds = fields_logodds
+
+        if eval:
+            self.woe_score = self.get_card_info(train_feature)
+            print(self.woe_score)
+            # 模型评估
+            print("training eval:")
+            df_pre, _ = self.predict(train_feature)
+            auc, _ = self.get_auc(df_pre, train_label)
+            ks, _ = self.get_ks(df_pre, train_label)
+            print("auc={}, ks={}".format(auc, ks['gap'].values[0]))
+
+            print('testing eval:')
+            df_pre, _ = self.predict(test_feature)
+            self.plot_roc(df_pre, test_label, pre_target=1, save_path='.')
+            self.plot_ks(df_pre, test_label, pre_target=1, save_path='.')
+            self.plot_lift(df_pre, test_label, pre_target=1, save_path='.')
+
+    def predict(self,x):
         '''
-            通过训练集的odds来创建违约率模型
-        :param df_fields:
-        :param df_label:
-        :return:
+        :param x: list/datafame
+        :return: array([proba]),array([score_label])
         '''
-        df_fields.reset_index(drop=True, inplace=True)
-        df_label.reset_index(drop=True, inplace=True)
-        _bad_rate = 1.00* (df_label==self.bad_target).sum()/df_label.size
-        self.base_logodds = max(_bad_rate,self.eps)/max(1-_bad_rate,self.eps)
-        self.fields_logodds = []
-        for iname in df_fields.columns:
-            df_concat = pd.concat([df_fields[iname], df_label], axis=1)
-            log_odds = df_concat.groupby(iname).agg(
-                lambda x:1.00* np.log(max(sum(x==self.bad_target),self.eps)/max(sum(x!=self.bad_target),self.eps)))
-            odds_dict = dict(zip(log_odds.index,log_odds.values[:,0]))
-            self.fields_logodds.append(odds_dict)
+        _, _, final_score = self.predict_detail(x)
+        proba = np.array([self.score_to_probability(score_i) for score_i in final_score])
+        return proba, final_score
 
     def predict_detail(self,x):
-        base_score = round(self.score_offset, 2)  # 基础分
-        field_score = []
-        for i,v in enumerate(x):
-            _logodds = self.fields_logodds[i].get(v,self.base_logodds)
-            _score = round(self.score_factor * _logodds,2)  # 特征的分值
-            field_score.append(_score)
-        final_score = int(base_score+sum(field_score))
-        return final_score, base_score, field_score
+        '''
+
+        :param x: list/datafame
+        :return: base_score,array([field_score]),array([final_score])
+        '''
+        if isinstance(x,(pd.DataFrame,pd.Series)):
+            x = x.values.tolist()
+
+        intercept_ = 0
+        logodds = np.array([list(self.fields_logodds[i].get(v,self.base_logodds) for i,v in enumerate(iterm)) for iterm in x])
+        base_score = round(self.score_offset + self.score_factor * intercept_,2)  # 基础分
+        field_score = (logodds*self.score_factor).round(decimals=2)  # 特征的分值
+        final_score = (base_score + field_score.sum(axis=1)).astype(int)  #综合评分
+        return base_score, field_score, final_score
+
+    def get_card_info(self,df_field):
+        '''
+        计算评分卡模型详细分数信息
+        :param df_field:
+        :return:
+        '''
+        _out = []
+        base_score = None
+        for i,field in enumerate(df_field.columns):
+            df_idx = df_field[field].drop_duplicates().index
+            df_eval = df_field.loc[df_idx,:]
+            base_score, field_score, _ = self.predict_detail(x=df_eval)
+            # 变量评分
+            df_iter = pd.DataFrame(df_eval[field].values,columns=['value'])
+            df_iter['score'] = field_score[:,i]
+            df_iter.insert(loc=0, column='fields', value=field)
+            _out.append(df_iter.sort_values('value'))
+        df_card = pd.concat(_out, axis=0)
+        df_card.loc['__'] = ['_base',None, base_score]
+        df_card = df_card.sort_values('fields').reset_index(drop=True)
+        return df_card
 
 
 if __name__ == '__main__':
@@ -67,5 +120,9 @@ if __name__ == '__main__':
     df_fields, df_label = df[['field1','field2']], df['label']
 
     base = BaseModel()
-    base.train(df_fields,df_label)
-    print(base.predict_detail([2,10]))
+    base.train(df_fields,df_label,eval=True)
+    print(base.predict_detail([[2,10]]))
+    print(base.predict([[2,10]]))
+
+    print(base.predict_detail(df_fields))
+    print(base.predict(df_fields))

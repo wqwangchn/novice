@@ -91,7 +91,7 @@ class FeatureGenerator:
             if woe:
                 field_value = woe.transform(field_value)
             feature.append(field_value)
-        return feature
+        return [feature]
 
     def preprocessing(self, df_fields):
         return df_fields

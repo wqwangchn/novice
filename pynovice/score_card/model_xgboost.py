@@ -15,6 +15,7 @@ from pynovice.score_card.score_card import ScoreCardModel
 import xgboost as xgb
 import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
 
 class XGBModel(ScoreCardModel):
     '''
@@ -79,27 +80,28 @@ class XGBModel(ScoreCardModel):
         :return:
         '''
         self.feature_columns = train_feature.columns
-        dtrain = xgb.DMatrix(data=train_feature, label=train_label, missing=self.missing_value)
         if (test_feature.empty or test_label.empty):
-            dtest = dtrain
-        else:
-            dtest = xgb.DMatrix(data=test_feature, label=test_label, missing=self.missing_value)
-        evallist = [(dtrain, 'train'), (dtest, 'test')] #如果说eval_metric有很多个指标(evals)，那就以最后一个指标为准
+            train_feature, test_feature, train_label, test_label = \
+                train_test_split(train_feature, train_label, test_size=0.2, random_state=0)
+        dtrain = xgb.DMatrix(data=train_feature, label=train_label, missing=self.missing_value)
+        dtest = xgb.DMatrix(data=test_feature, label=test_label, missing=self.missing_value)
+        evallist = [(dtrain, 'train'), (dtest, 'test')]  # 如果说eval_metric有很多个指标(evals)，那就以最后一个指标为准
         # 当logloss在设置early_stopping_rounds轮迭代之内，都没有提升的话，就stop。
         self.model_ = xgb.train(self.param, dtrain, num_boost_round=200, evals=evallist, early_stopping_rounds=20)
 
         if eval:
             # 模型评估
-            if (test_feature.empty or test_label.empty):
-                df_test = train_feature
-                df_label = train_label
-            else:
-                df_test = test_feature
-                df_label = test_label
-            df_pre, _ = self.predict(df_test)
-            self.plot_roc(df_pre, df_label, pre_target=1, save_path='.')
-            self.plot_ks(df_pre, df_label, pre_target=1, save_path='.')
-            self.plot_lift(df_pre, df_label, pre_target=1, save_path='.')
+            print("training eval:")
+            df_pre, _ = self.predict(train_feature)
+            auc, _ = self.get_auc(df_pre,train_label)
+            ks, _ = self.get_ks(df_pre, train_label)
+            print("auc={}, ks={}".format(auc,ks['gap'].values[0]))
+
+            print('testing eval:')
+            df_pre, _ = self.predict(test_feature)
+            self.plot_roc(df_pre, test_label, pre_target=1, save_path='.')
+            self.plot_ks(df_pre, test_label, pre_target=1, save_path='.')
+            self.plot_lift(df_pre, test_label, pre_target=1, save_path='.')
 
     def predict(self,x):
         '''

@@ -13,6 +13,7 @@ Desc:
 
 from pynovice.score_card.score_card import ScoreCardModel
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 
@@ -29,17 +30,28 @@ class LRModel(ScoreCardModel):
         self.model_ = None
         self.woe_score = None
 
-    def train(self,df_field,df_label,eval=False):
+    def train(self,train_feature, train_label, test_feature=pd.DataFrame, test_label=pd.DataFrame,eval=False):
+        if (test_feature.empty or test_label.empty):
+            train_feature, test_feature, train_label, test_label = \
+                train_test_split(train_feature, train_label, test_size=0.2, random_state=0)
+
         self.model_ = LogisticRegression()
-        self.model_.fit(df_field, df_label)
+        self.model_.fit(train_feature, train_label)
         if eval:
-            self.woe_score = self.get_card_info(df_field)
+            self.woe_score = self.get_card_info(train_feature)
             print(self.woe_score)
             # 模型评估
-            df_pre, _ = self.predict(df_field)
-            self.plot_roc(df_pre, df_label, pre_target=1, save_path='.')
-            self.plot_ks(df_pre, df_label, pre_target=1, save_path='.')
-            self.plot_lift(df_pre, df_label, pre_target=1, save_path='.')
+            print("training eval:")
+            df_pre, _ = self.predict(train_feature)
+            auc, _ = self.get_auc(df_pre, train_label)
+            ks, _ = self.get_ks(df_pre, train_label)
+            print("auc={}, ks={}".format(auc, ks['gap'].values[0]))
+
+            print('testing eval:')
+            df_pre, _ = self.predict(test_feature)
+            self.plot_roc(df_pre, test_label, pre_target=1, save_path='.')
+            self.plot_ks(df_pre, test_label, pre_target=1, save_path='.')
+            self.plot_lift(df_pre, test_label, pre_target=1, save_path='.')
 
     def predict(self,x):
         '''
@@ -91,7 +103,7 @@ if __name__ == '__main__':
     df.columns = ['field1', 'field2', 'label']
     df_fields, df_label = df[['field1','field2']], df['label']
     lr = LRModel()
-    lr.train(df_fields,df_label,eval=False)
+    lr.train(df_fields,df_label,eval=True)
     print(lr.predict_detail([[2,8]]))
     print(lr.predict_detail(df_fields.head()))
 

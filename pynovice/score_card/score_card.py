@@ -45,6 +45,18 @@ class ScoreCardModel:
         score = self.score_offset + self.score_factor * np.log(odds)
         return int(score)
 
+    def score_to_probability(self, score, eps=1e-4):
+        '''
+            评分转换为逾期概率
+        :param score: 信用评分
+        :return: bScore = offset - factor*ln(odds) -->bad_prob
+        '''
+        score_factor = eps if self.score_factor==0 else self.score_factor
+        odds = np.e**((score - self.score_offset)/(score_factor))
+        odds = -1+eps if odds == -1 else odds
+        bad_prob = 1.00*odds/(1+odds)
+        return bad_prob
+
     @classmethod
     def get_auc(cls, df_pre, df_label, pre_target=1):
         '''
