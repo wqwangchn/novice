@@ -36,6 +36,7 @@ class FeatureGenerator:
             category_fields = list()
 
         # 1.预处理
+        df_fields = df_fields.copy()
         df_fields = self.preprocessing(df_fields)
         self.fields = df_fields.columns.to_list()
 
@@ -112,7 +113,7 @@ if __name__ == '__main__':
     df_fields, df_label = df[['field1', 'field2']], df['label']
 
     feature_generator = FeatureGenerator()
-    feature_generator.fit_transform(df_fields,df_label)
+    feature_generator.fit_transform(df_fields,df_label,category_fields=['field1'])
     print(feature_generator.binning_woe_info)
 
     # file_name = '../data/feature_generater.pkl'

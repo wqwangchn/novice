@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
 	name='pynovice',
-	version='0.2.1',
+	version='0.2.2',
 	description='data mining for novice and expert',
 	url='https://github.com/wqwangchn/novice',
 	author='wqwangchn',
@@ -15,8 +15,8 @@ setuptools.setup(
 	long_description_content_type="text/markdown",
 	packages=setuptools.find_packages(),
 	include_package_data = True,
-	install_requires = ['wordninja>=2.0.0','bert4keras>=0.6.5','tensorflow==2.1.0','reverse_geocoder==1.5.1',
-						'dill==0.3.1.1 ','pyecharts==1.6.2'],
+	install_requires = ['wordninja>=2.0.0','bert4keras>=0.6.5','reverse_geocoder==1.5.1',
+						'dill==0.3.1.1 ','pyecharts==1.6.2'],#'tensorflow==2.1.0',
 	classifiers=[
 	"Programming Language :: Python :: 3",
 	"License :: OSI Approved :: MIT License",

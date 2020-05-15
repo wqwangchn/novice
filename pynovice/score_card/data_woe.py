@@ -35,7 +35,7 @@ class WeightOfEvidence:
             woe字典和此特征的iv值
         '''
         df_info = self.calc_woe(df_x,df_y)
-        self.woe_dict = dict(zip(df_info['bin'].values,df_info['woe'].values))
+        self.woe_dict = dict(zip(df_info['bin'].values,df_info['woe'].values.astype(float)))
         self.iv = sum(df_info['iv'])
         self.woe_info = df_info
 

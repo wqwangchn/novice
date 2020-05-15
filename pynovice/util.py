@@ -47,6 +47,9 @@ if __name__ == '__main__':
         if sum:
            break
     print("ok")
+    # or
+    progress_bar(portion=32, total=100)
+
 
     ## 变量名
     name = "bob"

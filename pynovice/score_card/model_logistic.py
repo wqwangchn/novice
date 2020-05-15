@@ -39,7 +39,6 @@ class LRModel(ScoreCardModel):
         self.model_.fit(train_feature, train_label)
         if eval:
             self.woe_score = self.get_card_info(train_feature)
-            print(self.woe_score)
             # 模型评估
             print("training eval:")
             df_pre, _ = self.predict(train_feature)
