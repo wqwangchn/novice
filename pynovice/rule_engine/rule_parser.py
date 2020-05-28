@@ -50,7 +50,7 @@ class LogicalFunctions(object):
         return args[0] in args[1:]
 
     def between_(self, *args):
-        return args[0] in [args[1],args[2]]
+        return (args[0] >= args[1]) and (args[0] <= args[2])
 
     def gt(self, *args):
         return args[0] > args[1]
@@ -131,6 +131,15 @@ class RuleParser(object):
         rule = self.validate_check(_rule)
         result = self._evaluate(rule)
         return result,self.whole_result
+
+    # filter hit_rule
+    def get_hit_rules(self):
+        result = self.whole_result
+        filt_out = []
+        for i in result:
+            if not list(i.values())[0]:
+                filt_out.append(list(i)[0])
+        return filt_out
 
     def _evaluate(self, rule):
         """
