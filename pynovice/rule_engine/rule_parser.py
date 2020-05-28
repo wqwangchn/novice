@@ -22,7 +22,7 @@ class LogicalFunctions(object):
     def __init__(self):
         self.func_ = {
             '=': self.eq,
-            '！=': self.neq,
+            '!=': self.neq,
             '>': self.gt,
             '>=': self.gte,
             '<': self.lt,
