@@ -60,7 +60,8 @@ def set_timeout(seconds, callback_func):
                 signal.alarm(0)  # 关闭闹钟
                 return r
             except RuntimeError as e:
-                callback_func()
+                if callback_func:
+                    callback_func()
 
         return to_do
 

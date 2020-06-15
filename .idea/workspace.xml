@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/rule_engine/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/rule_engine/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/test/test_rule_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/test/test_rule_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pynovice/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +24,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pynovice/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="-73">
+              <caret line="62" column="33" lean-forward="true" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+              <folding>
+                <element signature="e#121#131#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -41,17 +39,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/requirements">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
+              <caret selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -221,17 +219,17 @@
         <option value="$PROJECT_DIR$/pynovice/score_card/feature_preprocessing.py" />
         <option value="$PROJECT_DIR$/pynovice/score_card/data_woe.py" />
         <option value="$PROJECT_DIR$/pynovice/score_card/model_logistic.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/pynovice/rule_engine/rule_parser.py" />
         <option value="$PROJECT_DIR$/pynovice/test/test_rule_engine.py" />
         <option value="$PROJECT_DIR$/pynovice/rule_engine/__init__.py" />
-        <option value="$PROJECT_DIR$/pynovice/util.py" />
         <option value="$PROJECT_DIR$/requirements" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/pynovice/util.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="43" />
+    <option name="x" value="48" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
@@ -462,7 +460,7 @@
       <workItem from="1590645552893" duration="3641000" />
       <workItem from="1590737968936" duration="564000" />
       <workItem from="1591006195363" duration="453000" />
-      <workItem from="1591340088356" duration="451000" />
+      <workItem from="1591340088356" duration="2574000" />
     </task>
     <servers />
   </component>
@@ -499,17 +497,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277986000" />
+    <option name="totallyTimeSpent" value="280109000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="43" y="23" width="1440" height="797" extended-state="0" />
+    <frame x="48" y="46" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.501002" side_tool="true" weight="0.24034335" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.498998" visible="true" weight="0.2761087" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.6269504" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.121985815" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5007153" side_tool="true" weight="0.2751773" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3503546" />
       <window_info anchor="bottom" id="Python Console" order="4" sideWeight="0.49928468" weight="0.40425533" />
@@ -847,24 +845,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/requirements">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        <state relative-caret-position="-73">
+          <caret line="62" column="33" lean-forward="true" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+          <folding>
+            <element signature="e#121#131#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
