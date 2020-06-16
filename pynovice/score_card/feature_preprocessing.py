@@ -32,6 +32,8 @@ class FeatureGenerator:
         :param bins_dict: 自定义分箱阈值，{field:[]}
         :return:
         '''
+        df_fields=df_fields.reset_index(drop=True)
+        df_label = df_label.reset_index(drop=True)
         if category_fields is None:
             category_fields = list()
 
