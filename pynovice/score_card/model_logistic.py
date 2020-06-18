@@ -25,17 +25,18 @@ class LRModel(ScoreCardModel):
         score_feature: 各个特征的得分字典
     '''
 
-    def __init__(self):
+    def __init__(self,**kwargs):
         super().__init__()
         self.model_ = None
         self.woe_score = None
+        self.kwargs = kwargs
 
     def train(self,train_feature, train_label, test_feature=pd.DataFrame, test_label=pd.DataFrame,eval=False):
         if (test_feature.empty or test_label.empty):
             train_feature, test_feature, train_label, test_label = \
                 train_test_split(train_feature, train_label, test_size=0.2, random_state=0)
 
-        self.model_ = LogisticRegression()
+        self.model_ = LogisticRegression(**self.kwargs)
         self.model_.fit(train_feature, train_label)
         if eval:
             self.woe_score = self.get_card_info(train_feature)
@@ -101,7 +102,7 @@ if __name__ == '__main__':
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7],[10, 2, 3, 42, 534, 5, 53, 6, 83, 3, 42, 21, 25, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
     df.columns = ['field1', 'field2', 'label']
     df_fields, df_label = df[['field1','field2']], df['label']
-    lr = LRModel()
+    lr = LRModel(class_weight='balanced')
     lr.train(df_fields,df_label,eval=True)
     print(lr.predict_detail([[2,8]]))
     print(lr.predict_detail(df_fields.head()))

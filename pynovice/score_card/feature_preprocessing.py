@@ -14,12 +14,20 @@ from pynovice.score_card.data_woe import WeightOfEvidence
 import pandas as pd
 
 class FeatureGenerator:
-    def __init__(self):
+    def __init__(self,auto_fill_missing=True,missing=None):
         self.cate_coder_dict = {}
         self.binning_dict = {}
         self.woe_dict = {}
-        self.binning_woe_info = None
+        self.woe_defalut = {}
         self.fields = None #特征字段
+        if missing:
+            self.missing = missing
+            self.auto_fill_missing = False
+        else:
+            self.missing = -999
+            self.auto_fill_missing = auto_fill_missing
+        self.binning_woe_info = None
+        self.cate_fields_info = None
 
     def fit_transform(self, df_fields, df_label, category_fields=None, default_boxs=5, boxs_dict={},bins_dict={}):
         '''
@@ -67,10 +75,12 @@ class FeatureGenerator:
             woe = WeightOfEvidence()
             df_field = woe.fit_transform(df_field, df_label)
             self.woe_dict.update({field: woe})
+            self.woe_defalut.update({field:df_field.mode()[0]})## 众数
 
             df_fields.loc[:, field] = df_field
 
         self.binning_woe_info = self.get_binning_woe()
+        self.cate_fields_info = self.get_cate_info()
         return df_fields
 
     def transform(self,fields_json):
@@ -79,7 +89,10 @@ class FeatureGenerator:
             # 取数据
             field_value = fields_json.get(field_name)
             if not field_value:
-                feature.append(-999)
+                if self.auto_fill_missing:
+                    feature.append(self.woe_defalut.get(field_name))
+                else:
+                    feature.append(self.missing)
                 continue
             # 类别编码
             cate_coder = self.cate_coder_dict.get(field_name)
@@ -93,7 +106,13 @@ class FeatureGenerator:
             woe = self.woe_dict.get(field_name)
             if woe:
                 field_value = woe.transform(field_value)
-            feature.append(field_value)
+                feature.append(field_value)
+            else:
+                if self.auto_fill_missing:
+                    feature.append(self.woe_defalut.get(field_name))
+                else:
+                    feature.append(self.missing)
+
         return [feature]
 
     def preprocessing(self, df_fields):
@@ -104,7 +123,9 @@ class FeatureGenerator:
         df_woe = pd.concat(field_woe,axis=0)
         return df_woe
 
-
+    def get_cate_info(self):
+        cate_fields_info = {field:cate.cate_dict for field,cate in self.cate_coder_dict.items()}
+        return cate_fields_info
 
 if __name__ == '__main__':
     import dill as pickle
@@ -116,6 +137,7 @@ if __name__ == '__main__':
 
     feature_generator = FeatureGenerator()
     feature_generator.fit_transform(df_fields,df_label,category_fields=['field1'])
+    print(feature_generator.cate_fields_info)
     print(feature_generator.binning_woe_info)
 
     # file_name = '../data/feature_generater.pkl'

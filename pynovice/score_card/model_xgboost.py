@@ -24,6 +24,7 @@ class XGBModel(ScoreCardModel):
         score_label: 最终预测的评分
         score_feature: 各个特征的得分字典
     '''
+    missing_value: float
 
     def __init__(self,missing_value=-999.0):
         super().__init__()
@@ -108,7 +109,7 @@ class XGBModel(ScoreCardModel):
         :param x: list/datafame
         :return: array([proba]),array([score_label])
         '''
-        dmatrix = xgb.DMatrix(x, feature_names=self.feature_columns, missing=-999.0)
+        dmatrix = xgb.DMatrix(np.array(x), feature_names=self.feature_columns, missing=self.missing_value)
         predict = self.model_.predict(dmatrix)
         score_label = np.array([self.probability_to_score(bad_prob=proba_i) for proba_i in predict])
         return predict, score_label
