@@ -86,13 +86,15 @@ class FeatureGenerator:
     def transform(self,fields_json):
         feature = []
         for field_name in self.fields:
+            # 默认值
+            if self.auto_fill_missing:
+                _missing = self.woe_defalut.get(field_name)
+            else:
+                _missing = self.missing
             # 取数据
             field_value = fields_json.get(field_name)
             if not field_value:
-                if self.auto_fill_missing:
-                    feature.append(self.woe_defalut.get(field_name))
-                else:
-                    feature.append(self.missing)
+                feature.append(_missing)
                 continue
             # 类别编码
             cate_coder = self.cate_coder_dict.get(field_name)
@@ -106,12 +108,11 @@ class FeatureGenerator:
             woe = self.woe_dict.get(field_name)
             if woe:
                 field_value = woe.transform(field_value)
-                feature.append(field_value)
+                if not field_value:
+                    field_value = _missing
             else:
-                if self.auto_fill_missing:
-                    feature.append(self.woe_defalut.get(field_name))
-                else:
-                    feature.append(self.missing)
+                field_value = _missing
+            feature.append(field_value)
 
         return [feature]
 
