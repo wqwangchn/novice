@@ -18,10 +18,11 @@ def rule_pattern(_iterm):
     this_apply_dueday_predicted_score = _iterm.get('this_apply_dueday_predicted_score', 0)
 
     _pattern = [
-        'OR',
+        'OR#old#',
             ['between#rule_10',age,18,55],
             ['>#rule_11',sms_len,50],
             ['<#rule_12',micro_loan_len,8],
+            ['<', micro_loan_len, -99],
             ['and#rule_40',
                 ['>',endBillsLen,4],
                 ['>',maxDueday,20],

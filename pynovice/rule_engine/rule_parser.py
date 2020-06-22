@@ -133,12 +133,18 @@ class RuleParser(object):
         return result,self.whole_result
 
     # filter hit_rule
-    def get_hit_rules(self):
+    def get_hit_rules(self,exclude_rules=[]):
         result = self.whole_result
         filt_out = []
-        for i in result:
-            if not list(i.values())[0]:
-                filt_out.append(list(i)[0])
+        for irule in result:
+            for _k,_v in irule.items():
+                if _k in exclude_rules:
+                    continue
+                if 'untag'==_k:
+                    continue
+                if bool(_v):
+                    continue
+                filt_out.append(_k)
         return filt_out
 
     def _evaluate(self, rule):
@@ -153,8 +159,8 @@ class RuleParser(object):
             if isinstance(idata, list):
                 data[id] = self._evaluate(idata)
         iterate_out = self.get_func(operate)(*data)
-
-        self.whole_result.append({tag:iterate_out})
+        if 'untag'!=tag:
+            self.whole_result.append({tag:iterate_out})
         return iterate_out
 
 if __name__ == '__main__':
