@@ -1,0 +1,2 @@
+pyecharts==1.6.2
+reverse_geocoder==1.5.1

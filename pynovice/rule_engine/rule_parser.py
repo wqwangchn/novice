@@ -138,7 +138,7 @@ class RuleParser(object):
         filt_out = []
         for irule in result:
             for _k,_v in irule.items():
-                if _k in exclude_rules:
+                if _k.lower() in exclude_rules:
                     continue
                 if 'untag'==_k:
                     continue

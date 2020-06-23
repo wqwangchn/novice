@@ -14,9 +14,8 @@ setuptools.setup(
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 	packages=setuptools.find_packages(),
-	include_package_data = True,
-	install_requires = ['wordninja>=2.0.0','bert4keras>=0.6.5','reverse_geocoder==1.5.1',
-						'dill==0.3.1.1 ','pyecharts==1.6.2','signal2==0.2','scikit-learn==0.19.2'],#'tensorflow==2.1.0',
+	include_package_data=True,
+	install_requires=['pandas>=1.0.3','numpy>=1.18.4','scipy>=1.4.1'],
 	classifiers=[
 	"Programming Language :: Python :: 3",
 	"License :: OSI Approved :: MIT License",
