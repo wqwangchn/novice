@@ -8,9 +8,9 @@ Date: 2020-05-04 15:34
 Desc:
     特征生成（预处理，转换，编码）
 '''
-from pynovice.score_card.category_coder import CateCoder
-from pynovice.score_card.data_binning import DataBinning
-from pynovice.score_card.data_woe import WeightOfEvidence
+from pynovice.score_card.src.category_coder import CateCoder
+from pynovice.score_card.src.data_binning import DataBinning
+from pynovice.score_card.src.data_woe import WeightOfEvidence
 import pandas as pd
 
 class FeatureGenerator:

@@ -11,9 +11,8 @@ Desc:
 '''
 from collections import Sequence
 
-import numpy as np
 import pandas as pd
-from pynovice.score_card.data_boxing import *
+from pynovice.score_card.src.data_boxing import *
 
 DISCRETIZATION_FUNCTION = {
     'frequence_blocks':

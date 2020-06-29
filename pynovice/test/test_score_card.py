@@ -9,7 +9,7 @@ Desc:
 '''
 import pandas as pd
 import dill as pickle
-from pynovice.score_card.data_boxing import frequence_blocks,distince_blocks, kmeans_blocks, bayesian_blocks, \
+from pynovice.score_card.src.data_boxing import frequence_blocks,distince_blocks, kmeans_blocks, bayesian_blocks, \
     ks_blocks, chi_blocks, tree_blocks
 
 from pynovice.score_card.feature_preprocessing import FeatureGenerator

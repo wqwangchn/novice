@@ -23,7 +23,7 @@ https://github.com/boredbird/woe
 
 import pandas as pd
 import numpy as np
-from pynovice.score_card.data_boxing.base_blocks import frequence_blocks
+from pynovice.score_card.src.data_boxing import frequence_blocks
 
 def calc_woe(x,y,bad_target=1, eps=1e-4):
     '''

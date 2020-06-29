@@ -32,3 +32,4 @@ from .feature_preprocessing import FeatureGenerator
 from .model_base import BaseModel
 from .model_logistic import LRModel
 from .model_xgboost import XGBModel
+from .src.psi_csi import StabilityIndex

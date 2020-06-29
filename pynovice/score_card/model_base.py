@@ -10,7 +10,7 @@ Desc:
     score = self.score_offset + self.score_factor * np.log(odds)
 '''
 
-from pynovice.score_card.score_card import ScoreCardModel
+from pynovice.score_card.src.score_card import ScoreCardModel
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split

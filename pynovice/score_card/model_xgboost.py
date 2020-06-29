@@ -11,7 +11,7 @@ Desc:
     score = self.score_offset + self.score_factor * np.log(odds)
 '''
 
-from pynovice.score_card.score_card import ScoreCardModel
+from pynovice.score_card.src.score_card import ScoreCardModel
 import xgboost as xgb
 import pandas as pd
 import numpy as np

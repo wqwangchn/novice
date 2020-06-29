@@ -28,7 +28,7 @@ Desc:
 import pandas as pd
 import numpy as np
 from scipy.stats import chi2
-from pynovice.score_card.data_boxing.base_blocks import frequence_blocks
+from pynovice.score_card.src.data_boxing import frequence_blocks
 
 def get_chi2(df_field,df_label):
     '''

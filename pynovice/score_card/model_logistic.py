@@ -11,7 +11,7 @@ Desc:
     score = self.score_offset + self.score_factor * np.log(odds)
 '''
 
-from pynovice.score_card.score_card import ScoreCardModel
+from pynovice.score_card.src.score_card import ScoreCardModel
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 import pandas as pd

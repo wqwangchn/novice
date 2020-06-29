@@ -195,6 +195,9 @@ if __name__ == '__main__':
         score = score_card_model.probability_to_score(0.1 * i)
         print('overdue prob: {}, score: {}'.format(round(0.1 * i, 2), score))
 
+    print('2343',score_card_model.score_to_probability(660))
+    print(score_card_model.probability_to_score(0.3))
+
     # 评分卡模型评估
     df_raw = pd.DataFrame([[0.42, 0.73, 0.55, 0.37, 0.57, 0.70, 0.25, 0.23, 0.46, 0.62, 0.76, 0.46, 0.55, 0.56, 0.56,
                             0.38, 0.37, 0.73, 0.77, 0.21],
@@ -202,6 +205,6 @@ if __name__ == '__main__':
     df_pre = df_raw[0]
     df_label = df_raw[1]
 
-    score_card_model.plot_roc(df_pre, df_label, pre_target=1, save_path='../data')
-    score_card_model.plot_ks(df_pre, df_label, pre_target=1, save_path='../data')
-    score_card_model.plot_lift(df_pre, df_label, pre_target=1, save_path='../data')
+    # score_card_model.plot_roc(df_pre, df_label, pre_target=1, save_path='../data')
+    # score_card_model.plot_ks(df_pre, df_label, pre_target=1, save_path='../data')
+    # score_card_model.plot_lift(df_pre, df_label, pre_target=1, save_path='../data')

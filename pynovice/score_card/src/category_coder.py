@@ -52,7 +52,7 @@ class CateCoder:
         return block_dict
 
 if __name__ == '__main__':
-    from pynovice.score_card.data_boxing.chi_blocks import chi_blocks
+    from pynovice.score_card.src.data_boxing import chi_blocks
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 3, 3, 3, 2, 1, 5, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
     df.columns = ['field', 'label']
     df_field, df_label = df['field'], df['label']
