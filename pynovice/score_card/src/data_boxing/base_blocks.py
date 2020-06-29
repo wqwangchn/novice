@@ -22,14 +22,13 @@ def frequence_blocks(x, box_num=10):
     :return: 箱边界
     '''
     x=np.sort(x)
-    len_clocks = min(len(x),box_num)
+    len_clocks = int(min(len(x),box_num))
     ind = np.linspace(0, len(x)-1, len_clocks).astype(int)
     tb=np.array(x)[ind]
     blocks = np.concatenate([[-np.inf],
                             0.5 * (tb[1:] + tb[:-1]),
                             [np.inf]])
     return blocks.tolist()
-
 
 def distince_blocks(x, box_num=5):
     '''
