@@ -10,7 +10,7 @@ Desc:
 1. Population Stability Index (PSI)：群体稳定性指标，用来衡量分数分布的变化
 2. Characteristic Stability Index (CSI)：特征稳定性指标，用来衡量特征层面的变化
 '''
-import json
+import pickle
 import pandas as pd
 import numpy as np
 from pynovice.score_card.src.data_binning import DataBinning
@@ -22,7 +22,7 @@ class StabilityIndex:
             需要加载bins_statistic_dict即可，可计算calc_expect_bins_statistic函数
         计算入模特征的稳定性csi：
             需要加载bins_statistic_dict和bins_statistic_dict，可计算calc_expect_bins_statistic和load_expect_bins_score函数
-        或者直接加载保存到本地的数据load_bins_statistic(json)/load_bins_score(json)
+        或者直接加载保存到本地的数据load_bins_statistic()/load_bins_score()
         '''
         self.bins_statistic_dict = {}  # 各箱的count数量
         self.bins_score_dict = {}  # 各箱的对应贡献分
@@ -55,16 +55,17 @@ class StabilityIndex:
         self.bins_score_dict = bins_score_dict
 
     def load_bins_statistic(self,file_name):
-        with open(file_name, "r") as f:
-            self.bins_statistic_dict = json.load(f)
+        with open(file_name, "rb") as f:
+            self.bins_statistic_dict = pickle.load(f)
 
     def load_bins_score(self,file_name):
-        with open(file_name, "r") as f:
-            self.bins_score_dict = json.load(f)
+        with open(file_name, "rb") as f:
+            self.bins_score_dict = pickle.load(f)
 
     def dump_bins_statistic(self,file_name):
-        with open(file_name, "w") as f:
-            f.write(json.dumps(self.bins_statistic_dict))
+        # json not suppert Interval type
+        with open(file_name, "wb") as f:
+            pickle.dump(self.bins_statistic_dict, f)
 
     def get_psi(self,actual_array,eps=1e-4):
         '''
@@ -106,10 +107,9 @@ if __name__ == '__main__':
     # 1.psi:
     stab_index = StabilityIndex()
     stab_index.calc_expect_bins_statistic(expect_array=expected_array,bins=3)
-    #stab_index.dump_bins_statistic('./model_score_bins.json')
+    #stab_index.dump_bins_statistic('./model_score_bins_statistic.pkl')
     aa = stab_index.get_psi(actual_array)
     print(aa)
-
     bins_score_dict=dict(zip(aa.index,[20.0,30.0,40.0]))
     # 2.csi:
     stab_index = StabilityIndex()

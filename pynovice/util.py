@@ -41,7 +41,7 @@ def get_retrieve_name(var):
 # 3.函数超时退出
 def set_timeout(seconds, callback_func):
     '''
-
+    暂时不可用
     :param seconds: 超时时间秒
     :param callback_func:超时后执行的函数
     :return:
@@ -64,7 +64,6 @@ def set_timeout(seconds, callback_func):
                     callback_func()
 
         return to_do
-
     return wrap
 
 if __name__ == '__main__':
