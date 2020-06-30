@@ -19,9 +19,9 @@ class StabilityIndex:
     def __init__(self):
         '''
         计算模型分的稳定性psi：
-            需要加载bins_statistic_dict即可，可计算calc_expect_bins_statistic函数
+            需要加载bins&bins_statistic_dict，可计算calc_expect_bins_statistic函数
         计算入模特征的稳定性csi：
-            需要加载bins_statistic_dict和bins_statistic_dict，可计算calc_expect_bins_statistic和load_expect_bins_score函数
+            需要加载bins&bins_statistic_dict和bins_statistic_dict，可计算calc_expect_bins_statistic和load_expect_bins_score函数
         或者直接加载保存到本地的数据load_bins_statistic()/load_bins_score()
         '''
         self.bins_statistic_dict = {}  # 各箱的count数量
@@ -56,7 +56,7 @@ class StabilityIndex:
 
     def load_bins_statistic(self,file_name):
         with open(file_name, "rb") as f:
-            self.bins_statistic_dict = pickle.load(f)
+            self.bins, self.bins_statistic_dict = pickle.load(f)
 
     def load_bins_score(self,file_name):
         with open(file_name, "rb") as f:
@@ -64,8 +64,9 @@ class StabilityIndex:
 
     def dump_bins_statistic(self,file_name):
         # json not suppert Interval type
+        bins_info = [self.bins, self.bins_statistic_dict]
         with open(file_name, "wb") as f:
-            pickle.dump(self.bins_statistic_dict, f)
+            pickle.dump(bins_info, f)
 
     def get_psi(self,actual_array,eps=1e-4):
         '''

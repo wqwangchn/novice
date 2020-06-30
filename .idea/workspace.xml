@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pynovice/score_card/src/psi_csi.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/src/psi_csi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/psi_csi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+            <state relative-caret-position="-130">
+              <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
               <folding>
                 <element signature="e#272#285#0" expanded="true" />
               </folding>
@@ -41,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/pynovice/util.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-303">
-              <caret line="49" column="11" lean-forward="true" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+              <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
               <folding>
                 <element signature="e#121#131#0" expanded="true" />
               </folding>
@@ -194,14 +194,6 @@
               <item name="pynovice" type="462c0819:PsiDirectoryNode" />
               <item name="score_card" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="novice" type="462c0819:PsiDirectoryNode" />
-              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
-              <item name="score_card" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data_boxing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
@@ -432,7 +424,7 @@
       <workItem from="1593329180614" duration="8000" />
       <workItem from="1593332925441" duration="881000" />
       <workItem from="1593399956904" duration="4377000" />
-      <workItem from="1593412352991" duration="12986000" />
+      <workItem from="1593412352991" duration="14435000" />
     </task>
     <servers />
   </component>
@@ -469,11 +461,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="328001000" />
+    <option name="totallyTimeSpent" value="329450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.501002" side_tool="true" weight="0.24034335" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.498998" visible="true" weight="0.2746781" />
@@ -482,11 +473,11 @@
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.24096386" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5007153" side_tool="true" weight="0.2751773" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3493976" />
-      <window_info anchor="bottom" id="Python Console" order="4" sideWeight="0.49928468" weight="0.31445783" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="4" sideWeight="0.49928468" visible="true" weight="0.31445783" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.49928468" visible="true" weight="0.39638555" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49928468" weight="0.39638555" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -879,7 +870,7 @@
     <entry file="file://$PROJECT_DIR$/pynovice/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
-          <caret line="49" column="11" lean-forward="true" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
           <folding>
             <element signature="e#121#131#0" expanded="true" />
           </folding>
@@ -895,8 +886,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/psi_csi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+        <state relative-caret-position="-130">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
           <folding>
             <element signature="e#272#285#0" expanded="true" />
           </folding>
