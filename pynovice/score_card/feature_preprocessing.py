@@ -12,6 +12,7 @@ from pynovice.score_card.src.category_coder import CateCoder
 from pynovice.score_card.src.data_binning import DataBinning
 from pynovice.score_card.src.data_woe import WeightOfEvidence
 import pandas as pd
+from pynovice.util import progress_bar
 
 class FeatureGenerator:
     def __init__(self,auto_fill_missing=True,missing=None):
@@ -83,38 +84,79 @@ class FeatureGenerator:
         self.cate_fields_info = self.get_cate_info()
         return df_fields
 
-    def transform(self,fields_json):
-        feature = []
+    def transform(self,fields_jsons):
+        if isinstance(fields_jsons,pd.DataFrame):
+            return self.transform_for_dataframe(df_fields)
+        if not isinstance(fields_jsons,list):
+            fields_jsons = [fields_jsons]
+        features=[]
+        len_data = len(fields_jsons)
+        for i,fields_json in enumerate(fields_jsons):
+            progress_bar(i,len_data)
+            feature = []
+            for field_name in self.fields:
+                # 主逻辑
+                # 默认值
+                if self.auto_fill_missing:
+                    _missing = self.woe_defalut.get(field_name)
+                else:
+                    _missing = self.missing
+                # 取数据
+                field_value = fields_json.get(field_name)
+                if not field_value:
+                    feature.append(_missing)
+                    continue
+                # 类别编码
+                cate_coder = self.cate_coder_dict.get(field_name)
+                if cate_coder:
+                    field_value = cate_coder.transform(field_value)
+                # data分箱
+                binning = self.binning_dict.get(field_name)
+                if binning:
+                    field_value = binning.transform(field_value)
+                # woe编码
+                woe = self.woe_dict.get(field_name)
+                if woe:
+                    field_value = woe.transform(field_value)
+                    if not field_value:
+                        field_value = _missing
+                else:
+                    field_value = _missing
+                feature.append(field_value)
+            features.append(feature)
+        return features
+
+    def transform_for_dataframe(self,df_fields):
+        df_in = df_fields.copy()
+        feature_columns=[]
         for field_name in self.fields:
+            feature_columns.append(field_name)
             # 默认值
             if self.auto_fill_missing:
                 _missing = self.woe_defalut.get(field_name)
             else:
                 _missing = self.missing
             # 取数据
-            field_value = fields_json.get(field_name)
-            if not field_value:
-                feature.append(_missing)
+            if field_name not in df_fields.columns:
+                df_in[field_name]=_missing
                 continue
+            df_in[field_name] = df_in[field_name].fillna(_missing)
             # 类别编码
             cate_coder = self.cate_coder_dict.get(field_name)
             if cate_coder:
-                field_value = cate_coder.transform(field_value)
+                df_in[field_name] = df_in[field_name].apply(lambda x:cate_coder.transform(x))
             # data分箱
             binning = self.binning_dict.get(field_name)
             if binning:
-                field_value = binning.transform(field_value)
+                df_in[field_name] = df_in[field_name].apply(lambda x: binning.transform(x))
             # woe编码
             woe = self.woe_dict.get(field_name)
             if woe:
-                field_value = woe.transform(field_value)
-                if not field_value:
-                    field_value = _missing
+                df_in[field_name] = df_in[field_name].apply(lambda x: woe.transform(x)).fillna(_missing)
             else:
-                field_value = _missing
-            feature.append(field_value)
-
-        return [feature]
+                df_in[field_name] = _missing
+        features = df_in[feature_columns].values.tolist()
+        return features
 
     def preprocessing(self, df_fields):
         return df_fields
@@ -145,8 +187,7 @@ if __name__ == '__main__':
     #
     # # load
     # feature_generator= pickle.load(open(file_name, "rb"))
-    fields_json = {'field1':4, 'field22':5, 'aa':9}
-    feature = feature_generator.transform(fields_json)
+    fields_json = [{'field1':4, 'field22':5, 'aa':9},{'field1':4, 'field22':5, 'aa':9}]
+    df_fields = pd.DataFrame(fields_json)
+    feature = feature_generator.transform(df_fields)
     print(feature)
-
-

@@ -26,14 +26,14 @@ class XGBModel(ScoreCardModel):
     '''
     missing_value: float
 
-    def __init__(self,missing_value=-999.0):
+    def __init__(self,missing_value=-999.0,**kwargs):
         super().__init__()
         self.missing_value = missing_value
-        self.param = self.load_xgb_param()
+        self.param = self.load_xgb_param(kwargs)
         self.feature_columns = None
         self.model_ = None
 
-    def load_xgb_param(self):
+    def load_xgb_param(self,kwargs):
         param={}
         # 1.一般参数:  这些参数用来控制XGBoost的整体通用功能，
         general_param={
@@ -69,9 +69,11 @@ class XGBModel(ScoreCardModel):
         param.update(general_param)
         param.update(booster_tree_param)
         param.update(object_param)
+        param.update(kwargs)
         return param
 
-    def train(self,train_feature, train_label, test_feature=pd.DataFrame(), test_label=pd.DataFrame(),eval=False):
+    def train(self,train_feature, train_label, test_feature=pd.DataFrame(), test_label=pd.DataFrame(),eval=False,
+              num_boost_round=200,early_stopping_rounds=50):
         '''
 
         :param train_feature: pd.DataFrame
@@ -88,8 +90,8 @@ class XGBModel(ScoreCardModel):
         dtest = xgb.DMatrix(data=test_feature, label=test_label, missing=self.missing_value)
         evallist = [(dtrain, 'train'), (dtest, 'test')]  # 如果说eval_metric有很多个指标(evals)，那就以最后一个指标为准
         # 当logloss在设置early_stopping_rounds轮迭代之内，都没有提升的话，就stop。
-        self.model_ = xgb.train(self.param, dtrain, num_boost_round=200, evals=evallist, early_stopping_rounds=20)
-
+        self.model_ = xgb.train(self.param, dtrain, num_boost_round=num_boost_round, evals=evallist,
+                                early_stopping_rounds=early_stopping_rounds)
         if eval:
             # 模型评估
             print("training eval:")
@@ -119,7 +121,7 @@ if __name__ == '__main__':
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 6, 8, 3, 2, 1, 5, 7],[10, 2, 3, 42, 534, 5, 53, 6, 83, 3, 42, 21, 25, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
     df.columns = ['field1', 'field2', 'label']
     df_fields, df_label = df[['field1','field2']], df['label']
-    lf = XGBModel()
+    lf = XGBModel(aa=34,missing_value=99)
     lf.train(df_fields,df_label,eval=False)
     print(lf.predict([[2,3]]))
     print(lf.predict(df_fields.head()))
