@@ -159,7 +159,7 @@ class FeatureGenerator:
         return features
 
     def preprocessing(self, df_fields):
-        return df_fields
+        return df_fields.fillna(self.missing)
 
     def get_binning_woe(self):
         field_woe = [woe.woe_info for woe in self.woe_dict.values()]
