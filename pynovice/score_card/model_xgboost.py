@@ -72,8 +72,8 @@ class XGBModel(ScoreCardModel):
         param.update(kwargs)
         return param
 
-    def train(self,train_feature, train_label, test_feature=pd.DataFrame(), test_label=pd.DataFrame(),eval=False,
-              num_boost_round=200,early_stopping_rounds=50):
+    def train(self,train_feature, train_label, test_feature=pd.DataFrame(), test_label=pd.DataFrame(),eval=True,
+              eval_plot=False,num_boost_round=200,early_stopping_rounds=50):
         '''
 
         :param train_feature: pd.DataFrame
@@ -98,9 +98,17 @@ class XGBModel(ScoreCardModel):
             df_pre, _ = self.predict(train_feature)
             auc, _ = self.get_auc(df_pre,train_label)
             ks, _ = self.get_ks(df_pre, train_label)
-            print("auc={}, ks={}".format(auc,ks['gap'].values[0]))
+            lift, _ = self.get_lift(df_pre, train_label)
+            print("auc={}, ks={}, lift={}".format(auc, ks['gap'].values[0],lift))
 
             print('testing eval:')
+            df_pre, _ = self.predict(test_feature)
+            auc, _ = self.get_auc(df_pre, test_label)
+            ks, _ = self.get_ks(df_pre, test_label)
+            lift,_ = self.get_lift(df_pre, test_label)
+            print("auc={}, ks={}, lift={}".format(auc, ks['gap'].values[0],lift))
+
+        if eval_plot:
             df_pre, _ = self.predict(test_feature)
             self.plot_roc(df_pre, test_label, pre_target=1, save_path='.')
             self.plot_ks(df_pre, test_label, pre_target=1, save_path='.')
@@ -122,6 +130,6 @@ if __name__ == '__main__':
     df.columns = ['field1', 'field2', 'label']
     df_fields, df_label = df[['field1','field2']], df['label']
     lf = XGBModel(aa=34,missing_value=99)
-    lf.train(df_fields,df_label,eval=False)
+    lf.train(df_fields,df_label,eval=True)
     print(lf.predict([[2,3]]))
     print(lf.predict(df_fields.head()))

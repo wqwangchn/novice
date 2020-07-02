@@ -31,7 +31,7 @@ class LRModel(ScoreCardModel):
         self.woe_score = None
         self.kwargs = kwargs
 
-    def train(self,train_feature, train_label, test_feature=pd.DataFrame, test_label=pd.DataFrame,eval=False):
+    def train(self,train_feature, train_label, test_feature=pd.DataFrame, test_label=pd.DataFrame,eval=True,eval_plot=False):
         if (test_feature.empty or test_label.empty):
             train_feature, test_feature, train_label, test_label = \
                 train_test_split(train_feature, train_label, test_size=0.2, random_state=0)
@@ -45,9 +45,17 @@ class LRModel(ScoreCardModel):
             df_pre, _ = self.predict(train_feature)
             auc, _ = self.get_auc(df_pre, train_label)
             ks, _ = self.get_ks(df_pre, train_label)
-            print("auc={}, ks={}".format(auc, ks['gap'].values[0]))
+            lift, _ = self.get_lift(df_pre, train_label)
+            print("auc={}, ks={}, lift={}".format(auc, ks['gap'].values[0], lift))
 
             print('testing eval:')
+            df_pre, _ = self.predict(test_feature)
+            auc, _ = self.get_auc(df_pre, test_label)
+            ks, _ = self.get_ks(df_pre, test_label)
+            lift, _ = self.get_lift(df_pre, test_label)
+            print("auc={}, ks={}, lift={}".format(auc, ks['gap'].values[0], lift))
+
+        if eval_plot:
             df_pre, _ = self.predict(test_feature)
             self.plot_roc(df_pre, test_label, pre_target=1, save_path='.')
             self.plot_ks(df_pre, test_label, pre_target=1, save_path='.')
