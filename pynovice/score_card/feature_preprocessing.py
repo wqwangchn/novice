@@ -148,7 +148,7 @@ class FeatureGenerator:
             # data分箱
             binning = self.binning_dict.get(field_name)
             if binning:
-                df_in[field_name] = df_in[field_name].apply(lambda x: binning.transform(x))
+                df_in[field_name] = pd.cut(df_in[field_name], bins=binning.bins)
             # woe编码
             woe = self.woe_dict.get(field_name)
             if woe:
