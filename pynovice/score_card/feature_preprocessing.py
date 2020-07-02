@@ -86,7 +86,7 @@ class FeatureGenerator:
 
     def transform(self,fields_jsons):
         if isinstance(fields_jsons,pd.DataFrame):
-            return self.transform_for_dataframe(df_fields)
+            return self.transform_for_dataframe(fields_jsons)
         if not isinstance(fields_jsons,list):
             fields_jsons = [fields_jsons]
         features=[]
