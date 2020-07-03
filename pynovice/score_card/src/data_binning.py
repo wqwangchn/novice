@@ -12,6 +12,7 @@ Desc:
 from collections import Sequence
 
 import pandas as pd
+import numpy as np
 from pynovice.score_card.src.data_boxing import *
 
 DISCRETIZATION_FUNCTION = {
@@ -55,6 +56,8 @@ class DataBinning:
         self.bins = blocks
 
     def transform(self, x):
+        if not x:
+            return [-np.inf,np.inf]
         s = pd.cut([x], bins=self.bins)[0]
         return s
 

@@ -13,6 +13,7 @@ from pynovice.score_card.src.data_binning import DataBinning
 from pynovice.score_card.src.data_woe import WeightOfEvidence
 import pandas as pd
 from pynovice.util import progress_bar
+import logging
 
 class FeatureGenerator:
     def __init__(self,auto_fill_missing=True,missing=None):
@@ -115,6 +116,10 @@ class FeatureGenerator:
                 cate_coder = self.cate_coder_dict.get(field_name)
                 if cate_coder:
                     field_value = cate_coder.transform(field_value)
+                if not isinstance(field_value,(float,int)):
+                    logging.error("{} is not a number type[index:{}]".format(field_name,i))  # 数值类型
+                    feature.append(_missing)
+                    continue
                 # data分箱
                 binning = self.binning_dict.get(field_name)
                 if binning:
@@ -132,7 +137,7 @@ class FeatureGenerator:
         return features
 
     def transform_for_dataframe(self,df_fields):
-        df_in = df_fields.copy()
+        df_in = self.preprocessing(df_fields)
         feature_columns=[]
         for field_name in self.fields:
             feature_columns.append(field_name)
@@ -142,10 +147,9 @@ class FeatureGenerator:
             else:
                 _missing = self.missing
             # 取数据
-            if field_name not in df_fields.columns:
+            if field_name not in df_in.columns:
                 df_in[field_name]=_missing
                 continue
-            df_in[field_name] = df_in[field_name].fillna(_missing)
             # 类别编码
             cate_coder = self.cate_coder_dict.get(field_name)
             if cate_coder:
@@ -164,8 +168,9 @@ class FeatureGenerator:
         return features
 
     def preprocessing(self, df_fields):
-        df_fields = df_fields.fillna(self.missing)
-        df_fields = df_fields[self.digital_fields].astype(float)
+        _columns = list(set(df_fields.columns)&set(self.digital_fields))
+        if _columns:
+            df_fields[_columns] = df_fields[_columns].fillna(self.missing).astype(float)
         return df_fields
 
     def get_binning_woe(self):
@@ -194,7 +199,7 @@ if __name__ == '__main__':
     #
     # # load
     # feature_generator= pickle.load(open(file_name, "rb"))
-    fields_json = [{'field1':4, 'field22':5, 'aa':9},{'field1':4, 'field22':5, 'aa':9}]
+    fields_json = [{'field1':'4a', 'field2':'5a', 'aa':9},{'field1':4, 'field2':5, 'aa':9}]
     df_fields = pd.DataFrame(fields_json)
     feature = feature_generator.transform(df_fields)
     print(feature)
