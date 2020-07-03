@@ -21,6 +21,8 @@ class FeatureGenerator:
         self.woe_dict = {}
         self.woe_defalut = {}
         self.fields = None #特征字段
+        self.category_fields = None
+        self.digital_fields = None
         if missing:
             self.missing = missing
             self.auto_fill_missing = False
@@ -43,13 +45,16 @@ class FeatureGenerator:
         '''
         df_fields=df_fields.reset_index(drop=True)
         df_label = df_label.reset_index(drop=True)
+        self.fields = df_fields.columns.to_list()
         if category_fields is None:
-            category_fields = list()
+            self.category_fields = list()
+        else:
+            self.category_fields = category_fields
+        self.digital_fields = list(set(self.fields)-set(self.category_fields))
 
         # 1.预处理
         df_fields = df_fields.copy()
         df_fields = self.preprocessing(df_fields)
-        self.fields = df_fields.columns.to_list()
 
         # 2.类别特征转换
         for field in category_fields:
@@ -155,11 +160,13 @@ class FeatureGenerator:
                 df_in[field_name] = df_in[field_name].apply(lambda x: woe.transform(x)).fillna(_missing)
             else:
                 df_in[field_name] = _missing
-        features = df_in[feature_columns].values.tolist()
+        features = df_in[feature_columns]
         return features
 
     def preprocessing(self, df_fields):
-        return df_fields.fillna(self.missing)
+        df_fields = df_fields.fillna(self.missing)
+        df_fields = df_fields[self.digital_fields].astype(float)
+        return df_fields
 
     def get_binning_woe(self):
         field_woe = [woe.woe_info for woe in self.woe_dict.values()]

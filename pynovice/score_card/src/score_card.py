@@ -111,7 +111,11 @@ class ScoreCardModel:
         crossdens['acc_random'] = df_label.sum() / df_label.size  # 随机情况下的准确率
         crossdens['lift'] = crossdens['acc_true'] / crossdens['acc_random']
         # 预测阈值
-        lift = crossdens[crossdens.index >= judg_threshold]['lift'].values[-1]
+        lift = crossdens[crossdens.index >= judg_threshold]['lift'].values
+        if len(lift)>0:
+            lift =lift[-1]
+        else:
+            lift = crossdens['lift'].mean()
         return lift, crossdens
 
     @classmethod
@@ -130,7 +134,6 @@ class ScoreCardModel:
         plt.ylabel('True Postive Rate')
         plt.title('ROC Curve')
         plt.legend(loc="lower right")
-        # plt.savefig('%s/roc_curve_v1.png' % (save_path), dpi=180)
         fig.savefig('%s/roc_curve_v1.png' % (save_path,), dpi=180)
         plt.close(fig)
         return auc
@@ -204,6 +207,8 @@ if __name__ == '__main__':
                            [1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0]]).T
     df_pre = df_raw[0]
     df_label = df_raw[1]
+
+    aa,bb=score_card_model.get_lift(df_pre, df_label)
 
     # score_card_model.plot_roc(df_pre, df_label, pre_target=1, save_path='../data')
     # score_card_model.plot_ks(df_pre, df_label, pre_target=1, save_path='../data')
