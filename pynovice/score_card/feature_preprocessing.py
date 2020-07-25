@@ -44,6 +44,7 @@ class FeatureGenerator:
         :param bins_dict: 自定义分箱阈值，{field:[]}
         :return:
         '''
+        df_fields = df_fields.copy()
         df_fields=df_fields.reset_index(drop=True)
         df_label = df_label.reset_index(drop=True)
         self.fields = df_fields.columns.to_list()
@@ -54,7 +55,6 @@ class FeatureGenerator:
         self.digital_fields = list(set(self.fields)-set(self.category_fields))
 
         # 1.预处理
-        df_fields = df_fields.copy()
         df_fields = self.preprocessing(df_fields)
 
         # 2.类别特征转换
