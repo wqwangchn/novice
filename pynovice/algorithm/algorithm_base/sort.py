@@ -58,27 +58,24 @@ def quick_sort_v2(_list,m=0,n=None):
     :param n:
     :return:
     '''
+    if not _list:
+        return _list
     if not n:
-        n = len(_list) - 1
-    base = _list[n]
-    i=m  # 查找指针
-    low=m  # 大小划分区间
-    while i < n:
-        is_find = True
-        while (i<n) and (_list[i] >= base):  # 在【0,n-1】中查找小于base的值
-            i+=1
-            if i>=n:  # 在【0,n-1】中未查找到小于base的值
-                is_find = False
-        if is_find:  # 没有找到就不移动low
-            if i!=low :
-                _list[low], _list[i] = _list[i], _list[low]
-            low=low+1
-        i=i+1
-    _list[low], _list[n] = _list[n], _list[low]
-    if m < low-1:
-        quick_sort_v2(_list, m, low-1)
-    if n > low+1:
-        quick_sort_v2(_list, low+1, n)
+        n = len(_list)
+    base = _list[m]
+    i, j = m, n
+    cur = m
+    while (i < j):  # O(n)
+        if _list[i] <= base:
+            _list[cur], _list[i] = _list[i], _list[cur]
+            cur = cur + 1
+        i += 1
+    if cur>m:
+        _list[cur-1], _list[m] = _list[m], _list[cur-1]
+    if m < cur - 2:
+        quick_sort_v2(_list, m, cur - 2)  # O(log(n))
+    if cur < n:
+        quick_sort_v2(_list, cur, n)
     print(_list)
     return _list
 
@@ -165,7 +162,7 @@ if __name__ == '__main__':
     # the_list=[4,4,3]
     print(the_list)
     # aa = quick_sort(the_list)
-    # aa = quick_sort_v2(the_list)
+    aa = quick_sort_v2(the_list)
     # bb = bubble_sort(the_list)
-    cc = heap_sort(the_list)
+    # cc = heap_sort(the_list)
     # fancy_sort()

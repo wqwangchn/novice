@@ -186,8 +186,80 @@ def fun_4(arr_x,target,m=0,n=None):
     else:
         print(m, middle-1)
         return fun_1(arr_x, target,m,middle-1)
+
+
+# 1. 实现一个快速排序算法，注意时间复杂度和空间复杂度
+def quick_sort(arr_x,m=0,n=None):
+    if not arr_x:
+        return arr_x
+    if not n:
+        n=len(arr_x)
+    base = arr_x[m]
+    i,j=m,n
+    while(i<j):  #O(n)
+        while (i<j) and (arr_x[j]>=base):
+            j-=1
+        arr_x[i]=arr_x[j]
+        while(i<j) and (arr_x[m]<=base):
+            i+=1
+        arr_x[j] = arr_x[i]
+    arr_x[i]=base
+    if m<i-1:
+        quick_sort(arr_x,m,i-1)  # O(log(n))
+    if j+1<n:
+        quick_sort(arr_x,j+1,n)
+    return arr_x
+
+
+# 如果数组只能从左向右扫描，一个for 循环
+# 就是说快排的一次partition，用一个for循环实现 数组只能从左向右扫描 你现在这个版本，用了三个while循环 数组是双向扫描的
+
+def quick_sort_v2(arr_x,m=0,n=None):
+    if not arr_x:
+        return arr_x
+    if not n:
+        n=len(arr_x)
+    base = arr_x[m]
+    i,j=m,n
+    cur = m
+    while(i<j):  #O(n)
+        if arr_x[i]<=base:
+            arr_x[cur],arr_x[i] = arr_x[i],arr_x[cur]
+            cur=cur+1
+        i+=1
+    print(cur,m)
+    arr_x[cur],arr_x[m]=arr_x[m],arr_x[cur]
+    if m<cur-1:
+        quick_sort_v2(arr_x,m,cur-1)  # O(log(n))
+    if cur+1<n:
+        quick_sort_v2(arr_x,cur+1,n)
+    return arr_x
+
+
+def lengthOfLongestSubstring(s):
+    l = len(s)
+    if l < 2:
+        return 1
+
+    # dp[i]表示以s[i]结尾的最长不重复子串的长度
+    dp = [1 for _ in range(l)]
+    map = dict()
+    map[s[0]] = 0
+    for i in range(1, l):
+        if s[i] in map:
+            if i - map[s[i]] > dp[i - 1]:
+                dp[i] = dp[i - 1] + 1
+            else:
+                dp[i] = i - map[s[i]]
+        else:
+            dp[i] = dp[i - 1] + 1
+        map[s[i]] = i
+    return max(dp)
+
 if __name__ == '__main__':
-    dd = fun_1(arr_x=[5,6,6,6,6,6,6,6,7,9,10], target=9)
+    # dd = fun_1(arr_x=[5,6,6,6,6,6,6,6,7,9,10], target=9)
+    # print(dd)
+    dd = quick_sort_v2(arr_x=[5, 6, 10, 6, 6, 6, 6, 6, 7, 9, 10])
     print(dd)
 
     # aa=fun_2(arr_x=[2,3,4,5,5,4], target=10)

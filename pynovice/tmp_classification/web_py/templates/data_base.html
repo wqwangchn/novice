@@ -1,0 +1,7 @@
+$def with(message,form,data_table,href_link,href_name)
+$message
+<form method="POST">
+    $:form.render()
+    <a href=$href_link>$href_name</a>
+</form>
+$:data_table
