@@ -1,0 +1,19 @@
+1.客户端生成密钥
+    ssh-keygen -t rsa
+    --> 在~/.ssh目录下生成（id_rsa为私钥，id_rsa.pub为公钥）
+2.服务器配置
+    将本地~/.ssh/id_rsa.pub内容拷贝到服务器的~/.ssh/authorized_keys文件
+3.在客户端配置服务器登录相关参数
+    编辑~/.ssh/config文件
+    Host server1
+        Hostname 192.168.1.1
+        Port 22
+        User bingoli
+        IdentityFile ~/.ssh/id_rsa
+    Host server2
+        Hostname 192.168.1.1
+        Port 22
+        User bingoli
+        IdentityFile ~/.ssh/id_rsa
+登录：
+    ssh server
