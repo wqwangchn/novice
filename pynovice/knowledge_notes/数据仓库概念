@@ -1,0 +1,19 @@
+仓库分层：
+
+1.ODS — Operation Data Store(操作性数据)
+业务抽取过来的原始明细数据
+
+2.DW — Data Warehouse(数据仓库)
+按照各主题领域的宏观汇集数据
+
+2.DWD - data warehouse detail(细节数据层)
+有的也称为bai ODS层，是业务层与du数据仓库的隔离层
+
+3.DM — Data Market(数据集市)
+按某个具体业务的汇集数据，局部分析数据
+
+3.DWS(宽表-用户行为，轻度聚合) data warehouse service
+对DWD的轻度聚合,一般是宽表。
+
+4.ADS - Application Data Store(出报表结果）
+做分析处理的结果同步到RDS数据库里边

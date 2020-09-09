@@ -81,7 +81,7 @@ class DistributionAnysis:
     def plot_summary(self,page_name='',page_type='page',web_open=False,html_name=None):
         assert page_type in ('page','tab'),'仅支持单页多图(page)和选项卡多图(tab)'
         if html_name:
-            self.html_name = str(html_name)
+            self.html_name = os.path.abspath(str(html_name)+'.html')
         if 'page' == page_type:
             page = Page(page_title=page_name)  # 单页多图
             for idata in self.datas:
