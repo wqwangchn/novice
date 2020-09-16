@@ -9,3 +9,4 @@ Desc:
 trans gps 到国家的城市地区,并画出geo图和热点图
 '''
 from .geo_map import GeoMap
+from .google_map import plot_google_map

@@ -51,6 +51,7 @@ class DistributionAnysis:
         bar.add_xaxis(xaxis)
         line.add_xaxis(xaxis)
         for field in _df.columns:
+            field=str(field)
             bar.add_yaxis(series_name=field, yaxis_data=_df[field].to_list(), is_selected=True)
             line.add_yaxis(series_name=field+self.series_name_add, y_axis=_df[field].to_list(), is_symbol_show=False)
 
