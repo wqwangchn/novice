@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/geo_map/google_map.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/data_base/anysis_distribution_plot.py" afterPath="$PROJECT_DIR$/pynovice/data_base/anysis_distribution_plot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/geo_map/requirements.txt" afterPath="$PROJECT_DIR$/pynovice/geo_map/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shell/publish.sh" afterPath="$PROJECT_DIR$/shell/publish.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,6 +34,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="怎么自定义jupyter的magic命令" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/pynovice/geo_map/geo_map.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="482">
-              <caret line="146" column="28" lean-forward="true" selection-start-line="140" selection-start-column="4" selection-end-line="146" selection-end-column="28" />
+              <caret line="146" column="28" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="146" selection-end-column="28" />
               <folding>
                 <element signature="e#132#149#0" expanded="true" />
               </folding>
@@ -68,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google_map.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="google_map.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pynovice/geo_map/google_map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+            <state relative-caret-position="496">
+              <caret line="38" column="58" lean-forward="false" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
               <folding>
                 <element signature="e#126#139#0" expanded="true" />
               </folding>
@@ -80,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google_apply_map.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/geo_map/google_apply_map.html">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pynovice/geo_map/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -116,17 +126,7 @@
         <entry file="file://$PROJECT_DIR$/shell/publish.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RELEASE-VERSION" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RELEASE-VERSION">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -189,7 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pynovice/score_card/category_coder.py" />
         <option value="$PROJECT_DIR$/pynovice/test/test_rule_engine.py" />
         <option value="$PROJECT_DIR$/pynovice/rule_engine/rule_parser.py" />
         <option value="$PROJECT_DIR$/requirements" />
@@ -202,7 +201,6 @@
         <option value="$PROJECT_DIR$/interview.md/面试.md" />
         <option value="$PROJECT_DIR$/pynovice/score_card/__init__.py" />
         <option value="$PROJECT_DIR$/version.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/base_blocks.py" />
         <option value="$PROJECT_DIR$/pynovice/util.py" />
         <option value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/clustering_blocks.py" />
@@ -234,12 +232,14 @@
         <option value="$PROJECT_DIR$/pynovice/algorithm/__init__.py" />
         <option value="$PROJECT_DIR$/pynovice/algorithm/leetcode/aa.py" />
         <option value="$PROJECT_DIR$/pynovice/knowledge_notes/ssh config" />
-        <option value="$PROJECT_DIR$/shell/publish.sh" />
         <option value="$PROJECT_DIR$/RELEASE-VERSION" />
         <option value="$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令" />
         <option value="$PROJECT_DIR$/pynovice/data_base/anysis_distribution_plot.py" />
         <option value="$PROJECT_DIR$/pynovice/geo_map/requirements.txt" />
         <option value="$PROJECT_DIR$/pynovice/geo_map/google_map.py" />
+        <option value="$PROJECT_DIR$/pynovice/geo_map/__init__.py" />
+        <option value="$PROJECT_DIR$/shell/publish.sh" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -304,30 +304,7 @@
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
               <item name="novice" type="462c0819:PsiDirectoryNode" />
               <item name="pynovice" type="462c0819:PsiDirectoryNode" />
-              <item name="data_base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="novice" type="462c0819:PsiDirectoryNode" />
-              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
               <item name="geo_map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="novice" type="462c0819:PsiDirectoryNode" />
-              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge_notes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="novice" type="462c0819:PsiDirectoryNode" />
-              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="novice" type="462c0819:PsiDirectoryNode" />
-              <item name="shell" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
@@ -575,17 +552,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20181043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32770607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32770607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -670,13 +646,6 @@
     <SUITE FILE_PATH="coverage/novice$iv_blocks.coverage" NAME="iv_blocks Coverage Results" MODIFIED="1588142092579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/feature_preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2267">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/score_card/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -796,16 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#17#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/algorithm/__init__.py" />
     <entry file="file://$PROJECT_DIR$/pynovice/algorithm/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -909,14 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shell/publish.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1065">
@@ -964,7 +915,7 @@
     <entry file="file://$PROJECT_DIR$/pynovice/geo_map/geo_map.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
-          <caret line="146" column="28" lean-forward="true" selection-start-line="140" selection-start-column="4" selection-end-line="146" selection-end-column="28" />
+          <caret line="146" column="28" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="146" selection-end-column="28" />
           <folding>
             <element signature="e#132#149#0" expanded="true" />
           </folding>
@@ -981,10 +932,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/geo_map/google_map.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+        <state relative-caret-position="496">
+          <caret line="38" column="58" lean-forward="false" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
           <folding>
             <element signature="e#126#139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shell/publish.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/geo_map/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>

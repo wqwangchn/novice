@@ -15,7 +15,7 @@ setuptools.setup(
 	long_description_content_type="text/markdown",
 	packages=setuptools.find_packages(),
 	include_package_data=True,
-	install_requires=['pandas>=1.0.3','numpy>=1.18.4','scipy>=1.4.1'],
+	install_requires=['pandas','numpy','scipy'],
 	classifiers=[
 	"Programming Language :: Python :: 3",
 	"License :: OSI Approved :: MIT License",

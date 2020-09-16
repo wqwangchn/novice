@@ -7,6 +7,8 @@
 #rm -rf ./dist
 #rm -rf ./pynovice.egg-info
 
+#git push origin --tags
+
 # 2. add tag
 # git tag v0.2.22 -m 'update feature_pre'
 
