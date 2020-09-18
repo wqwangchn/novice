@@ -33,7 +33,7 @@ class DistributionAnysis:
         self.html_name = os.path.abspath('data_distribution.html')
         self.datas = []
 
-    def get_plot_base(self, _df, title_name='数据分布', subtitle_name=''):
+    def get_plot_base(self, _df, title_name='数据分布', subtitle_name='',chart_type=None):
         '''
         plot line & bar info
         :param _df:
@@ -52,9 +52,13 @@ class DistributionAnysis:
         line.add_xaxis(xaxis)
         for field in _df.columns:
             field=str(field)
-            bar.add_yaxis(series_name=field, yaxis_data=_df[field].to_list(), is_selected=True)
-            line.add_yaxis(series_name=field+self.series_name_add, y_axis=_df[field].to_list(), is_symbol_show=False)
-
+            if chart_type=='line':
+                line.add_yaxis(series_name=field, y_axis=_df[field].to_list(),is_symbol_show=False)
+            elif chart_type=='bar':
+                bar.add_yaxis(series_name=field, yaxis_data=_df[field].to_list(), is_selected=True,)
+            else:
+                bar.add_yaxis(series_name=field, yaxis_data=_df[field].to_list(), is_selected=True)
+                line.add_yaxis(series_name=field+self.series_name_add, y_axis=_df[field].to_list(), is_symbol_show=True)
         bar.overlap(line)
         return bar
 
@@ -75,8 +79,8 @@ class DistributionAnysis:
         )
         return table
 
-    def add_data(self,_df,title_name, subtitle_name=''):
-        _plot = self.get_plot_base(_df, title_name, subtitle_name)
+    def add_data(self,_df,title_name, subtitle_name='',chart_type=None):
+        _plot = self.get_plot_base(_df, title_name, subtitle_name,chart_type)
         self.datas.append(_plot)
 
     def plot_summary(self,page_name='',page_type='page',web_open=False,html_name=None):
@@ -106,6 +110,6 @@ if __name__ == '__main__':
                            columns=['latitude', 'longitude'])
 
     any = DistributionAnysis(image_separation=True)
-    any.add_data(_df=df_raw,title_name='aa1', subtitle_name='aa')
+    any.add_data(_df=df_raw,title_name='aa1', subtitle_name='aa',chart_type='bar')
     any.add_data(_df=df_raw,title_name='bb1', subtitle_name='bb')
     any.plot_summary(page_name='1234',page_type='tab',web_open=True,html_name=None)
