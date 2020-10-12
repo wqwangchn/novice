@@ -33,7 +33,7 @@ class DistributionAnysis:
         self.html_name = os.path.abspath('data_distribution.html')
         self.datas = []
 
-    def get_plot_base(self, _df, title_name='数据分布', subtitle_name='',chart_type=None):
+    def get_plot_base(self, _df, title_name='数据分布', subtitle_name='',chart_type=None,xname=None,yname=None):
         '''
         plot line & bar info
         :param _df:
@@ -42,9 +42,9 @@ class DistributionAnysis:
         bar = Bar()
         line = Line()
         bar.set_global_opts(title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
-                            yaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(formatter="{value}")),
+                            yaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(formatter="{value}"),name=yname),
                             datazoom_opts=opts.DataZoomOpts(),  # 滑动条
-                            xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=-15)),  # label旋转
+                            xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=-15),name=xname),  # label旋转
                             toolbox_opts=opts.ToolboxOpts(),
                             )
         xaxis = list(map(str, _df.index))
@@ -79,8 +79,8 @@ class DistributionAnysis:
         )
         return table
 
-    def add_data(self,_df,title_name, subtitle_name='',chart_type=None):
-        _plot = self.get_plot_base(_df, title_name, subtitle_name,chart_type)
+    def add_data(self,_df,title_name, subtitle_name='',chart_type=None,xname=None,yname=None):
+        _plot = self.get_plot_base(_df, title_name, subtitle_name,chart_type,xname,yname)
         self.datas.append(_plot)
 
     def plot_summary(self,page_name='',page_type='page',web_open=False,html_name=None):
@@ -110,6 +110,6 @@ if __name__ == '__main__':
                            columns=['latitude', 'longitude'])
 
     any = DistributionAnysis(image_separation=True)
-    any.add_data(_df=df_raw,title_name='aa1', subtitle_name='aa',chart_type='bar')
+    any.add_data(_df=df_raw,title_name='aa1', subtitle_name='aa',chart_type='bar',yname='xname',xname='yname')
     any.add_data(_df=df_raw,title_name='bb1', subtitle_name='bb')
     any.plot_summary(page_name='1234',page_type='tab',web_open=True,html_name=None)
