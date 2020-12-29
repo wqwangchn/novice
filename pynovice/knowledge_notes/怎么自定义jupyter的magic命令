@@ -10,7 +10,7 @@ eg:
 # -*- coding: utf-8 -*-
 # @Time    : 2019/11/22 下午3:56
 # @Title   : Jupyter notebook自定义hive读取数据到df的magic方法
-# @Link    : https://ipython.readthedocs.io/en/stable/config/custommagics.html
+# @Link    : https://ipython.readthedocs.io/en/stable/config/custommagics.html （官方文档）
 
 
 from IPython.core import magic_arguments

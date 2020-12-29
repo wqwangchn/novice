@@ -4,16 +4,6 @@
 '''
 Author: wenqiangw
 Email: wenqiangw@opera.com
-Date: 2020-07-03 17:31
-Desc:
-'''
-
-# coding=utf-8
-# /usr/bin/env python
-
-'''
-Author: wenqiangw
-Email: wenqiangw@opera.com
 Date: 2020-04-16 18:09
 Desc:
 map extends
@@ -23,7 +13,7 @@ import os
 import pandas as pd
 from pyecharts.components import Table
 from pyecharts import options as opts
-from pyecharts.charts import Bar, Line, Tab, Page
+from pyecharts.charts import Bar, Line, Tab, Page,Grid
 
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 class DistributionAnysis:
@@ -112,4 +102,4 @@ if __name__ == '__main__':
     any = DistributionAnysis(image_separation=True)
     any.add_data(_df=df_raw,title_name='aa1', subtitle_name='aa',chart_type='bar',yname='xname',xname='yname')
     any.add_data(_df=df_raw,title_name='bb1', subtitle_name='bb')
-    any.plot_summary(page_name='1234',page_type='tab',web_open=True,html_name=None)
+    any.plot_summary(page_name='1234',page_type='tab',web_open=False,html_name=None)

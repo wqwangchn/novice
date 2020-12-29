@@ -1,0 +1,12 @@
+hive:
+select carnum, trigertime, speed, gps_key, gps_val
+from(
+  select *, map("lat", lat, "lng", lng) as map1
+from dwa_vrisk.wq_double_three_datacenter_mileage_detail_20201214
+)t1
+lateral view explode(map1) as gps_key, gps_val
+
+
+-- explode作用：处理map结构的字段，将数组转换成多行
+1.Lateral View 用于和UDTF函数【explode,split】结合来使用。
+2.首先通过UDTF函数将数据拆分成多行，再将多行结果组合成一个支持别名的虚拟表。

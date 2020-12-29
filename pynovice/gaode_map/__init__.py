@@ -4,10 +4,9 @@
 '''
 Author: wenqiangw
 Email: wenqiangw@opera.com
-Date: 2020-03-25 14:40
-Desc:
+Date: 2020-07-28 15:07
+Desc: 数据分布画图
 '''
 
 
-def start():
-    print("import successful")
+from .trajectory_playback import Trajectory
