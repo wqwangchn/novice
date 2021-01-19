@@ -47,7 +47,7 @@
 
     //data
     <script>
-        var lineArr = [[116.478935, 39.997761, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"], [116.478939, 39.997825], [116.478912, 39.998549], [116.478912, 39.998549], [116.478998, 39.998555], [116.478998, 39.998555], [116.479282, 39.99856], [116.479658, 39.998528, "fdafasfdasfasf"], [116.480151, 39.998453], [116.480784, 39.998302], [116.480784, 39.998302], [116.481149, 39.998184], [116.481573, 39.997997], [116.481863, 39.997846], [116.482072, 39.997718], [116.482362, 39.997718, "fdafasfdasfasf"], [116.483633, 39.998935, "fdafasfdasfasf"], [116.48367, 39.998968, "fdafasfdasfasf"], [116.484648, 39.999861, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"]];
+        var lineArr = [[116.478935, 39.997761], [116.478939, 39.997825], [116.478912, 39.998549], [116.478912, 39.998549], [116.478998, 39.998555], [116.478998, 39.998555], [116.479282, 39.99856], [116.479658, 39.998528], [116.480151, 39.998453], [116.480784, 39.998302], [116.480784, 39.998302], [116.481149, 39.998184], [116.481573, 39.997997], [116.481863, 39.997846], [116.482072, 39.997718], [116.482362, 39.997718], [116.483633, 39.998935], [116.48367, 39.998968], [116.484648, 39.999861]];
         var tripArr = [3, 5, 10, 15];
         var markerArr = [];
         var massArr = lineArr.concat([]);
@@ -55,7 +55,6 @@
 
     // main_container
     <script>
-        // function initContainer(){
         var map = new AMap.Map("container", {
             resizeEnable: true,
             center: lineArr.concat(markerArr)[0],
@@ -80,22 +79,18 @@
             document.querySelector("#location_text").innerText = text;
         }
         map.on('click', showInfoClick);
-
-        document.getElementById("stroke").value='['+[0,tripArr.length+1].toString( )+']';
     </script>
 
     // trajectory moving
     <script>
         var marker_moving = new AMap.Marker({
-            map: map,
-            position: lineArr[0],
-            icon: "https://webapi.amap.com/images/car.png",
-            offset: new AMap.Pixel(-26, -13),
-            autoRotation: true,
-            angle:-90
-        });
-
-        // 全部轨迹
+                map: map,
+                position: lineArr[0],
+                icon: "https://webapi.amap.com/images/car.png",
+                offset: new AMap.Pixel(-26, -13),
+                autoRotation: true,
+                angle:-90
+            });
         var polyline = new AMap.Polyline({
             map: map,
             path: lineArr,
@@ -105,17 +100,15 @@
             strokeWeight: 3,      //线宽
             // strokeStyle: "solid"  //线样式
         });
-        // 当前轨迹
         var polyline2 = new AMap.Polyline({
             map: map,
-            path: lineArr,
+            path: null,
             showDir:true,
             strokeColor: "#28F",  //线颜色
             strokeOpacity: 1,     //线透明度
             strokeWeight: 6,      //线宽
             // strokeStyle: "solid"  //线样式
         });
-        // 当前行驶经过的轨迹
         var passedPolyline = new AMap.Polyline({
             map: map,
             strokeColor: "#AF5",  //线颜色
@@ -124,26 +117,31 @@
             // strokeStyle: "solid"  //线样式
         });
 
-        // 当前数据明细
-        var mass_style = {
-                url: 'https://a.amap.com/jsapi_demos/static/images/mass1.png',
-                anchor: new AMap.Pixel(6, 6),
-                size: new AMap.Size(6, 6)
+        document.getElementById("stroke").value='['+[0,tripArr.length+1].toString( )+']';
+        function initAnimation(lineArr_main,speed=200,stroke=[0,1]){
+            var lineArr_main=lineArr.slice(tripArr[stroke[0]-1],tripArr[stroke.slice(-1)-1]);
+            marker_moving.position=lineArr_main[0];
+            polyline2.path=lineArr_main;
+            marker_moving.on('moving', function (e) {
+                passedPolyline.setPath(e.passedPath);
+            });
+            marker_moving.moveAlong(lineArr_main, speed );
         }
-        var linemarker = new AMap.Marker({content: ' ', map: map});
-        mass = new AMap.MassMarks(null, {
-            opacity: 0.4,
-            zIndex: 111,
-            cursor: 'pointer',
-            style: mass_style
-        });
-        mass.setMap(map);
-
 
         function startAnimation () {
             var speed = document.getElementById("speed").value;
-            var stroke = checkStroke(document.getElementById("stroke").value);
-            updateAnimation(speed,stroke)
+            var stroke = document.getElementById("stroke").value;
+            if (stroke.trim()==''){
+                stroke='['+[0,tripArr.length+1].toString( )+']';
+                document.getElementById("stroke").value=stroke
+            }
+            else{
+                stroke=eval(stroke)
+            }
+            if (stroke.slice(-1)>tripArr.length+1){
+                document.getElementById("stroke").value='['+[0,tripArr.length+1].toString( )+']';
+            }
+            initAnimation(lineArr,speed,stroke)
         }
         function pauseAnimation () {
             marker_moving.pauseMove();
@@ -152,75 +150,9 @@
             marker_moving.resumeMove();
         }
 
-        function checkStroke(stroke){
-            if (stroke.trim()==''){
-                stroke='['+[0,tripArr.length+1].toString( )+']';
-            }
-            else if(eval(stroke).slice(-1)>tripArr.length+1){
-                stroke='['+[0,tripArr.length+1].toString( )+']';
-            }
-            else{
-                stroke=stroke.toString()
-            }
-            document.getElementById("stroke").value=stroke
-            return eval(stroke)
-        };
-
-        function updateAnimation(speed=200,stroke=[0,1]){
-            var lineArr_cur = lineArr.slice(tripArr[stroke[0]-1],tripArr[stroke.slice(-1)-1]);
-            var massdata = massArr.slice(tripArr[stroke[0]-1],tripArr[stroke.slice(-1)-1]);
-            var mass_data=[];
-            for (var i=0;i<massdata.length;i++){
-                mass_data[i]={'lnglat':massdata[i].slice(0, 2),'info':massdata[i].slice(2,)[0]}
-            };
-
-            // 当前轨迹
-            map.remove(polyline2);
-            polyline2 = new AMap.Polyline({
-                map: map,
-                path: lineArr_cur,
-                showDir:true,
-                strokeColor: "#28F",  //线颜色
-                strokeOpacity: 1,     //线透明度
-                strokeWeight: 6,      //线宽
-                // strokeStyle: "solid"  //线样式
-            });
-            // 当前行驶经过的轨迹
-            map.remove(passedPolyline);
-            passedPolyline = new AMap.Polyline({
-                map: map,
-                strokeColor: "#AF5",  //线颜色
-                //strokeOpacity: 1,     //线透明度
-                strokeWeight: 6,      //线宽
-                // strokeStyle: "solid"  //线样式
-            });
-            map.setFitView(polyline2);
-            map.setCenter(lineArr_cur[0]);
-            marker_moving.position=lineArr_cur[0];
-            marker_moving.on('moving', function (e) {
-                passedPolyline.setPath(e.passedPath);
-            });
-            marker_moving.moveAlong(lineArr_cur, speed);
-
-            //当前行程明细数据
-            map.remove(mass);
-            mass = new AMap.MassMarks(mass_data, {
-                opacity: 0.4,
-                zIndex: 111,
-                cursor: 'pointer',
-                style: mass_style
-            });
-            mass.on('mouseover', function (e) {
-                linemarker.setPosition(e.data.lnglat);
-                linemarker.setLabel({content: e.data.info})
-            });
-            mass.setMap(map);
-
-        };
-
     </script>
 
-    // trip_marker
+    // //trip_marker
     // <script>
     //     var auto_marker = true;
     //     var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
@@ -239,6 +171,31 @@
     //         infoWindow.open(map, e.target.getPosition());
     //     };
     // </script>
+
+    // trajectory mass
+    <script>
+        var mass_data=[];
+        for (var i=0;i<massArr.length;i++){
+            mass_data[i]={'lnglat':massArr[i].slice(0, 2),'info':massArr[i].slice(2,)[0]}
+        }
+        var style = {
+                url: 'https://a.amap.com/jsapi_demos/static/images/mass1.png',
+                anchor: new AMap.Pixel(6, 6),
+                size: new AMap.Size(6, 6)
+            }
+        var mass = new AMap.MassMarks(mass_data, {
+            opacity: 0.4,
+            zIndex: 111,
+            cursor: 'pointer',
+            style: style
+        });
+        var linemarker = new AMap.Marker({content: ' ', map: map});
+        mass.on('mouseover', function (e) {
+            linemarker.setPosition(e.data.lnglat);
+            linemarker.setLabel({content: e.data.info})
+        });
+        mass.setMap(map);
+    </script>
 
     <script>
             map.setFitView();
