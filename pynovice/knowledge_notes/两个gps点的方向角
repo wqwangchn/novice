@@ -1,0 +1,2 @@
+select float((atan2(sin((end_lng - start_lng)* pi() / 180) * cos(end_lat * pi() / 180),cos(start_lat * pi() / 180) * sin(end_lat * pi() / 180) - sin(start_lat * pi() / 180) * cos(end_lat * pi() / 180)*cos((end_lng - start_lng) * pi() / 180)) * 180 / pi() + 360.0) % 360.0)
+;
