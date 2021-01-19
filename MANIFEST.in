@@ -2,4 +2,5 @@ include RELEASE-VERSION
 include version.py
 include pynovice/geo_map/*
 include pynovice/bert_extracterr/*
+include pynovice/gaode_map/*.js
 # Anything else you normally use

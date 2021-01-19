@@ -9,5 +9,5 @@ Desc: 数据分布画图
 '''
 
 
-from .trajectory_playback import Trajectory
-from .trajectory_playback_v2 import Trajectory as Trajectory_tmp
+from .trajectory_playback import Trajectory_his
+from .trajectory_playback_v2 import Trajectory as Trajectory

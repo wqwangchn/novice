@@ -48,9 +48,14 @@
     //data
     <script>
         var lineArr = [[116.478935, 39.997761, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"], [116.478939, 39.997825], [116.478912, 39.998549], [116.478912, 39.998549], [116.478998, 39.998555], [116.478998, 39.998555], [116.479282, 39.99856], [116.479658, 39.998528, "fdafasfdasfasf"], [116.480151, 39.998453], [116.480784, 39.998302], [116.480784, 39.998302], [116.481149, 39.998184], [116.481573, 39.997997], [116.481863, 39.997846], [116.482072, 39.997718], [116.482362, 39.997718, "fdafasfdasfasf"], [116.483633, 39.998935, "fdafasfdasfasf"], [116.48367, 39.998968, "fdafasfdasfasf"], [116.484648, 39.999861, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"]];
-        var tripArr = [3, 5, 10, 15];
-        var markerArr = [];
+        var tripList = [3, 5, 10, 15];
+        var markerArr = [[116.478998, 39.998555], [116.478998, 39.998555]];
+        // extends
         var massArr = lineArr.concat([]);
+        var tripArr=[];
+        for (i=0;i<tripList.length;i++){
+            tripArr[i]=lineArr[tripList[i]];
+        }
     </script>
 
     // main_container
@@ -81,7 +86,25 @@
         }
         map.on('click', showInfoClick);
 
-        document.getElementById("stroke").value='['+[0,tripArr.length+1].toString( )+']';
+        document.getElementById("stroke").value='['+[0,tripList.length+1].toString( )+']';
+    </script>
+
+    // trip_marker
+    <script>
+        var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+        for (var i = 0; i < tripArr.length; i++) {
+            var _curData = tripArr[i];
+            var _marker = new AMap.Marker({
+                position: _curData.slice(0,2),
+                map: map
+            });
+            _marker.content= (i+1).toString()+". "+_curData.slice(2,).toString();
+            _marker.on('click', markerClick);
+        }
+        function markerClick(e) {
+            infoWindow.setContent(e.target.content);
+            infoWindow.open(map, e.target.getPosition());
+        };
     </script>
 
     // trajectory moving
@@ -154,10 +177,10 @@
 
         function checkStroke(stroke){
             if (stroke.trim()==''){
-                stroke='['+[0,tripArr.length+1].toString( )+']';
+                stroke='['+[0,tripList.length+1].toString( )+']';
             }
-            else if(eval(stroke).slice(-1)>tripArr.length+1){
-                stroke='['+[0,tripArr.length+1].toString( )+']';
+            else if(eval(stroke).slice(-1)>tripList.length+1){
+                stroke='['+[0,tripList.length+1].toString( )+']';
             }
             else{
                 stroke=stroke.toString()
@@ -167,8 +190,8 @@
         };
 
         function updateAnimation(speed=200,stroke=[0,1]){
-            var lineArr_cur = lineArr.slice(tripArr[stroke[0]-1],tripArr[stroke.slice(-1)-1]);
-            var massdata = massArr.slice(tripArr[stroke[0]-1],tripArr[stroke.slice(-1)-1]);
+            var lineArr_cur = lineArr.slice(tripList[stroke[0]-1],tripList[stroke.slice(-1)-1]);
+            var massdata = massArr.slice(tripList[stroke[0]-1],tripList[stroke.slice(-1)-1]);
             var mass_data=[];
             for (var i=0;i<massdata.length;i++){
                 mass_data[i]={'lnglat':massdata[i].slice(0, 2),'info':massdata[i].slice(2,)[0]}
@@ -217,28 +240,74 @@
             mass.setMap(map);
 
         };
-
     </script>
 
-    // trip_marker
-    // <script>
-    //     var auto_marker = true;
-    //     var infoWindow = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
-    //     for (var i = 0; i < tripArr.length; i++) {
-    //         var _curData = lineArr[tripArr[i]-1];
-    //         var _marker = new AMap.Marker({
-    //             position: _curData.slice(,2),
-    //             content: (i+1).toString()+". "+_curData.slice(2,).toString();
-    //             map: map
-    //         });
-    //         _marker.on('click', markerClick);
-    //         _marker.emit('click', {target: _marker});
-    //     }
-    //     function markerClick(e) {
-    //         infoWindow.setContent(e.target.content);
-    //         infoWindow.open(map, e.target.getPosition());
-    //     };
-    // </script>
+    // markerArr
+    <script>
+        var infoWindow2 = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+        for (var i = 0; i < markerArr.length; i++) {
+            var _curData = markerArr[i];
+            var _marker = new AMap.Marker({
+                position: _curData.slice(0,2),
+                icon:'//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png',
+                map: map
+            });
+            _marker.content= _curData.slice(2,).toString();
+            _marker.on('click', markerClick);
+        }
+        function markerClick(e) {
+            infoWindow2.setContent(e.target.content);
+            infoWindow2.open(map, e.target.getPosition());
+        };
+    </script>
+
+    // 灵活标记点大小
+    <!-- <script>
+        var zoomStyleMapping = {
+                14:0,
+                15:0,
+                16:1,
+                17:1,
+                18:1,
+                19:1,
+                20:1
+        }
+        var infoWindow2 = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
+        for (var i = 0; i < markerArr.length; i++) {
+            var _curData = markerArr[i];
+            var marker = new AMap.ElasticMarker({
+                position:_curData.slice(0,2),
+            styles:[{
+                    icon:{
+                        img:'https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png',
+                        size:[16,16],//可见区域的大小
+                        ancher:[8,16],//锚点
+                        fitZoom:14,//最合适的级别
+                        scaleFactor:1,//地图放大一级的缩放比例系数
+                    }
+                },{
+                    icon:{
+                        img:'https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png',
+                        size:[6,6],
+                        ancher:[8,16],//锚点
+                        fitZoom:17.5,
+                        scaleFactor:1.2,
+                        maxScale:2,
+                        minScale:0.125
+                    }
+                }],
+            zoomStyleMapping:zoomStyleMapping
+        })
+        map.add(marker);
+        _marker.content= _curData.slice(2,).toString();
+        _marker.on('click', markerClick);
+    };
+    function markerClick(e) {
+            infoWindow2.setContent(e.target.content);
+            infoWindow2.open(map, e.target.getPosition());
+        };
+
+    </script> -->
 
     <script>
             map.setFitView();
