@@ -13,16 +13,15 @@ import re
 import json
 import webbrowser
 
-pattern_headdata=re.compile("var wqadd_headdata = \[\];",re.MULTILINE | re.DOTALL)
-pattern_taildata=re.compile("var wqadd_taildata = \[\];",re.MULTILINE | re.DOTALL)
-pattern_headfunc=re.compile("var wqadd_headfunc = \[\];",re.MULTILINE | re.DOTALL)
-pattern_tailfunc=re.compile("var wqadd_tailfunc = \[\];",re.MULTILINE | re.DOTALL)
+pattern_headdata=re.compile("var add_data = \[\];",re.MULTILINE | re.DOTALL)
+pattern_tailfunc=re.compile("var add_func = \{\};",re.MULTILINE | re.DOTALL)
 
 pattern_gpslist=re.compile(r"(?<=var lineArr = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 pattern_triplist=re.compile(r"(?<=var tripList = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 pattern_markerlist=re.compile(r"(?<=var markerArr = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 pattern_automarker=re.compile(r"(?<=var auto_marker = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 
+CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 class Trajectory():
     def __init__(self, lnglat_arr=[], trip_list=[], auto_marker=True):
         self.js=get_main_js()
@@ -30,50 +29,36 @@ class Trajectory():
         self.trip_str = json.dumps(trip_list)
         self.marker_str = '[]'
         self.auto_marker = str(auto_marker).lower()
-        self.head_data = ''
-        self.tail_data = ''
-        self.head_func = ''
-        self.tail_func = ''
+        self.head_data = []
+        self.tail_func = []
         self.html_name = os.path.abspath('gps_trajectory_playback.html')
 
     def add_marker(self,marker_arr=[]):
         self.marker_str = json.dumps(marker_arr)
 
+    def add_jsdata(self,data_js=''):
+        self.head_data.add(str(data_js))
 
-    def add_jsdata(self,data_js='',position='head'):
-        assert position in ('head','tail')
-        if 'head'==position:
-            self.head_data = str(data_js)
-        else:
-            self.tail_data = str(data_js)
+    def add_jsfunc(self,func_js=''):
+        self.tail_func.add(str(func_js))
 
-    def add_jsfunc(self,func_js='',position='tail'):
-        assert position in ('head','tail')
-        if 'head'==position:
-            self.head_func = str(func_js)
-        else:
-            self.tail_func = str(func_js)
+    def building(self,html_name=None,web_open=False):
+        _out = re.sub(pattern_gpslist, self.gps_str, self.js)
+        _out = re.sub(pattern_triplist, self.trip_str, _out)
+        _out = re.sub(pattern_markerlist, self.marker_str, _out)
+        _out = re.sub(pattern_automarker, self.auto_marker, _out)
 
-    def building(self,html_name=None,web_open=False,speed=200):
-        _out1 = re.sub(pattern_gpslist, self.gps_str, self.js)
-        _out2 = re.sub(pattern_triplist, self.trip_str, _out1)
-        _out3 = re.sub(pattern_markerlist, self.marker_str, _out2)
-        _out = _out3
-        #
-        # _out3 = re.sub(pattern_headdata, self.head_data, _out2)
-        # _out4 = re.sub(pattern_taildata, self.tail_data, _out3)
-        # _out5 = re.sub(pattern_headfunc, self.head_func, _out4)
-        # _out6 = re.sub(pattern_tailfunc, self.tail_func, _out5)
-        # _out = re.sub(pattern_automarker, self.auto_marker, _out6)
-        # _out = re.sub(pattern_speed, str(speed), _out)
+        _out = re.sub(pattern_headdata, ''.join(self.head_data), _out)
+        _out = re.sub(pattern_tailfunc, ''.join(self.tail_func), _out)
+        out = _out
         if html_name:
             self.html_name = os.path.abspath(str(html_name)+'.html')
-        dump_data(_data=_out,file_name=self.html_name)
+        dump_data(_data=out,file_name=self.html_name)
         if web_open:
             webbrowser.open(url='file://' + self.html_name, new=0, autoraise=True)
 
 def get_main_js():
-    filename= os.path.abspath('pynovice_map.js')
+    filename= os.path.join(CURRENT_PATH,'pynovice_map.js')
     with open(filename,'r') as f:
         main_js = f.read()
     return main_js
@@ -89,7 +74,8 @@ if __name__ == '__main__':
     marker_list=[3,5,10,15]
 
     traj = Trajectory(lnglat_arr=gps_list,trip_list=marker_list,auto_marker=False)
-    traj.building(web_open=True,speed=20000)
+    traj.add_marker(marker_arr=[[116.478912,39.998549,'akdfjkajfkjaksdf']])
+    traj.building(web_open=True)
 
 
 
