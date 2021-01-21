@@ -18,23 +18,37 @@ pattern_tailfunc=re.compile("var add_func = \{\};",re.MULTILINE | re.DOTALL)
 
 pattern_gpslist=re.compile(r"(?<=var lineArr = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 pattern_triplist=re.compile(r"(?<=var tripList = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
-pattern_markerlist=re.compile(r"(?<=var markerArr = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
-pattern_automarker=re.compile(r"(?<=var auto_marker = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
+pattern_markerlist=re.compile(r"(?<=var markerSet = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 class Trajectory():
-    def __init__(self, lnglat_arr=[], trip_list=[], auto_marker=True):
+    def __init__(self, lnglat_arr=[], trip_list=[]):
         self.js=get_main_js()
         self.gps_str = json.dumps(lnglat_arr)
         self.trip_str = json.dumps(trip_list)
-        self.marker_str = '[]'
-        self.auto_marker = str(auto_marker).lower()
+        self.trip_length=len(trip_list)
+        self.marker_set = []
         self.head_data = []
         self.tail_func = []
         self.html_name = os.path.abspath('gps_trajectory_playback.html')
 
-    def add_marker(self,marker_arr=[]):
-        self.marker_str = json.dumps(marker_arr)
+    def add_marker(self,marker_arr=[],marker_img='default'):
+        if marker_img == 'default':
+            if self.trip_length>0:
+                img = "https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png"
+            else:
+                img = "https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png"
+        elif marker_img == 'blue':
+            img = "https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png"
+        elif marker_img == 'red':
+            img="https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png"
+        else:
+            img=marker_img
+        if len(marker_arr)>0:
+            self.marker_set.append({
+                "data":marker_arr,
+                "img":img
+            })
 
     def add_jsdata(self,data_js=''):
         self.head_data.add(str(data_js))
@@ -45,9 +59,8 @@ class Trajectory():
     def building(self,html_name=None,web_open=False):
         _out = re.sub(pattern_gpslist, self.gps_str, self.js)
         _out = re.sub(pattern_triplist, self.trip_str, _out)
-        _out = re.sub(pattern_markerlist, self.marker_str, _out)
-        _out = re.sub(pattern_automarker, self.auto_marker, _out)
-
+        if self.marker_set:
+            _out = re.sub(pattern_markerlist, json.dumps(self.marker_set), _out)
         _out = re.sub(pattern_headdata, ''.join(self.head_data), _out)
         _out = re.sub(pattern_tailfunc, ''.join(self.tail_func), _out)
         out = _out
@@ -73,8 +86,9 @@ if __name__ == '__main__':
     gps_list=[[116.478935,39.997761],[116.478939,39.997825],[116.478912,39.998549],[116.478912,39.998549],[116.478998,39.998555],[116.478998,39.998555],[116.479282,39.99856],[116.479658,39.998528],[116.480151,39.998453],[116.480784,39.998302],[116.480784,39.998302],[116.481149,39.998184],[116.481573,39.997997],[116.481863,39.997846],[116.482072,39.997718],[116.482362,39.997718,'info:ttttt'],[116.483633,39.998935,'info:qqqqqqqq'],[116.48367,39.998968,'info:1234254325'],[116.484648,39.999861,'info:dsafaf']]
     marker_list=[3,5,10,15]
 
-    traj = Trajectory(lnglat_arr=gps_list,trip_list=marker_list,auto_marker=False)
+    traj = Trajectory(lnglat_arr=gps_list,trip_list=marker_list)
     traj.add_marker(marker_arr=[[116.478912,39.998549,'akdfjkajfkjaksdf']])
+    traj.add_marker(marker_arr=[[116.478912,39.998549],[116.478912,39.998549]],marker_img='blue')
     traj.building(web_open=True)
 
 

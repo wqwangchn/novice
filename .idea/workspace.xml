@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/gaode_map/__init__.py" afterPath="$PROJECT_DIR$/pynovice/gaode_map/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/gaode_map/gps_trajectory_playback.html" afterPath="$PROJECT_DIR$/pynovice/gaode_map/gps_trajectory_playback.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/gaode_map/pynovice_map.js" afterPath="$PROJECT_DIR$/pynovice/gaode_map/pynovice_map.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/gaode_map/trajectory_playback_v2.py" afterPath="$PROJECT_DIR$/pynovice/gaode_map/trajectory_playback_v2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shell/publish.sh" afterPath="$PROJECT_DIR$/shell/publish.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +18,7 @@
     <SUITE FILE_PATH="coverage/novice$geo_map.coverage" NAME="geo_map Coverage Results" MODIFIED="1607912431418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/geo_map" />
     <SUITE FILE_PATH="coverage/novice$rule_parser.coverage" NAME="rule_parser Coverage Results" MODIFIED="1607912618962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/rule_engine" />
     <SUITE FILE_PATH="coverage/novice$anysis_distribution_plot.coverage" NAME="anysis_distribution_plot Coverage Results" MODIFIED="1607398493946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/data_base" />
-    <SUITE FILE_PATH="coverage/novice$trajectory_playback_v2.coverage" NAME="trajectory_playback_v2 Coverage Results" MODIFIED="1611230734920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/gaode_map" />
+    <SUITE FILE_PATH="coverage/novice$trajectory_playback_v2.coverage" NAME="trajectory_playback_v2 Coverage Results" MODIFIED="1611233227420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/gaode_map" />
     <SUITE FILE_PATH="coverage/novice$feature_preprocessing.coverage" NAME="feature_preprocessing Coverage Results" MODIFIED="1609208867530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
     <SUITE FILE_PATH="coverage/novice$bert_extracter.coverage" NAME="bert_extracter Coverage Results" MODIFIED="1609208944446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/bert_extracter" />
     <SUITE FILE_PATH="coverage/novice$data_woe.coverage" NAME="data_woe Coverage Results" MODIFIED="1600845765444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src" />
@@ -46,8 +45,8 @@
       <file leaf-file-name="trajectory_playback_v2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pynovice/gaode_map/trajectory_playback_v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="89" column="75" lean-forward="true" selection-start-line="89" selection-start-column="75" selection-end-line="90" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -57,10 +56,10 @@
         <entry file="file://$PROJECT_DIR$/pynovice/gaode_map/gps_trajectory_playback.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="354">
-              <caret line="314" column="7" lean-forward="false" selection-start-line="314" selection-start-column="7" selection-end-line="314" selection-end-column="7" />
+              <caret line="312" column="7" lean-forward="false" selection-start-line="312" selection-start-column="7" selection-end-line="312" selection-end-column="7" />
               <folding>
-                <marker date="1611230735104" expanded="true" signature="11145:11158" ph="..." />
-                <marker date="1611230735104" expanded="true" signature="11172:11216" ph="..." />
+                <marker date="1611233227663" expanded="true" signature="11331:11344" ph="..." />
+                <marker date="1611233227663" expanded="true" signature="11358:11402" ph="..." />
               </folding>
             </state>
           </provider>
@@ -69,8 +68,8 @@
       <file leaf-file-name="pynovice_map.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pynovice/gaode_map/pynovice_map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="282" column="40" lean-forward="true" selection-start-line="282" selection-start-column="40" selection-end-line="282" selection-end-column="40" />
+            <state relative-caret-position="-13">
+              <caret line="278" column="45" lean-forward="false" selection-start-line="278" selection-start-column="45" selection-end-line="278" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -149,9 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.missing</find>
-      <find>df_fields</find>
-      <find>echarts_url</find>
       <find>list</find>
       <find>pd</find>
       <find>self.html_name</find>
@@ -179,6 +175,9 @@
       <find>tripArr</find>
       <find>CURRENT_PATH</find>
       <find>pattern_markerlist</find>
+      <find>auto_marker</find>
+      <find>marker_set</find>
+      <find>markerSet</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pynovice/geo_map</dir>
@@ -244,8 +243,8 @@
         <option value="$PROJECT_DIR$/pynovice/gaode_map/__init__.py" />
         <option value="$PROJECT_DIR$/shell/publish.sh" />
         <option value="$PROJECT_DIR$/pynovice/gaode_map/gps_trajectory_playback.html" />
-        <option value="$PROJECT_DIR$/pynovice/gaode_map/trajectory_playback_v2.py" />
         <option value="$PROJECT_DIR$/pynovice/gaode_map/pynovice_map.js" />
+        <option value="$PROJECT_DIR$/pynovice/gaode_map/trajectory_playback_v2.py" />
       </list>
     </option>
   </component>
@@ -324,12 +323,6 @@
               <item name="novice" type="462c0819:PsiDirectoryNode" />
               <item name="pynovice" type="462c0819:PsiDirectoryNode" />
               <item name="gaode_map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="novice" type="462c0819:PsiDirectoryNode" />
-              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
-              <item name="geo_map" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
@@ -1042,26 +1035,26 @@
     <entry file="file://$PROJECT_DIR$/pynovice/gaode_map/gps_trajectory_playback.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
-          <caret line="314" column="7" lean-forward="false" selection-start-line="314" selection-start-column="7" selection-end-line="314" selection-end-column="7" />
+          <caret line="312" column="7" lean-forward="false" selection-start-line="312" selection-start-column="7" selection-end-line="312" selection-end-column="7" />
           <folding>
-            <marker date="1611230735104" expanded="true" signature="11145:11158" ph="..." />
-            <marker date="1611230735104" expanded="true" signature="11172:11216" ph="..." />
+            <marker date="1611233227663" expanded="true" signature="11331:11344" ph="..." />
+            <marker date="1611233227663" expanded="true" signature="11358:11402" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/gaode_map/pynovice_map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="282" column="40" lean-forward="true" selection-start-line="282" selection-start-column="40" selection-end-line="282" selection-end-column="40" />
+        <state relative-caret-position="-13">
+          <caret line="278" column="45" lean-forward="false" selection-start-line="278" selection-start-column="45" selection-end-line="278" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/gaode_map/trajectory_playback_v2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="237">
+          <caret line="89" column="75" lean-forward="true" selection-start-line="89" selection-start-column="75" selection-end-line="90" selection-end-column="57" />
           <folding />
         </state>
       </provider>

@@ -49,8 +49,7 @@
     <script>
         var lineArr = [[116.478935, 39.997761, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"], [116.478939, 39.997825], [116.478912, 39.998549], [116.478912, 39.998549], [116.478998, 39.998555], [116.478998, 39.998555], [116.479282, 39.99856], [116.479658, 39.998528, "fdafasfdasfasf"], [116.480151, 39.998453], [116.480784, 39.998302], [116.480784, 39.998302], [116.481149, 39.998184], [116.481573, 39.997997], [116.481863, 39.997846], [116.482072, 39.997718], [116.482362, 39.997718, "fdafasfdasfasf"], [116.483633, 39.998935, "fdafasfdasfasf"], [116.48367, 39.998968, "fdafasfdasfasf"], [116.484648, 39.999861, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"]];
         var tripList = [3, 5, 10, 15];
-        var markerArr = [[116.478998, 39.998555], [116.478998, 39.998555],[116.48367, 39.998968, "fdafasfdasfasf"], [116.484648, 39.999861, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"]];
-        var auto_marker=true;
+        var markerSet = [{"data":[[116.478998, 39.998555], [116.478998, 39.998555],[116.48367, 39.998968, "fdafasfdasfasf"], [116.484648, 39.999861, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"]],"img":"https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png"}];
         // extends
         var massArr = lineArr.concat([]);
         var tripArr = getTripArr(tripList);
@@ -68,7 +67,7 @@
         // function initContainer(){
         var map = new AMap.Map("container", {
             resizeEnable: true,
-            center: lineArr.concat(markerArr)[0],
+            center: lineArr.concat(markerSet[0].data)[0].slice(0.2),
             zoom: 17
         });
 
@@ -117,13 +116,7 @@
                 zoomStyleMapping:zoomStyleMapping1,
                 map:map
             });
-            if (auto_marker){
-                cont_text=(i+1).toString()+". "+_curData.slice(2,).toString();
-            }
-            else{
-                cont_text=_curData.slice(2,).toString();
-            }
-            _marker.content= cont_text;
+            _marker.content= (i+1).toString()+". "+_curData.slice(2,).toString();
             _marker.on('click', markerClick);
         }
         function markerClick(e) {
@@ -279,27 +272,32 @@
     <script>
         var zoomStyleMapping1 = { 3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0,11:0,12:0,13:0,14:0,15:0,16:0,17:0,18:0,19:0,20:0 }
         var infoWindow2 = new AMap.InfoWindow({offset: new AMap.Pixel(0, -30)});
-        for (var i = 0; i < markerArr.length; i++) {
-            var _curData = markerArr[i];
-            var marker = new AMap.ElasticMarker({
-                position:_curData.slice(0,2),
-                zooms:[3,20],
-                styles:[{
-                    icon:{
-                        img:'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png',
-                        size:[26,36],//可见区域的大小
-                        ancher:[13,36],//锚点
-                        fitZoom:13,//最合适的级别
-                        scaleFactor:1.1,//地图放大一级的缩放比例系数
-                        maxScale:1,//最大放大比例
-                        minScale:0.5//最小放大比例
-                    }
-                }],
-                zoomStyleMapping:zoomStyleMapping1,
-                map:map
-            })
-            marker.content= _curData.slice(2,).toString();
-            marker.on('click', markerClick);
+
+        for (var i = 0; i < markerSet.length; i++) {
+            var markerArr = markerSet[i].data;
+            var markerImg = markerSet[i].img;
+            for (var j = 0; j < markerArr.length; j++) {
+                var _curData = markerArr[j];
+                var marker = new AMap.ElasticMarker({
+                    position:_curData.slice(0,2),
+                    zooms:[3,20],
+                    styles:[{
+                        icon:{
+                            img:markerImg,
+                            size:[26,36],//可见区域的大小
+                            ancher:[13,36],//锚点
+                            fitZoom:13,//最合适的级别
+                            scaleFactor:1.1,//地图放大一级的缩放比例系数
+                            maxScale:1,//最大放大比例
+                            minScale:0.5//最小放大比例
+                        }
+                    }],
+                    zoomStyleMapping:zoomStyleMapping1,
+                    map:map
+                })
+                marker.content= _curData.slice(2,).toString();
+                marker.on('click', markerClick);
+            };
         };
         function markerClick(e) {
             infoWindow2.setContent(e.target.content);
