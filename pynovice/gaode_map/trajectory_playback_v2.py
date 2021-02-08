@@ -19,13 +19,16 @@ pattern_tailfunc=re.compile("var add_func = \{\};",re.MULTILINE | re.DOTALL)
 pattern_gpslist=re.compile(r"(?<=var lineArr = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 pattern_triplist=re.compile(r"(?<=var tripList = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 pattern_markerlist=re.compile(r"(?<=var markerSet = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
+pattern_showMarker=re.compile(r"(?<=var showMarker = ).*?(?=;$)",re.MULTILINE | re.DOTALL)
 
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 class Trajectory():
-    def __init__(self, lnglat_arr=[], trip_list=[]):
+    def __init__(self, lnglat_arr=[], trip_list=[], show_marker=True):
+        assert show_marker in (True,False)
         self.js=get_main_js()
         self.gps_str = json.dumps(lnglat_arr)
         self.trip_str = json.dumps(trip_list)
+        self.show_marker = str(show_marker).lower()
         self.trip_length=len(trip_list)
         self.marker_set = []
         self.head_data = []
@@ -59,6 +62,8 @@ class Trajectory():
     def building(self,html_name=None,web_open=False):
         _out = re.sub(pattern_gpslist, self.gps_str, self.js)
         _out = re.sub(pattern_triplist, self.trip_str, _out)
+        _out = re.sub(pattern_showMarker, self.show_marker, _out)
+
         if self.marker_set:
             _out = re.sub(pattern_markerlist, json.dumps(self.marker_set), _out)
         _out = re.sub(pattern_headdata, ''.join(self.head_data), _out)
@@ -86,9 +91,9 @@ if __name__ == '__main__':
     gps_list=[[116.478935,39.997761],[116.478939,39.997825],[116.478912,39.998549],[116.478912,39.998549],[116.478998,39.998555],[116.478998,39.998555],[116.479282,39.99856],[116.479658,39.998528],[116.480151,39.998453],[116.480784,39.998302],[116.480784,39.998302],[116.481149,39.998184],[116.481573,39.997997],[116.481863,39.997846],[116.482072,39.997718],[116.482362,39.997718,'info:ttttt'],[116.483633,39.998935,'info:qqqqqqqq'],[116.48367,39.998968,'info:1234254325'],[116.484648,39.999861,'info:dsafaf']]
     marker_list=[3,5,10,15]
 
-    traj = Trajectory(lnglat_arr=gps_list,trip_list=marker_list)
+    traj = Trajectory(lnglat_arr=gps_list,trip_list=marker_list,show_marker=False)
     traj.add_marker(marker_arr=[[116.478912,39.998549,'akdfjkajfkjaksdf']])
-    traj.add_marker(marker_arr=[[116.478912,39.998549],[116.478912,39.998549]],marker_img='blue')
+    traj.add_marker(marker_arr=[[116.480784,39.998302]],marker_img='blue')
     traj.building(web_open=True)
 
 

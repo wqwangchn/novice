@@ -49,10 +49,13 @@
     <script>
         var lineArr = [[116.478935, 39.997761, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"], [116.478939, 39.997825], [116.478912, 39.998549], [116.478912, 39.998549], [116.478998, 39.998555], [116.478998, 39.998555], [116.479282, 39.99856], [116.479658, 39.998528, "fdafasfdasfasf"], [116.480151, 39.998453], [116.480784, 39.998302], [116.480784, 39.998302], [116.481149, 39.998184], [116.481573, 39.997997], [116.481863, 39.997846], [116.482072, 39.997718], [116.482362, 39.997718, "fdafasfdasfasf"], [116.483633, 39.998935, "fdafasfdasfasf"], [116.48367, 39.998968, "fdafasfdasfasf"], [116.484648, 39.999861, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"]];
         var tripList = [3, 5, 10, 15];
-        var markerSet = [{"data":[[116.478998, 39.998555], [116.478998, 39.998555],[116.48367, 39.998968, "fdafasfdasfasf"], [116.484648, 39.999861, "2020-10-02 00:02:38\uff1a\u901f\u5ea646km/h"]],"img":"https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png"}];
+        var markerSet = [{"data":[],"img":"https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png"}];
+        var showMarker = true;
         // extends
         var massArr = lineArr.concat([]);
-        var tripArr = getTripArr(tripList);
+        if(showMarker==true){
+            var tripArr = getTripArr(tripList);
+        };
         function getTripArr(tripList){
             var _data=[];
             for (i=0;i<tripList.length;i++){
@@ -64,7 +67,6 @@
 
     // main_container
     <script>
-        // function initContainer(){
         var map = new AMap.Map("container", {
             resizeEnable: true,
             center: lineArr.concat(markerSet[0].data)[0].slice(0.2),
@@ -216,8 +218,15 @@
         };
 
         function updateAnimation(speed=200,stroke=[0,1]){
-            var lineArr_cur = lineArr.slice(tripList[stroke[0]-1],tripList[stroke.slice(-1)-1]);
-            var massdata = massArr.slice(tripList[stroke[0]-1],tripList[stroke.slice(-1)-1]);
+            _start=tripList[stroke[0]-1];
+            if (stroke.slice(-1)>tripList.length){
+                _end=-1;
+            }
+            else{
+                _end=tripList[stroke.slice(-1)-1]+1;
+            }
+            var lineArr_cur = lineArr.slice(_start,_end);
+            var massdata = massArr.slice(_start,_end);
             var mass_data=[];
             for (var i=0;i<massdata.length;i++){
                 mass_data[i]={'lnglat':massdata[i].slice(0, 2),'info':massdata[i].slice(2,)[0]}
