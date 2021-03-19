@@ -5,7 +5,6 @@
 # 魔法脚本路径pwd:
 # /home/jumproot/.ipython/profile_default/startup/hive_magic.py
 
-
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time    : 2019/11/22 下午3:56
@@ -20,34 +19,12 @@ import pandas as pd
 import subprocess
 
 
-class HiveEngine2(object):
-    hive_config = {
-        '22':{
-            'host': '172.18.33.22',
-            'port': 10000,
-        },
-        '23': {
-            'host': '172.18.33.23',
-            'port': 10000,
-        },
-        '115':{
-            'host': '172.18.33.115',
-            'port': 10000,
-        },
-        '58': {
-            'host': '172.18.33.58',
-            'port': 10000,
-        },
-        '13': {
-            'host': '172.18.33.13',
-            'port': 10000,
-        },
-    }
-
+class HiveEngine(object):
     def __init__(self,hostname):
-        servers_list = self.hive_config.keys()
-        assert hostname in servers_list, 'Only servers {} are supported'.format(str(servers_list))
-        _config=self.hive_config.get(hostname)
+        _config={
+                'host': '172.18.33.{}'.format(hostname),
+                'port': 10000,
+        	}
         self.cur = hive.connect(**_config).cursor()
 
 
@@ -76,7 +53,7 @@ def _exec_cmd(cmd):
 
 
 @magics_class
-class HiveMagic22(Magics):
+class HiveMagic(Magics):
 
     def get_df(self, cell, size=None):
         hv = HiveEngine()
@@ -94,34 +71,20 @@ class HiveMagic22(Magics):
     @cell_magic
     @magic_arguments.magic_arguments()
     @magic_arguments.argument("variable", help="the df variable name")
+    @magic_arguments.argument("-n", default=115,help="select the host server")
     @magic_arguments.argument("-h", "--head", action="store_true", help="show 5 rows")
     @magic_arguments.argument("-f", "--file", action="store_true", help="absolute path of the file")
-    @magic_arguments.argument("-22", "--host22", action="store_true", help="select the 22 server")
-    @magic_arguments.argument("-23", "--host23", action="store_true", help="select the 23 server")
-    @magic_arguments.argument("-115", "--host115", action="store_true", help="select the 22 server")
-    @magic_arguments.argument("-13", "--host13", action="store_true", help="select the 13 server")
-    @magic_arguments.argument("-58", "--host58", action="store_true", help="select the 23 server")
-    def hive22(self, line="", cell=None):
-        args = magic_arguments.parse_argstring(self.hive22, line)
+    def hive(self, line="", cell=None):
+        args = magic_arguments.parse_argstring(self.hive, line)
         size = 5 if args.head else None
         file = args.file
-        hostname='23'
-        if args.host22:
-            hostname='22'
-        if args.host23:
-            hostname='23'
-        if args.host115:
-            hostname='115'
-        if args.host58:
-            hostname='58'
-        if args.host13:
-            hostname='13'
+        hostname=args.n
         if file:
             with open(cell.replace('\n','')) as f:
                 cell = f.read().strip()
                 if cell.endswith(";"):
                     cell = cell[:-1]
-        hv = HiveEngine2(hostname)
+        hv = HiveEngine(hostname)
         columns, records = hv.execute(cell, size=size)
         hv.close()
         df = pd.DataFrame(records, columns=columns)
@@ -132,8 +95,8 @@ class HiveMagic22(Magics):
     @magic_arguments.magic_arguments()
     @magic_arguments.argument("variable", help="the df variable name")
     @magic_arguments.argument("-o", "--overwrite", action="store_true", help="overwrite or not")
-    def hive_write22(self, line, cell):
-        args = magic_arguments.parse_argstring(self.hive_write22, line)
+    def hive_write(self, line, cell):
+        args = magic_arguments.parse_argstring(self.hive_write, line)
         variable = args.variable
         overwrite = args.overwrite
         df = self.shell.user_ns[variable]
@@ -156,4 +119,4 @@ class HiveMagic22(Magics):
 
 
 ip = get_ipython()
-ip.register_magics(HiveMagic22)
+ip.register_magics(HiveMagic)

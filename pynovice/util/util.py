@@ -110,6 +110,46 @@ def func_check_vin(vin):
 
     return verify == total_sum % 11
 
+## 房贷利率
+def get_fee_month(loan_amount, year_rates, _type=1, pay_month=360):
+    '''
+    :param loan_amount: 贷款金额
+    :param year_rates: 年化利率=月利率*12
+    :param _type: {1:'等额本息',2:'等额本金',3:'先息后本'}
+    :param pay_month: 1期为1月，30年即为360期
+    :return: 月还款明细
+    '''
+    month_rates = year_rates / 12
+    _col = ['期数', '还款总额', '还款本金', '还款利息']
+    if 1 == _type:  # 等额本息
+        data = []
+        for month_i in range(pay_month):
+            interest = loan_amount * month_rates * ((1 + month_rates) ** pay_month - (1 + month_rates) ** month_i) / (
+            (1 + month_rates) ** pay_month - 1)
+            principal = loan_amount * month_rates * (1 + month_rates) ** month_i / ((1 + month_rates) ** pay_month - 1)
+            _data = [month_i + 1, round(interest + principal, 2), round(principal, 2), round(interest, 2)]
+            data.append(_data)
+        df = pd.DataFrame(data, columns=_col)
+    elif 2 == _type:  # 等额本金
+        data = []
+        payed_fee = 0
+        principal = loan_amount / pay_month
+        for month_i in range(pay_month):
+            payed_fee = payed_fee + month_i * principal
+            interest = (loan_amount - payed_fee) * month_rates
+            _data = [month_i + 1, round(interest + principal, 2), round(principal, 2), round(interest, 2)]
+            data.append(_data)
+        df = pd.DataFrame(data, columns=_col)
+    else:  # 先息后本
+        data = []
+        interest = loan_amount * month_rates
+        for month_i in range(pay_month - 1):
+            _data = [month_i + 1, round(interest, 2), 0, round(interest, 2)]
+            data.append(_data)
+        data.append([month_i + 2, round(interest + loan_amount, 2), round(loan_amount, 2), round(interest, 2)])
+        df = pd.DataFrame(data, columns=_col)
+    return df
+
 if __name__ == '__main__':
     ## 1.进度条
     portion = 0
