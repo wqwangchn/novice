@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210222" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" afterPath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令.py" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,18 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-              <folding>
-                <element signature="e#129#185#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="20210220" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,11 +61,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="publish.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="publish.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shell/publish.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pynovice/util/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="112" column="7" lean-forward="false" selection-start-line="112" selection-start-column="7" selection-end-line="112" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -100,41 +94,11 @@
       <file leaf-file-name="echarts_base_plot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
+            <state relative-caret-position="525">
               <caret line="35" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="180" selection-end-column="8" />
               <folding>
                 <element signature="e#133#152#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="line.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/basic_charts/line.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chart.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/chart.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="globals.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/globals.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="9" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -196,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pynovice/data_base/__init__.py" />
         <option value="$PROJECT_DIR$/pynovice/leetcode/python_alg/base_vip/1055. 形成字符串的最短路径.py" />
         <option value="$PROJECT_DIR$/pynovice/leetcode/python_alg/base_vip/418. 屏幕可显示句子的数量.py" />
         <option value="$PROJECT_DIR$/pynovice/leetcode/python_alg/base_vip/1216. 验证回文字符串 III.py" />
@@ -247,6 +210,7 @@
         <option value="$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令.py" />
         <option value="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210222" />
         <option value="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" />
+        <option value="$PROJECT_DIR$/pynovice/util/util.py" />
       </list>
     </option>
   </component>
@@ -268,7 +232,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="724" />
@@ -324,6 +288,17 @@
             <path>
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
               <item name="novice" type="462c0819:PsiDirectoryNode" />
+              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="novice" type="462c0819:PsiDirectoryNode" />
+              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="novice" type="462c0819:PsiDirectoryNode" />
               <item name="shell" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -334,8 +309,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,10 +549,10 @@
     <option name="totallyTimeSpent" value="440674000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="724" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="724" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2819063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2907916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -585,7 +560,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42766297" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07154213" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -677,13 +652,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/mixins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/mixins.py" />
     <entry file="file://$PROJECT_DIR$/pynovice/rule_engine/rule_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-543">
@@ -698,27 +667,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/basic_charts/bar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/composite_charts/grid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="55" lean-forward="false" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/options/global_options.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/basic_charts/bar.py" />
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/composite_charts/grid.py" />
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/options/global_options.py" />
     <entry file="file://$PROJECT_DIR$/pynovice/data_base/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -751,13 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/util/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="70" column="18" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -993,41 +937,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/basic_charts/line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="15" lean-forward="false" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" column="58" lean-forward="true" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/globals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/chart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/basic_charts/line.py" />
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/base.py" />
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/globals.py" />
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_novice/lib/python3.6/site-packages/pyecharts/charts/chart.py" />
     <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
+        <state relative-caret-position="525">
           <caret line="35" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="180" selection-end-column="8" />
           <folding>
             <element signature="e#133#152#0" expanded="true" />
@@ -1046,7 +962,15 @@
     <entry file="file://$PROJECT_DIR$/shell/publish.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/util/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="112" column="7" lean-forward="false" selection-start-line="112" selection-start-column="7" selection-end-line="112" selection-end-column="7" />
           <folding />
         </state>
       </provider>

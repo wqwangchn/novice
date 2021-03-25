@@ -44,7 +44,7 @@ def plot_base_bar1(df: pd.DataFrame, title_name='', subtitle_name='', xaxis_name
         yaxis_opts=opts.AxisOpts(name=yaxis_name),
         datazoom_opts=opts.DataZoomOpts(is_show=True)
     )
-    c1.add_xaxis(_data.index.tolist())
+    c1.add_xaxis([str(i) for i in _data.index)
     for icol in ynames:
         c1.add_yaxis(icol, _data[icol].values.tolist())
     c1.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
@@ -78,7 +78,7 @@ def plot_base_line1(df: pd.DataFrame, title_name='', subtitle_name='', xaxis_nam
         yaxis_opts=opts.AxisOpts(name=yaxis_name),
         datazoom_opts=opts.DataZoomOpts(is_show=True)
     )
-    c1.add_xaxis(_data.index.tolist())
+    c1.add_xaxis([str(i) for i in _data.index])
     for icol in ynames:
         c1.add_yaxis(icol, _data[icol].values.tolist())
     c1.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
@@ -137,7 +137,7 @@ def plot_base_grid1(df1: pd.DataFrame, df2: pd.DataFrame,
     # plot1
     _data = df1.copy()
     c1 = Line({'bg_color':'white'})
-    c1.add_xaxis([str(i) for i in _data.index.tolist()])
+    c1.add_xaxis([str(i) for i in _data.index])
     for icol in _data.columns.tolist():
         c1.add_yaxis(str(icol), _data[icol].values.tolist())
     c1.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
@@ -157,7 +157,7 @@ def plot_base_grid1(df1: pd.DataFrame, df2: pd.DataFrame,
     # plot2
     _data = df2.copy()
     c2 = Line({'bg_color':'white'})
-    c2.add_xaxis([str(i) for i in _data.index.tolist()])
+    c2.add_xaxis([str(i) for i in _data.index])
     for icol in _data.columns.tolist():
         c2.add_yaxis(str(icol), _data[icol].values.tolist())
     c2.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
