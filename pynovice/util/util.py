@@ -119,6 +119,21 @@ def get_fee_month(loan_amount, year_rates, _type=1, pay_month=360):
     :param pay_month: 1期为1月，30年即为360期
     :return: 月还款明细
     '''
+    '''
+    等额本息计算公式
+    每月还款额=贷款本金×[月利率×（1+月利率）^还款月数]÷[（1+月利率）^还款月数-1]
+    总支付利息：总利息=还款月数×每月月供额-贷款本金
+    每月应还利息=贷款本金×月利率×〔(1+月利率)^还款月数-(1+月利率)^(还款月序号-1)〕÷〔(1+月利率)^还款月数-1〕
+    每月应还本金=贷款本金×月利率×(1+月利率)^(还款月序号-1)÷〔(1+月利率)^还款月数-1〕
+    总利息=还款月数×每月月供额-贷款本金
+    
+    等额本金计算公式
+    每月月供额=(贷款本金÷还款月数)+(贷款本金-已归还本金累计额)×月利率
+    每月应还本金=贷款本金÷还款月数
+    每月应还利息=剩余本金×月利率=(贷款本金-已归还本金累计额)×月利率。
+    每月月供递减额=每月应还本金×月利率=贷款本金÷还款月数×月利率
+    总利息=还款月数×(总贷款额×月利率-月利率×(总贷款额÷还款月数)*(还款月数-1)÷2+总贷款额÷还款月数)
+    '''
     month_rates = year_rates / 12
     _col = ['期数', '还款总额', '还款本金', '还款利息']
     if 1 == _type:  # 等额本息
@@ -135,7 +150,7 @@ def get_fee_month(loan_amount, year_rates, _type=1, pay_month=360):
         payed_fee = 0
         principal = loan_amount / pay_month
         for month_i in range(pay_month):
-            payed_fee = payed_fee + month_i * principal
+            payed_fee = payed_fee +  principal
             interest = (loan_amount - payed_fee) * month_rates
             _data = [month_i + 1, round(interest + principal, 2), round(principal, 2), round(interest, 2)]
             data.append(_data)
@@ -149,6 +164,25 @@ def get_fee_month(loan_amount, year_rates, _type=1, pay_month=360):
         data.append([month_i + 2, round(interest + loan_amount, 2), round(loan_amount, 2), round(interest, 2)])
         df = pd.DataFrame(data, columns=_col)
     return df
+
+
+
+## 手机号正则
+mobile_rg=r'^1[3|4|5|6|7|8|9][0-9]{9}$'
+ydmobile_rg=r'^1(3[4-9]|4[7]|5[012789]|7[28]|8[23478]|9[578])\d{8}$'
+ltmobile_rg=r'^1(3[0-2]|4[56]|5[56]|6[6]|7[0156]|8[56]|9[6])\d{8}$'
+dxmobile_rg=r'^1(3[3]|4[19]|5[3]|7[3479]|8[019]|9[0139])\d{8}$'
+def re_mobile(mobile):
+    if re.match(ydmobile_rg,str(mobile)):
+        return "移动"
+    elif re.match(ltmobile_rg,str(mobile)):
+        return "联通"
+    elif re.match(mobile_rg,str(mobile)):
+        return "电信"
+    elif re.match(mobile_rg,str(mobile)):
+        return "未知"
+    else:
+        return "非法手机号"
 
 if __name__ == '__main__':
     ## 1.进度条

@@ -120,3 +120,41 @@ class HiveMagic(Magics):
 
 ip = get_ipython()
 ip.register_magics(HiveMagic)
+
+
+
+
+####
+# import pymysql
+# import pandas as pd
+#
+#
+# class MySQLEngine(object):
+#     def __init__(self, _db='ics_testing'):
+#         self.conn = pymysql.connect(
+#             host="rm-2ze79p6j8rq9m5nn4.mysql.rds.aliyuncs.com",
+#             user='ics_testing_rw',
+#             password='ics_testing@2021',
+#             db=_db,
+#             charset='utf8mb4'
+#         )
+#
+#     def execute(self, sql, size=None):
+#         with self.conn.cursor(cursor=pymysql.cursors.DictCursor) as cursor:
+#             res = cursor.execute(sql)
+#             if size:
+#                 rows = cursor.fetchmany(size=size)
+#             else:
+#                 rows = cursor.fetchall()
+#             return rows, res
+#
+#     def close(self):
+#         self.conn.close()
+#
+#
+# def run_sql(_sql, size=None):
+#     mysql = MySQLEngine()
+#     rows, records = mysql.execute(_sql)
+#     mysql.close()
+#     df = pd.DataFrame(rows)
+#     return df

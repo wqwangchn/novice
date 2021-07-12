@@ -21,7 +21,7 @@ def tree_blocks(df_field,df_label,box_num=5,criterion='entropy'):
         return [-np.inf,np.inf]
     internal_nodes = box_num - 1
 
-    boundary = [
+    boundary = []
     x = df_field.fillna(-999).values  # 填充缺失值
     y = df_label.values
     clf = DecisionTreeClassifier(criterion=criterion,  # “信息熵”最小化准则划分,gini,选择信息熵更合理。Gini 指数更偏向于连续属性，熵更偏向于离散属性。
