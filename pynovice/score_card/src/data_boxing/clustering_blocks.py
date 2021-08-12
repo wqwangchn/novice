@@ -12,7 +12,7 @@ Desc:
 '''
 
 from sklearn.cluster import KMeans
-from sklearn.metrics import calinski_harabasz_score
+# from sklearn.metrics import calinski_harabasz_score
 import numpy as np
 
 def kmeans_blocks(x,box_num=3):

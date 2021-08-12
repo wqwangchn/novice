@@ -19,6 +19,7 @@ base图：
 '''
 
 import pandas as pd
+import numpy as np
 import re
 import os
 from pyecharts.charts import Bar, Line, Page, Grid, Tab

@@ -19,10 +19,10 @@ class ScoreCardModel:
     def __init__(self):
         self.load_score_alpha()
 
-    def load_score_alpha(self, odds=1 / 2, bScore=650, addScore=-20):
+    def load_score_alpha(self, odds=1 / 1, bScore=600, addScore=-30):
         '''
             1.坏好比odds=1:2时，对应基础评分bScore=600
-            2.坏好比增加一倍时，评分减少addscore=-20
+            2.坏好比增加一倍时，评分减少addscore=-30
             bScore = offset - factor*ln(odds)
             bScore + addScore = offset - factor*ln(2*odds)
         :param odds: 坏好比
@@ -43,7 +43,7 @@ class ScoreCardModel:
 
         odds = max(bad_prob, eps) / max(1 - bad_prob, eps)
         score = self.score_offset + self.score_factor * np.log(odds)
-        return int(score)
+        return round(score)
 
     def score_to_probability(self, score, eps=1e-4):
         '''
@@ -51,10 +51,10 @@ class ScoreCardModel:
         :param score: 信用评分
         :return: bScore = offset - factor*ln(odds) -->bad_prob
         '''
-        score_factor = eps if self.score_factor==0 else self.score_factor
-        odds = np.e**((score - self.score_offset)/(score_factor))
-        odds = -1+eps if odds == -1 else odds
-        bad_prob = 1.00*odds/(1+odds)
+        score_factor = eps if self.score_factor == 0 else self.score_factor
+        odds = np.e ** ((score - self.score_offset) / (score_factor))
+        odds = -1 + eps if odds == -1 else odds
+        bad_prob = 1.00 * odds / (1 + odds)
         return bad_prob
 
     @classmethod
@@ -84,9 +84,11 @@ class ScoreCardModel:
         :param df_report_fee: 一维数组或series，代表赔付额
         :return: 'auc': auc值，'crossdens': TPR&FPR
         '''
-        df_data = pd.concat([df_pre.reset_index(drop=True), df_got_fee.reset_index(drop=True), df_report_fee.reset_index(drop=True)],axis=1,ignore_index=True)
-        df_data.columns=['pre','got_fee','report_fee']
-        df_data=df_data.set_index('pre').sort_index(ascending=False)  # 按照预测概率从大到小排序作为阈值
+        df_data = pd.concat(
+            [df_pre.reset_index(drop=True), df_got_fee.reset_index(drop=True), df_report_fee.reset_index(drop=True)],
+            axis=1, ignore_index=True)
+        df_data.columns = ['pre', 'got_fee', 'report_fee']
+        df_data = df_data.set_index('pre').sort_index(ascending=False)  # 按照预测概率从大到小排序作为阈值
         crossdens = df_data.cumsum(axis=0) / df_data.sum()
         crossdens.columns = ['fpr', 'tpr']
         crossdens.name = 'pre_threshold'
@@ -123,9 +125,11 @@ class ScoreCardModel:
         :param df_report_fee: 一维数组或series，代表赔付额
         :return: 'auc': auc值，'crossdens': TPR&FPR
         '''
-        df_data = pd.concat([df_pre.reset_index(drop=True), df_got_fee.reset_index(drop=True), df_report_fee.reset_index(drop=True)],axis=1,ignore_index=True)
-        df_data.columns=['pre','got_fee','report_fee']
-        df_data=df_data.set_index('pre').sort_index(ascending=False)  # 按照预测概率从大到小排序作为阈值
+        df_data = pd.concat(
+            [df_pre.reset_index(drop=True), df_got_fee.reset_index(drop=True), df_report_fee.reset_index(drop=True)],
+            axis=1)
+        df_data.columns = ['pre', 'got_fee', 'report_fee']
+        df_data = df_data.set_index('pre').sort_index(ascending=False)  # 按照预测概率从大到小排序作为阈值
         crossdens = df_data.cumsum(axis=0) / df_data.sum()
         crossdens.columns = ['fpr', 'tpr']
         crossdens.name = 'pre_threshold'
@@ -151,14 +155,14 @@ class ScoreCardModel:
         crossdens['lift'] = crossdens['acc_true'] / crossdens['acc_random']
         # 预测阈值
         lift = crossdens[crossdens.index >= judg_threshold]['lift'].values
-        if len(lift)>0:
-            lift =lift[-1]
+        if len(lift) > 0:
+            lift = lift[-1]
         else:
             lift = crossdens['lift'].mean()
         return lift, crossdens
 
     @classmethod
-    def plot_roc(cls, df_pre, df_label, pre_target=1, save_path='./'):
+    def plot_roc(cls, df_pre, df_label, pre_target=1, title_name='ROC Curve', save_path='./'):
         auc, crossdens = cls.get_auc(df_pre, df_label, pre_target)
         fpr = crossdens.loc[:, 'fpr']
         tpr = crossdens.loc[:, 'tpr']
@@ -171,14 +175,34 @@ class ScoreCardModel:
         plt.ylim([0.0, 1.00])
         plt.xlabel('False Postive Rate')
         plt.ylabel('True Postive Rate')
-        plt.title('ROC Curve')
+        plt.title(title_name)
         plt.legend(loc="lower right")
         fig.savefig('%s/roc_curve_v1.png' % (save_path,), dpi=180)
         plt.close(fig)
         return auc
 
     @classmethod
-    def plot_ks(cls, df_pre, df_label, pre_target=1, save_path='./'):
+    def plot_g7_auc(cls, df_pre, df_got_fee, df_report_fee, title_name='ROC Curve', save_path='./'):
+        auc, crossdens = cls.get_g7_auc(df_pre, df_got_fee, df_report_fee)
+        fpr = crossdens.loc[:, 'fpr']
+        tpr = crossdens.loc[:, 'tpr']
+
+        print('auc=%0.5f' % auc)
+        fig = plt.figure(figsize=(10, 10))
+        plt.plot(fpr, tpr, 'r--', linewidth=2.0, aa=False, label='ROC (area=%0.2f)' % (auc))
+        plt.plot([0, 1], [0, 1], '--', color=(0.6, 0.6, 0.6))
+        plt.xlim([0.0, 1.00])
+        plt.ylim([0.0, 1.00])
+        plt.xlabel('False Postive Rate')
+        plt.ylabel('True Postive Rate')
+        plt.title(title_name)
+        plt.legend(loc="lower right")
+        fig.savefig('%s/roc_curve_v1.png' % (save_path,), dpi=180)
+        plt.close(fig)
+        return auc
+
+    @classmethod
+    def plot_ks(cls, df_pre, df_label, pre_target=1, title_name='KS Curve', save_path='./'):
         ks, crossdens = cls.get_ks(df_pre, df_label, pre_target)
         max_ks_gap_index = str(ks.index[0])
         max_ks_gap_good_value = ks['tpr'].values[0]
@@ -204,7 +228,39 @@ class ScoreCardModel:
                   linestyle='--', linewidth=2.5)
         axes.annotate(annotate_ytext, xy=(max_ks_gap_index, annotate_text_y_index))
         axes.legend()
-        axes.set_title('KS Curve')
+        axes.set_title(title_name)
+        fig.savefig('%s/ks_curve_v1.png' % (save_path), dpi=180)
+        plt.close(fig)
+        return max_ks_gap_value
+
+    @classmethod
+    def plot_g7_ks(cls, df_pre, df_got_fee, df_report_fee, title_name='KS Curve', save_path='./'):
+        ks, crossdens = cls.get_g7_ks(df_pre, df_got_fee, df_report_fee)
+        max_ks_gap_index = str(ks.index[0])
+        max_ks_gap_good_value = ks['tpr'].values[0]
+        max_ks_gap_bad_value = ks['fpr'].values[0]
+        max_ks_gap_value = ks['gap'].values[0]
+        annotate_xtext = max_ks_gap_index
+        annotate_ytext = str(round(max_ks_gap_value, 3))
+        annotate_text_y_index = max_ks_gap_value / 2 + min(max_ks_gap_good_value, max_ks_gap_bad_value)
+
+        fpr = crossdens.loc[:, 'fpr']
+        tpr = crossdens.loc[:, 'tpr']
+        axes_x = [str(i) for i in fpr.index]
+
+        print('ks=%s' % max_ks_gap_value)
+        fig = plt.figure(figsize=(10, 10))
+        axes = fig.gca()
+        axes.plot(axes_x, tpr, 'g', linewidth=2, label='tpr')
+        axes.plot(axes_x, fpr, 'r', linewidth=2, label='fpr')
+        axes.annotate(annotate_xtext, xy=(max_ks_gap_index, 0), xytext=(max_ks_gap_index, 0.05),
+                      arrowprops=dict(facecolor='red', shrink=0.05))
+        axes.plot([max_ks_gap_index, max_ks_gap_index],
+                  [max_ks_gap_bad_value, max_ks_gap_good_value],
+                  linestyle='--', linewidth=2.5)
+        axes.annotate(annotate_ytext, xy=(max_ks_gap_index, annotate_text_y_index))
+        axes.legend()
+        axes.set_title(title_name)
         fig.savefig('%s/ks_curve_v1.png' % (save_path), dpi=180)
         plt.close(fig)
         return max_ks_gap_value
