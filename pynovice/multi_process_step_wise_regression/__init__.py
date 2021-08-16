@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*- 
 
 ## 特征筛选
+# del 删除
 
 from .Reg_Step_Wise_MP import LogisticReg,LinearReg
 

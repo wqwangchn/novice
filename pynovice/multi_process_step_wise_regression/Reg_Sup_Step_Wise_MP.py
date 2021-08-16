@@ -17,11 +17,10 @@ from multiprocessing import Pool
 import math
 
 class Regression():
-    
     def __init__(self,X,y,fit_weight=None,measure='ks',measure_weight=None,kw_measure_args=None,max_pvalue_limit=0.05,max_vif_limit=3,max_corr_limit=0.6,coef_sign=None,iter_num=20,kw_algorithm_class_args=None,n_core=None,logger_file_CH=None,logger_file_EN=None):
         self.X = X
         self.y = y
-        self.fit_weight = fit_weight
+        self.fit_weight=np.ones(len(X))#fit_weight
         self.measure = measure
         self.kw_measure_args = {'sample_weight':measure_weight}
         if kw_measure_args is not None:
@@ -55,7 +54,7 @@ class Regression():
         elif self.coef_sign == '+':
             check_param = (clf.params[1:] > 0).all()
         elif self.coef_sign == '-':
-            check_param = (clf.params[1:] < 0).all()      
+            check_param = (clf.params[1:] < 0).all()
         
         check_pvalue = (clf.pvalues < self.max_pvalue_limit).all()
         y_hat=pd.Series(clf.predict(sm.add_constant(X)),index=self.y.index,name='score')     
