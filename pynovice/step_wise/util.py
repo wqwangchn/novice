@@ -55,16 +55,18 @@ class _Tool():
         vif = vif.sort_values('VIF Factor', ascending=False)
         return vif
 
-    def make_logger(logger_name, logger_file):
-        logger = logging.getLogger(logger_name)
-        logger.setLevel(logging.DEBUG)
-        fh = logging.FileHandler(logger_file, mode='w')
-        fh.setLevel(logging.DEBUG)
-        formatter = logging.Formatter(
-            '[%(name)s]-[%(filename)s-%(lineno)d]-[%(processName)s]-[%(asctime)s]-[%(levelname)s]: %(message)s')
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
-        return logger, fh
+    def make_logger(is_logger, logger_file):
+        logger_level = logging.INFO if is_logger else logging.DEBUG
+        logging.getLogger().setLevel(logger_level)
+        fh = None
+        if logger_file is not None:
+            fh = logging.FileHandler(logger_file, mode='w')
+            fh.setLevel(logging.DEBUG)
+            formatter = logging.Formatter(
+                '[%(name)s]-[%(filename)s-%(lineno)d]-[%(processName)s]-[%(asctime)s]-[%(levelname)s]: %(message)s')
+            fh.setFormatter(formatter)
+            logger.addHandler(fh)
+        return logging, fh
 
 SCORERS = dict(
     r2=r2_score,

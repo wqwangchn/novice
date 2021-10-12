@@ -201,134 +201,77 @@ def plot_base_grid2(df1: pd.DataFrame, df2: pd.DataFrame,chart_type='barline',st
     else:
         return c1
 
-# def plot_base_line2(df1: pd.DataFrame, df2: pd.DataFrame,
-#                     title_name='', subtitle_name='', xaxis_name='', yaxis_name1='', yaxis_name2='',
-#                     is_save: bool = False):
-#     '''
-#     折线图(双坐标)
-#     '''
-#     if isinstance(df1, pd.Series):
-#         df1 = pd.DataFrame(df1)
-#     if isinstance(df2, pd.Series):
-#         df2 = pd.DataFrame(df2)
-#     assert df1.index.to_list()==df2.index.to_list()
-#     _data1 = df1.copy()
-#     _data2 = df2.copy()
-#     # plot
-#     c1 = Line({'bg_color':'white'})
-#     c1.set_global_opts(
-#         title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
-#         legend_opts=opts.LegendOpts(is_show=True),
-#         toolbox_opts=opts.ToolboxOpts(is_show=True),
-#         xaxis_opts=opts.AxisOpts(name=xaxis_name),
-#         yaxis_opts=opts.AxisOpts(name=yaxis_name1),
-#         datazoom_opts=opts.DataZoomOpts(is_show=True)
-#     )
-#     c1.extend_axis(yaxis=opts.AxisOpts(name=yaxis_name2,position="right"))
-#     c1.add_xaxis([str(i) for i in _data1.index])
-#     for icol in _data1.columns:
-#         c1.add_yaxis(icol, _data1[icol].values.tolist(),yaxis_index=0)
-#     for icol in _data2.columns:
-#         c1.add_yaxis(icol, _data2[icol].values.tolist(),yaxis_index=1)
-#     c1.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
-#     if is_save:
-#         return c1
-#     else:
-#         return c1.render_notebook()
-#
-# def plot_base_barline1(df1: pd.DataFrame, df2: pd.DataFrame,
-#                     title_name='', subtitle_name='', xaxis_name='', yaxis_name1='', yaxis_name2='',
-#                     is_save: bool = False):
-#     '''
-#     折线图(双坐标)
-#     '''
-#     if isinstance(df1, pd.Series):
-#         df1 = pd.DataFrame(df1)
-#     if isinstance(df2, pd.Series):
-#         df2 = pd.DataFrame(df2)
-#     assert df1.index.to_list()==df2.index.to_list()
-#     _data1 = df1.copy()
-#     _data2 = df2.copy()
-#     # plot
-#     c1 = Bar({'bg_color':'white'})
-#     c1.set_global_opts(
-#         title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
-#         legend_opts=opts.LegendOpts(is_show=True),
-#         toolbox_opts=opts.ToolboxOpts(is_show=True),
-#         xaxis_opts=opts.AxisOpts(name=xaxis_name),
-#         yaxis_opts=opts.AxisOpts(name=yaxis_name1),
-#         datazoom_opts=opts.DataZoomOpts(is_show=True)
-#     )
-#     c1.extend_axis(yaxis=opts.AxisOpts(name=yaxis_name2,position="right"))
-#     c1.add_xaxis([str(i) for i in _data1.index])
-#     for icol in _data1.columns:
-#         c1.add_yaxis(icol, _data1[icol].values.tolist(),yaxis_index=0)
-#     c2=Line()
-#     c2.add_xaxis([str(i) for i in _data1.index])
-#     for icol in _data2.columns:
-#         c2.add_yaxis(icol, _data2[icol].values.tolist(),yaxis_index=1)
-#     c1.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
-#     c2.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
-#     c1.overlap(c2)
-#     if is_save:
-#         return c1
-#     else:
-#         return c1.render_notebook()
 
-# def plot_base_grid1(df1: pd.DataFrame, df2: pd.DataFrame,
-#                     title_name='', subtitle_name='', xaxis_name='', yaxis_name1='', yaxis_name2='',
-#                     is_save: bool = False):
-#     '''
-#         组合折线图(上下)
-#     '''
-#     if isinstance(df1, pd.Series):
-#         df1 = pd.DataFrame(df1)
-#     if isinstance(df2, pd.Series):
-#         df2 = pd.DataFrame(df2)
-#     len_col = df2.columns.size
-#
-#     # plot1
-#     _data = df1.copy()
-#     c1 = Line({'bg_color':'white'})
-#     c1.add_xaxis([str(i) for i in _data.index])
-#     for icol in _data.columns.tolist():
-#         c1.add_yaxis(str(icol), _data[icol].values.tolist())
-#     c1.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
-#     if (len_col > 5):
-#         opt_leg = opts.LegendOpts(is_show=True, type_='scroll',
-#                                   pos_left='25%', pos_right='25%')
-#     else:
-#         opt_leg = opts.LegendOpts(is_show=True)
-#     c1.set_global_opts(
-#         title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
-#         legend_opts=opt_leg,
-#         toolbox_opts=opts.ToolboxOpts(is_show=True),
-#         xaxis_opts=opts.AxisOpts(name=xaxis_name),
-#         yaxis_opts=opts.AxisOpts(name=yaxis_name1),
-#         datazoom_opts=opts.DataZoomOpts(is_show=True),
-#     )
-#     # plot2
-#     _data = df2.copy()
-#     c2 = Line({'bg_color':'white'})
-#     c2.add_xaxis([str(i) for i in _data.index])
-#     for icol in _data.columns.tolist():
-#         c2.add_yaxis(str(icol), _data[icol].values.tolist())
-#     c2.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
-#     c2.set_global_opts(
-#         legend_opts=opts.LegendOpts(is_show=False),
-#         toolbox_opts=opts.ToolboxOpts(is_show=True),
-#         xaxis_opts=opts.AxisOpts(name=xaxis_name),
-#         yaxis_opts=opts.AxisOpts(name=yaxis_name2),
-#     )
-#     grid = Grid(init_opts=opts.InitOpts(theme="white", bg_color='white', ))
-#     grid.add(c1, grid_opts=opts.GridOpts(pos_bottom="50%"))
-#     grid.add(c2, grid_opts=opts.GridOpts(pos_top="65%"))
-#
-#     if is_save:
-#         return grid
-#     else:
-#         return grid.render_notebook()
+def get_g7_risk_report(df11,df12,df21,df22,df3,title_name='特征1风险分布', subtitle_name='tezheng1'):
+    '''
+    :param df11: df_plot1.赔付率*100
+    :param df12: df_plot1.累计赔付率*100
+    :param df21: df_plot1.出险率*100
+    :param df22: df_plot1.累计出险率*100
+    :param df3: df_plot1.车辆数
+    :return:
+        grid = get_g7_risk_report(df11,df12,df21,df22,df3)
+        grid.render("tmp.html")
+    '''
+    def plot_base_line(df: pd.DataFrame, title_name='', subtitle_name='', xaxis_name='', yaxis_name='',
+                        is_show_label=False,_interval=20):
+        if isinstance(df, pd.Series):
+            df = pd.DataFrame(df)
+        _data = df.copy()
+        _data.index = [str(i) for i in _data.index]
+        c1 = Line({'bg_color':'white'})
+        c1.add_xaxis(_data.index.tolist())
+        for icol in _data.columns:
+            c1.add_yaxis(icol, _data[icol].values.tolist(), is_connect_nones=True)
+        c1.set_series_opts(label_opts=opts.LabelOpts(is_show=is_show_label))
+        c1.set_global_opts(
+            title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
+            toolbox_opts=opts.ToolboxOpts(is_show=True),
+            datazoom_opts=opts.DataZoomOpts(is_show=True),
+            xaxis_opts=opts.AxisOpts(name=xaxis_name),
+            yaxis_opts=opts.AxisOpts(name=yaxis_name,
+                type_="value",
+                is_scale = True,
+                axislabel_opts=opts.LabelOpts(formatter="{value} %"),
+                splitline_opts=opts.SplitLineOpts(is_show=True,linestyle_opts= opts.LineStyleOpts(opacity= 0.4)),
+            )
+        )
+        return c1
 
+    def plot_base_bar(df: pd.DataFrame, title_name='', subtitle_name='', xaxis_name='', yaxis_name='',
+                       is_show_label=True):
+        if isinstance(df, pd.Series):
+            df = pd.DataFrame(df)
+        _data = df.copy()
+        _data.index = [str(i) for i in _data.index]
+        c1 = Bar({'bg_color':'white'})
+        c1.add_xaxis(_data.index.tolist())
+        for icol in _data.columns:
+            c1.add_yaxis(icol, _data[icol].values.tolist())
+        c1.set_series_opts(label_opts=opts.LabelOpts(is_show=is_show_label))
+        c1.set_global_opts(
+            title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
+            toolbox_opts=opts.ToolboxOpts(is_show=True),
+            xaxis_opts=opts.AxisOpts(name=xaxis_name),
+            yaxis_opts=opts.AxisOpts(name=yaxis_name,type_="value"),
+            datazoom_opts=opts.DataZoomOpts(is_show=True,xaxis_index = [0,1,2,3,4])
+        )
+        return c1
+
+    line11 = plot_base_line(df11, title_name=title_name, subtitle_name=subtitle_name, yaxis_name='赔付率')
+    line12 = plot_base_line(df12, yaxis_name='累计赔付率')
+    line21 = plot_base_line(df21, yaxis_name='赔付率')
+    line22 = plot_base_line(df22, yaxis_name='累计赔付率')
+    bar1 = plot_base_bar(df3, yaxis_name='车辆数')
+    grid = (
+        Grid(init_opts=opts.InitOpts(width="1200px", height="600px"))
+        .add(bar1, grid_opts=opts.GridOpts(pos_top="83%"))
+        .add(line11, grid_opts=opts.GridOpts(pos_right="55%",pos_bottom="65%"))
+        .add(line12, grid_opts=opts.GridOpts(pos_left="55%",pos_bottom="65%"))
+        .add(line21, grid_opts=opts.GridOpts(pos_right="55%",pos_top="45%",pos_bottom="25%"))
+        .add(line22, grid_opts=opts.GridOpts(pos_left="55%",pos_top="45%",pos_bottom="25%"))
+    )
+    return grid
 
 if __name__ == '__main__':
     pass

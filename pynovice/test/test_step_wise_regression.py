@@ -35,12 +35,14 @@ def get_X_y(data_type):
     return X, y
 
 def test_logit(X,y):
-    lr  =  mpmr.Regression(X,y,measure='roc_auc',iter_num=20,logger_file=None)
+    lr  =  mpmr.Regression(X,y,measure='roc_auc',iter_num=20, max_related_level=2,observation_model='all',ignore_var=['informative_3'])
     in_vars,dr = lr.fit()
     return in_vars,dr
 
 
 if __name__ == '__main__':
+    import warnings
+    warnings._setoption('ignore')
     X_logit, y_logit = get_X_y('logistic')
     in_vars_logit,dr_logit = test_logit(X_logit,y_logit)
 
