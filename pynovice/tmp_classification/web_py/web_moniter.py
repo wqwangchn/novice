@@ -242,8 +242,8 @@ class download:
                     yield c
                 else:
                     break
-        except Exception, e:
-            print e
+        except Exception as e:
+            print (e)
             yield 'Error'
         finally:
             if f:

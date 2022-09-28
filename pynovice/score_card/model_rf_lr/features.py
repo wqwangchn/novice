@@ -8,8 +8,8 @@ Date: 2021/10/26 14:17
 Desc:
 '''
 import pandas as pd
-from score_card_model.model_buildings.feature_extracting import woe as g7_woe
-from util.hive_engine import progress_bar
+import woe as g7_woe
+from pynovice.util.util import progress_bar
 
 def get_woe_card(df_data,fields_bins):
     '''

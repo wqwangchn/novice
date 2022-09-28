@@ -22,7 +22,7 @@ import pandas as pd
 import numpy as np
 import re
 import os
-from pyecharts.charts import Bar, Line, Page, Grid, Tab
+from pyecharts.charts import Bar, Line, Page, Grid, Tab, Sankey
 from pyecharts.globals import ThemeType
 from pyecharts.components import Table
 from pyecharts import options as opts
@@ -68,6 +68,8 @@ def clac_kde_fit_tmp(arr_x,bins=50):
 def clac_kde_fit(arr_x,bins_list):
     '''
     密度拟合分布
+    bins = min(len(arr_x), bins)
+    bins_list = np.linspace(min(arr_x), max(arr_x), bins)
     '''
     bandwidth=1.05*np.std(arr_x)*(len(arr_x)**(-1/5))
     y_data = [get_kde(bins_list[i],arr_x,bandwidth) for i in range(len(bins_list))]
@@ -127,7 +129,7 @@ def plot_base_line1(df: pd.DataFrame, title_name='', subtitle_name='', xaxis_nam
         toolbox_opts=opts.ToolboxOpts(is_show=True),
         xaxis_opts=opts.AxisOpts(name=xaxis_name),
         yaxis_opts=opts.AxisOpts(name=yaxis_name),
-        datazoom_opts=opts.DataZoomOpts(is_show=True)
+        datazoom_opts=opts.DataZoomOpts(is_show=True, range_start=0, range_end=100)
     )
     c1.set_series_opts(label_opts=opts.LabelOpts(is_show=is_show_label))
     if is_plot:
@@ -226,8 +228,9 @@ def get_g7_risk_report(df11,df12,df21,df22,df3,title_name='特征1风险分布',
         c1.set_series_opts(label_opts=opts.LabelOpts(is_show=is_show_label))
         c1.set_global_opts(
             title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
+            legend_opts=opts.LegendOpts(is_show=True),
             toolbox_opts=opts.ToolboxOpts(is_show=True),
-            datazoom_opts=opts.DataZoomOpts(is_show=True),
+            datazoom_opts=opts.DataZoomOpts(is_show=True,range_start= 0,range_end = 100),
             xaxis_opts=opts.AxisOpts(name=xaxis_name),
             yaxis_opts=opts.AxisOpts(name=yaxis_name,
                 type_="value",
@@ -239,7 +242,7 @@ def get_g7_risk_report(df11,df12,df21,df22,df3,title_name='特征1风险分布',
         return c1
 
     def plot_base_bar(df: pd.DataFrame, title_name='', subtitle_name='', xaxis_name='', yaxis_name='',
-                       is_show_label=True):
+                       is_show_label=False):
         if isinstance(df, pd.Series):
             df = pd.DataFrame(df)
         _data = df.copy()
@@ -251,20 +254,21 @@ def get_g7_risk_report(df11,df12,df21,df22,df3,title_name='特征1风险分布',
         c1.set_series_opts(label_opts=opts.LabelOpts(is_show=is_show_label))
         c1.set_global_opts(
             title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
+            legend_opts=opts.LegendOpts(is_show=False,type_='scroll',pos_left='20%',pos_right='20%'),
             toolbox_opts=opts.ToolboxOpts(is_show=True),
             xaxis_opts=opts.AxisOpts(name=xaxis_name),
-            yaxis_opts=opts.AxisOpts(name=yaxis_name,type_="value"),
-            datazoom_opts=opts.DataZoomOpts(is_show=True,xaxis_index = [0,1,2,3,4])
+            yaxis_opts=opts.AxisOpts(name=yaxis_name,type_="value",split_number=4),
+            datazoom_opts=opts.DataZoomOpts(is_show=True,range_start= 0,range_end = 100,xaxis_index = [0,1,2,3,4])
         )
         return c1
 
     line11 = plot_base_line(df11, title_name=title_name, subtitle_name=subtitle_name, yaxis_name='赔付率')
     line12 = plot_base_line(df12, yaxis_name='累计赔付率')
-    line21 = plot_base_line(df21, yaxis_name='赔付率')
-    line22 = plot_base_line(df22, yaxis_name='累计赔付率')
+    line21 = plot_base_line(df21, yaxis_name='出险率')
+    line22 = plot_base_line(df22, yaxis_name='累计出险率')
     bar1 = plot_base_bar(df3, yaxis_name='车辆数')
     grid = (
-        Grid(init_opts=opts.InitOpts(width="1200px", height="600px"))
+        Grid(init_opts=opts.InitOpts(width="1200px", height="600px",bg_color='white'))
         .add(bar1, grid_opts=opts.GridOpts(pos_top="83%"))
         .add(line11, grid_opts=opts.GridOpts(pos_right="55%",pos_bottom="65%"))
         .add(line12, grid_opts=opts.GridOpts(pos_left="55%",pos_bottom="65%"))

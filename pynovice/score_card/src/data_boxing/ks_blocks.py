@@ -118,7 +118,6 @@ def ks_blocks(df_field, df_label,box_num=5 ,bad_target=1):
 
 if __name__ == '__main__':
     df = pd.DataFrame([[1, 2, 3, 4, 5, 5, 5, 3, 3, 3, 2, 1, 5, 7], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
-    #df = pd.DataFrame([[3, 4, 0, 1, 2, 2, 2, 5, 7, 4, 7, 7, 7, 6], [1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1]]).T
     df.columns = ['field', 'label']
     df_field, df_label = df['field'], df['label']
     aa = ks_blocks(df_field, df_label,box_num=5, bad_target=1)

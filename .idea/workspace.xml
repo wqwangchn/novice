@@ -2,40 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/_beeswarm.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/_force.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/_waterfall.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_colorconv.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_colors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_explanation.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_force_matplotlib.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_legacy.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_utils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pynovice/test/test_card_explanations.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/multi_process_step_wise_regression/Reg_Step_Wise_MP.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/multi_process_step_wise_regression/Reg_Sup_Step_Wise_MP.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/multi_process_step_wise_regression/Tool.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/multi_process_step_wise_regression/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/score_card/tmp/Part1数据预处理.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/score_card/tmp/Part3基本数据处理.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/score_card/tmp/Part4.1模型_logistic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/score_card/tmp/Part4.2模型_DNN.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/score_card/tmp/Part4.3模型_XGboost.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/score_card/tmp/Part4.4模型_GBDT.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pynovice/test/test_multi_process_step_wise_regression.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pynovice/score_card/tmp/__init__.py" afterPath="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" afterPath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/score_card/__init__.py" afterPath="$PROJECT_DIR$/pynovice/score_card/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/clustering_blocks.py" afterPath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/clustering_blocks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/step_wise/Step_Wise_Multiprocess.py" afterPath="$PROJECT_DIR$/pynovice/step_wise/Step_Wise_Multiprocess.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/step_wise/util.py" afterPath="$PROJECT_DIR$/pynovice/step_wise/util.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pynovice/test/test_step_wise_regression.py" afterPath="$PROJECT_DIR$/pynovice/test/test_step_wise_regression.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shell/publish.sh" afterPath="$PROJECT_DIR$/shell/publish.sh" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211103" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211103" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211104" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211104" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/base_blocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/base_blocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/ks_blocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/ks_blocks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/test/test_rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/test/test_rf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pynovice/tmp_classification/web_py/web_moniter.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py/web_moniter.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,13 +23,20 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/novice$anysis_distribution_plot_v2.coverage" NAME="anysis_distribution_plot_v2 Coverage Results" MODIFIED="1606720439749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/data_base" />
+    <SUITE FILE_PATH="coverage/novice$alg_rf.coverage" NAME="alg_rf Coverage Results" MODIFIED="1636042755877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml" />
     <SUITE FILE_PATH="coverage/novice$echarts_base_plot.coverage" NAME="echarts_base_plot Coverage Results" MODIFIED="1623291728673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/echarts_plot" />
+    <SUITE FILE_PATH="coverage/novice$Doctests_in_chi_blocks.coverage" NAME="Doctests in chi_blocks Coverage Results" MODIFIED="1636001500390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src/data_boxing" />
     <SUITE FILE_PATH="coverage/novice$test_step_wise_regression.coverage" NAME="test_step_wise_regression Coverage Results" MODIFIED="1630033484007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/test" />
+    <SUITE FILE_PATH="coverage/novice$Doctests_in_chi_blocks__1_.coverage" NAME="Doctests in chi_blocks (1) Coverage Results" MODIFIED="1636001525312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src/data_boxing" />
     <SUITE FILE_PATH="coverage/novice$rule_parser.coverage" NAME="rule_parser Coverage Results" MODIFIED="1607912618962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/rule_engine" />
+    <SUITE FILE_PATH="coverage/novice$randomforest_blocks.coverage" NAME="randomforest_blocks Coverage Results" MODIFIED="1636086326514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src/data_boxing" />
     <SUITE FILE_PATH="coverage/novice$trajectory_playback_v2.coverage" NAME="trajectory_playback_v2 Coverage Results" MODIFIED="1611369738103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/gaode_map" />
+    <SUITE FILE_PATH="coverage/novice$features.coverage" NAME="features Coverage Results" MODIFIED="1636087928884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
     <SUITE FILE_PATH="coverage/novice$bert_extracter.coverage" NAME="bert_extracter Coverage Results" MODIFIED="1609208944446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/bert_extracter" />
     <SUITE FILE_PATH="coverage/novice$data_woe.coverage" NAME="data_woe Coverage Results" MODIFIED="1600845765444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src" />
+    <SUITE FILE_PATH="coverage/novice$chi_blocks.coverage" NAME="chi_blocks Coverage Results" MODIFIED="1636002333458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src/data_boxing" />
     <SUITE FILE_PATH="coverage/novice$test_card_explanations.coverage" NAME="test_card_explanations Coverage Results" MODIFIED="1629432012818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/test" />
+    <SUITE FILE_PATH="coverage/novice$test_rf.coverage" NAME="test_rf Coverage Results" MODIFIED="1636044943781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/test" />
     <SUITE FILE_PATH="coverage/novice$geo_map.coverage" NAME="geo_map Coverage Results" MODIFIED="1621320100048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/geo_map" />
     <SUITE FILE_PATH="coverage/novice$anysis_distribution_plot.coverage" NAME="anysis_distribution_plot Coverage Results" MODIFIED="1607398493946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/data_base" />
     <SUITE FILE_PATH="coverage/novice$psi_csi.coverage" NAME="psi_csi Coverage Results" MODIFIED="1624198688331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src" />
@@ -63,118 +50,6 @@
   <component name="FavoritesManager">
     <favorites_list name="novice" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="13" column="53" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="13" selection-end-column="53" />
-              <folding>
-                <element signature="e#121#154#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="publish.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/shell/publish.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="15" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="echarts_base_plot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
-              <folding>
-                <element signature="e#230#249#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-              <folding>
-                <element signature="e#129#185#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_force.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/_force.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_beeswarm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/_beeswarm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6225">
-              <caret line="420" column="78" lean-forward="false" selection-start-line="420" selection-start-column="67" selection-end-line="420" selection-end-column="78" />
-              <folding>
-                <element signature="e#23319#26637#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alg_dt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_dt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alg_gbdt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_gbdt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alg_lr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_lr.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_card_explanations.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pynovice/test/test_card_explanations.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -184,19 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pl.gcf().set_size_inches(8, num_featur</find>
-      <find>format_data</find>
-      <find>AdditiveForceVisualizer(e, plot_cmap=plot_cmap)</find>
-      <find>draw_additive_plot(data, figsize, show, text_rotation, min_perc)</find>
-      <find>matplotlib</find>
-      <find>pl.rcParams['font.sans-serif']</find>
-      <find>pl.rcParams</find>
-      <find>Explanation</find>
-      <find>shap_values</find>
-      <find>base_value</find>
-      <find>pl</find>
-      <find>format_value</find>
-      <find>neg_inds</find>
       <find>text</find>
       <find>pl.</find>
       <find>perf_toler</find>
@@ -214,6 +76,19 @@
       <find>LogisticRegression</find>
       <find>self.columns</find>
       <find>summary_legacy</find>
+      <find>_exec_cmd</find>
+      <find>cur_</find>
+      <find>CUR_PASTH</find>
+      <find>args</find>
+      <find>kw_measure_args</find>
+      <find>abs</find>
+      <find>CURRENT_PATH</find>
+      <find>print(aa)</find>
+      <find>g7_woe</find>
+      <find>g7_wo</find>
+      <find>insert</find>
+      <find>predict</find>
+      <find>try</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pynovice/geo_map</dir>
@@ -231,18 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pynovice/gaode_map/pynovice_test.js" />
-        <option value="$PROJECT_DIR$/pynovice/gaode_map/func_slice/body_contral.js" />
-        <option value="$PROJECT_DIR$/MANIFEST.in" />
-        <option value="$PROJECT_DIR$/pynovice/gaode_map/__init__.py" />
-        <option value="$PROJECT_DIR$/pynovice/gaode_map/gps_trajectory_playback.html" />
-        <option value="$PROJECT_DIR$/pynovice/gaode_map/trajectory_playback_v2.py" />
-        <option value="$PROJECT_DIR$/pynovice/gaode_map/pynovice_map.js" />
-        <option value="$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令" />
-        <option value="$PROJECT_DIR$/pynovice/echarts_plot/anysis_distribution_plot.py" />
-        <option value="$PROJECT_DIR$/pynovice/echarts_plot/__init__.py" />
-        <option value="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" />
-        <option value="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210222" />
         <option value="$PROJECT_DIR$/pynovice/util/__init__.py" />
         <option value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/tree_blocks.py" />
         <option value="$PROJECT_DIR$/pynovice/score_card/model_logistic.py" />
@@ -282,6 +145,18 @@
         <option value="$PROJECT_DIR$/pynovice/test/test_step_wise_regression.py" />
         <option value="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" />
         <option value="$PROJECT_DIR$/shell/publish.sh" />
+        <option value="$PROJECT_DIR$/build/lib/pynovice/echarts_plot/echarts_base_plot.py" />
+        <option value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/base_blocks.py" />
+        <option value="$PROJECT_DIR$/pynovice/tmp_classification/web_py/web_moniter.py" />
+        <option value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/ks_blocks.py" />
+        <option value="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211103" />
+        <option value="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py" />
+        <option value="$PROJECT_DIR$/pynovice/test/test_rf.py" />
+        <option value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/randomforest_blocks.py" />
+        <option value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py" />
+        <option value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/run.py" />
+        <option value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py" />
+        <option value="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211104" />
       </list>
     </option>
   </component>
@@ -303,12 +178,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-188" />
-    <option name="y" value="-1057" />
-    <option name="width" value="1920" />
-    <option name="height" value="1004" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="724" />
+  </component>
+  <component name="ProjectId" id="23GgnE4466HLELYqHDLPtJxQ4DH" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -340,17 +218,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
               <item name="novice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
-              <item name="novice" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
@@ -366,6 +241,12 @@
             <path>
               <item name="novice" type="b2602c69:ProjectViewProjectNode" />
               <item name="novice" type="462c0819:PsiDirectoryNode" />
+              <item name="pynovice" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="novice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="novice" type="462c0819:PsiDirectoryNode" />
               <item name="shell" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,74 +257,134 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zhangxuejing/wqwang/work/git_wq/novice/pynovice/gaode_map/trajectory_playback_v2.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Applications/anaconda3/envs/wq_g7/bin/python3.6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zhangxuejing/wqwang/work/git_wq/novice/pynovice/gaode_map/trajectory_playback_v2.py" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils" />
-      <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations" />
-      <recent name="$PROJECT_DIR$/pynovice/step_wise" />
-      <recent name="$PROJECT_DIR$/pynovice/test" />
-      <recent name="$PROJECT_DIR$/pynovice" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
       <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils" />
       <recent name="$PROJECT_DIR$/pynovice/util" />
       <recent name="$PROJECT_DIR$/pynovice/algorithm" />
       <recent name="$PROJECT_DIR$/pynovice/data_base" />
-      <recent name="$PROJECT_DIR$/pynovice/score_card/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
+      <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils" />
+      <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations" />
+      <recent name="$PROJECT_DIR$/pynovice/step_wise" />
+      <recent name="$PROJECT_DIR$/pynovice/test" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.test_step_wise_regression">
-    <configuration name="g7_score_card" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.rule_parser">
+    <configuration name="alg_rf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="novice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/build/lib/pynovice/score_card/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="novice" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/build/lib/pynovice/score_card/src/g7_score_card.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
-    <configuration name="test_card_explanations" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="features" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="novice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="randomforest_blocks" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="novice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rule_parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="novice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/rule_engine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/rule_engine/rule_parser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_rf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="novice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -454,87 +395,34 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="novice" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/test/test_card_explanations.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/test/test_rf.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
-    <configuration name="test_multi_process_step_wise_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="novice" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/test/test_multi_process_step_wise_regression.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="test_score_card" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="novice" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/test/test_score_card.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="test_step_wise_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="novice" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/test/test_step_wise_regression.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.g7_score_card" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test_multi_process_step_wise_regression" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_step_wise_regression" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_card_explanations" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_score_card" />
+    <list>
+      <item itemvalue="Python.alg_rf" />
+      <item itemvalue="Python.features" />
+      <item itemvalue="Python.randomforest_blocks" />
+      <item itemvalue="Python.rule_parser" />
+      <item itemvalue="Python.test_rf" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_step_wise_regression" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_card_explanations" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test_score_card" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test_multi_process_step_wise_regression" />
-        <item index="4" class="java.lang.String" itemvalue="Python.g7_score_card" />
+      <list>
+        <item itemvalue="Python.rule_parser" />
+        <item itemvalue="Python.features" />
+        <item itemvalue="Python.randomforest_blocks" />
+        <item itemvalue="Python.test_rf" />
+        <item itemvalue="Python.alg_rf" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -582,18 +470,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_base_blocks - 2020.05.04 at 10h 30m 58s.xml">
-      <configuration name="Doctests in base_blocks" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctests_in_base_blocks - 2020.05.04 at 10h 54m 53s.xml">
-      <configuration name="Doctests in base_blocks" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctests_in_base_blocks - 2020.05.04 at 10h 55m 15s.xml">
-      <configuration name="Doctests in base_blocks" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctests_in_base_blocks - 2020.05.04 at 10h 55m 37s.xml">
-      <configuration name="Doctests in base_blocks" configurationId="tests" />
-    </history-entry>
     <history-entry file="Doctests_in_base_blocks - 2020.05.04 at 11h 08m 44s.xml">
       <configuration name="Doctests in base_blocks" configurationId="tests" />
     </history-entry>
@@ -612,22 +488,35 @@
     <history-entry file="Doctests_in_chi_blocks - 2020.05.04 at 11h 10m 19s.xml">
       <configuration name="Doctests in chi_blocks" configurationId="tests" />
     </history-entry>
+    <history-entry file="Doctests_in_chi_blocks - 2021.11.04 at 12h 51m 07s.xml">
+      <configuration name="Doctests in chi_blocks" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_chi_blocks - 2021.11.04 at 12h 51m 37s.xml">
+      <configuration name="Doctests in chi_blocks" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_chi_blocks - 2021.11.04 at 12h 51m 45s.xml">
+      <configuration name="Doctests in chi_blocks" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_chi_blocks_(1) - 2021.11.04 at 12h 52m 10s.xml">
+      <configuration name="Doctests in chi_blocks (1)" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="440674000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-188" y="-1057" width="1920" height="1004" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="724" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17678382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4378029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26550078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06359301" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32750398" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36743674" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2209857" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39889959" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -658,9 +547,6 @@
       </list>
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -675,310 +561,13 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
     </breakpoint-manager>
-    <watches-manager />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/novice$Doctests_in_bayesian_blocks__1_.coverage" NAME="Doctests in bayesian_blocks (1) Coverage Results" MODIFIED="1587625202154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$score_card.coverage" NAME="score_card Coverage Results" MODIFIED="1595918817239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src" />
-    <SUITE FILE_PATH="coverage/novice$transform_categray.coverage" NAME="transform_categray Coverage Results" MODIFIED="1588557907494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1585289491008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/bert_extracter" />
-    <SUITE FILE_PATH="coverage/novice$Doctests_in_bayesian_blocks.coverage" NAME="Doctests in bayesian_blocks Coverage Results" MODIFIED="1588561739702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$data_woe.coverage" NAME="data_woe Coverage Results" MODIFIED="1589448191643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$offer_coding.coverage" NAME="offer_coding Coverage Results" MODIFIED="1596599367787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/algorithm/algorithm_base" />
-    <SUITE FILE_PATH="coverage/novice$feature_preprocessing.coverage" NAME="feature_preprocessing Coverage Results" MODIFIED="1595660939307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$clustering_blocks.coverage" NAME="clustering_blocks Coverage Results" MODIFIED="1588561841591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$category_coder.coverage" NAME="category_coder Coverage Results" MODIFIED="1592471989351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$bert_extracter.coverage" NAME="bert_extracter Coverage Results" MODIFIED="1586598947560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/bert_extracter" />
-    <SUITE FILE_PATH="coverage/novice$categray_coder.coverage" NAME="categray_coder Coverage Results" MODIFIED="1588740621216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$tree_blocks.coverage" NAME="tree_blocks Coverage Results" MODIFIED="1592472386912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_boxing" />
-    <SUITE FILE_PATH="coverage/novice$version.coverage" NAME="version Coverage Results" MODIFIED="1593422231275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/novice$data_woe_1.coverage" NAME="data_woe_1 Coverage Results" MODIFIED="1588125784550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$bayesian_blocks.coverage" NAME="bayesian_blocks Coverage Results" MODIFIED="1588467655737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$Doctests_in_base_blocks.coverage" NAME="Doctests in base_blocks Coverage Results" MODIFIED="1588561722763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$Doctests_in_chi_blocks.coverage" NAME="Doctests in chi_blocks Coverage Results" MODIFIED="1588561817600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$test_rule_engine.coverage" NAME="test_rule_engine Coverage Results" MODIFIED="1596871225172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/test" />
-    <SUITE FILE_PATH="coverage/novice$model_xgboost.coverage" NAME="model_xgboost Coverage Results" MODIFIED="1593693085600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$ks_blocks.coverage" NAME="ks_blocks Coverage Results" MODIFIED="1588227572623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$base_blocks.coverage" NAME="base_blocks Coverage Results" MODIFIED="1588560965603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$model_base.coverage" NAME="model_base Coverage Results" MODIFIED="1593693174338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$chi_blocks.coverage" NAME="chi_blocks Coverage Results" MODIFIED="1588078769969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$data_binning.coverage" NAME="data_binning Coverage Results" MODIFIED="1593401597580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src" />
-    <SUITE FILE_PATH="coverage/novice$test_bert_extracter.coverage" NAME="test_bert_extracter Coverage Results" MODIFIED="1587523721849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/test" />
-    <SUITE FILE_PATH="coverage/novice$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1586775628984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/text_classification/TextBertCNN" />
-    <SUITE FILE_PATH="coverage/novice$text_cnn.coverage" NAME="text_cnn Coverage Results" MODIFIED="1586599056509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/text_classification/TextCNN" />
-    <SUITE FILE_PATH="coverage/novice$Doctests_in_base_clocks__1_.coverage" NAME="Doctests in base_clocks (1) Coverage Results" MODIFIED="1587627891881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$Doctests_in_base_clocks.coverage" NAME="Doctests in base_clocks Coverage Results" MODIFIED="1587627635414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
-    <SUITE FILE_PATH="coverage/novice$extract_vector.coverage" NAME="extract_vector Coverage Results" MODIFIED="1585124327178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/bert_extracter" />
-    <SUITE FILE_PATH="coverage/novice$test_geo_map.coverage" NAME="test_geo_map Coverage Results" MODIFIED="1587524639008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/test" />
-    <SUITE FILE_PATH="coverage/novice$test_score_card.coverage" NAME="test_score_card Coverage Results" MODIFIED="1589197404517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/test" />
-    <SUITE FILE_PATH="coverage/novice$anysis_distribution_plot.coverage" NAME="anysis_distribution_plot Coverage Results" MODIFIED="1595930572999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/data_base" />
-    <SUITE FILE_PATH="coverage/novice$rule_parser.coverage" NAME="rule_parser Coverage Results" MODIFIED="1596871342195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/rule_engine" />
-    <SUITE FILE_PATH="coverage/novice$main.coverage" NAME="main Coverage Results" MODIFIED="1586599387894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/text_classification/TextCNN" />
-    <SUITE FILE_PATH="coverage/novice$sort.coverage" NAME="sort Coverage Results" MODIFIED="1596795310792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/algorithm/algorithm_base" />
-    <SUITE FILE_PATH="coverage/novice$alg_lr.coverage" NAME="alg_lr Coverage Results" MODIFIED="1592297792800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml" />
-    <SUITE FILE_PATH="coverage/novice$model_logistic.coverage" NAME="model_logistic Coverage Results" MODIFIED="1593693220808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card" />
-    <SUITE FILE_PATH="coverage/novice$psi_csi.coverage" NAME="psi_csi Coverage Results" MODIFIED="1593436327671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/src" />
-    <SUITE FILE_PATH="coverage/novice$util.coverage" NAME="util Coverage Results" MODIFIED="1591340664146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice" />
-    <SUITE FILE_PATH="coverage/novice$geo_map.coverage" NAME="geo_map Coverage Results" MODIFIED="1595918364391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/geo_map" />
-    <SUITE FILE_PATH="coverage/novice$iv_blocks.coverage" NAME="iv_blocks Coverage Results" MODIFIED="1588142092579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pynovice/score_card/data_binning" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/sklearn/metrics/_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="495" column="4" lean-forward="false" selection-start-line="495" selection-start-column="4" selection-end-line="495" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/test/test_multi_process_step_wise_regression.py" />
-    <entry file="file://$PROJECT_DIR$/pynovice/multi_process_step_wise_regression/Reg_Step_Wise_MP.py" />
-    <entry file="file://$PROJECT_DIR$/pynovice/multi_process_step_wise_regression/__init__.py" />
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/pandas/core/indexing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="1297" column="0" lean-forward="false" selection-start-line="1297" selection-start-column="0" selection-end-line="1297" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/statsmodels/stats/outliers_influence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="195" column="0" lean-forward="true" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/multiprocessing/pool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="359" column="8" lean-forward="false" selection-start-line="359" selection-start-column="8" selection-end-line="359" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/multi_process_step_wise_regression/Reg_Sup_Step_Wise_MP.py" />
-    <entry file="file://$PROJECT_DIR$/pynovice/step_wise/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/sklearn/linear_model/_logistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="944">
-          <caret line="1357" column="18" lean-forward="false" selection-start-line="1357" selection-start-column="18" selection-end-line="1357" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/score_card.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_woe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-705">
-          <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/feature_preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="74" column="18" lean-forward="false" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_colorconv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1775">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/matplotlib/backends/backend_agg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="187" column="13" lean-forward="false" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_colors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-471">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_embedding.py" />
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_explanation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/g7_score_card.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/psi_csi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/test/test_score_card.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="94" column="33" lean-forward="true" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/pandas/core/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6065">
-          <caret line="544" column="0" lean-forward="false" selection-start-line="544" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/clustering_blocks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-          <folding>
-            <element signature="e#200#234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/chi_blocks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="34" column="58" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/g7_woe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="109" column="18" lean-forward="false" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_legacy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="253" column="106" lean-forward="false" selection-start-line="253" selection-start-column="106" selection-end-line="253" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="3008" column="58" lean-forward="false" selection-start-line="3008" selection-start-column="58" selection-end-line="3008" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/lib/pynovice/score_card/src/card_explanations/utils/_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="78" column="12" lean-forward="true" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_force_matplotlib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="409" column="18" lean-forward="false" selection-start-line="409" selection-start-column="18" selection-end-line="409" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils/_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="94" column="11" lean-forward="false" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-1327188446/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="5720" column="6" lean-forward="false" selection-start-line="5720" selection-start-column="6" selection-end-line="5720" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/step_wise/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="78" column="16" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="78" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/score_card/model_logistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/step_wise/Step_Wise_Multiprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="95" column="31" lean-forward="false" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/test/test_step_wise_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/card_explanations/_waterfall.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="35" column="15" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#12907#25812#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -986,7 +575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,7 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,9 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="13" column="53" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="13" selection-end-column="53" />
-          <folding>
-            <element signature="e#121#154#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,17 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6225">
           <caret line="420" column="78" lean-forward="false" selection-start-line="420" selection-start-column="67" selection-end-line="420" selection-end-column="78" />
-          <folding>
-            <element signature="e#23319#26637#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_lr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,7 +603,128 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pynovice/echarts_plot/echarts_base_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3645">
+          <caret line="252" column="23" lean-forward="false" selection-start-line="252" selection-start-column="23" selection-end-line="252" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_lr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="110" column="40" lean-forward="false" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pynovice/bert_extracter/bert_extracter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="22" column="66" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/bert_extracter/bert_extracter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_binning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_woe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/g7_score_card.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pynovice/echarts_plot/anysis_distribution_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/lib/pynovice/gaode_map/trajectory_playback_v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="78" column="58" lean-forward="false" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/tmp_classification/web_py/web_moniter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="248" column="17" lean-forward="false" selection-start-line="248" selection-start-column="17" selection-end-line="248" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/bayesian_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/base_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/ks_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1830">
+          <caret line="123" column="13" lean-forward="false" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/clustering_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#200#234#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/iv_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/chi_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1038,45 +732,216 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210222">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211103">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/sklearn/model_selection/_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="2078" column="39" lean-forward="true" selection-start-line="2078" selection-start-column="21" selection-end-line="2078" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/sklearn/ensemble/_forest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6780">
+          <caret line="475" column="6" lean-forward="false" selection-start-line="475" selection-start-column="6" selection-end-line="475" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/怎么自定义jupyter的magic命令.py">
+    <entry file="file://$USER_HOME$/Applications/anaconda3/envs/wq_g7/lib/python3.6/site-packages/sklearn/tree/_classes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="115" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="159" selection-end-column="15" />
+        <state relative-caret-position="8700">
+          <caret line="611" column="6" lean-forward="false" selection-start-line="611" selection-start-column="6" selection-end-line="611" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/test/test_rf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/data_boxing/tree_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-869">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/version.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1303">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RELEASE-VERSION">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/model_rf_lr/woe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/model_rf_lr/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="17" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="35" selection-end-column="17" />
           <folding>
-            <element signature="e#380#420#0" expanded="true" />
-            <marker date="1621221272171" expanded="true" signature="1701:1725" ph="select * fro... missing_value" />
+            <element signature="e#127#165#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/src/g7_woe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="109" column="18" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="109" selection-end-column="18" />
+          <folding>
+            <element signature="e#282#300#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/model_logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="114" column="20" lean-forward="false" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="20" />
+          <folding>
+            <element signature="e#218#279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/score_card/model_xgboost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/step_wise/Step_Wise_Multiprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="109" column="86" lean-forward="false" selection-start-line="109" selection-start-column="71" selection-end-line="109" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211104">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="4" lean-forward="false" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/knowledge_notes/两个gps点的方向角">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/util/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2490">
+          <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="184" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#129#185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
-          <folding>
-            <element signature="e#230#249#0" expanded="true" />
-          </folding>
+          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shell/publish.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="204" column="14" lean-forward="true" selection-start-line="204" selection-start-column="14" selection-end-line="204" selection-end-column="14" />
           <folding />
         </state>
       </provider>
