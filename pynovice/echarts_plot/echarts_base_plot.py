@@ -228,7 +228,7 @@ def get_g7_risk_report(df11,df12,df21,df22,df3,title_name='特征1风险分布',
         c1.set_series_opts(label_opts=opts.LabelOpts(is_show=is_show_label))
         c1.set_global_opts(
             title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
-            legend_opts=opts.LegendOpts(is_show=True),
+            legend_opts=opts.LegendOpts(is_show=False),
             toolbox_opts=opts.ToolboxOpts(is_show=True),
             datazoom_opts=opts.DataZoomOpts(is_show=True,range_start= 0,range_end = 100),
             xaxis_opts=opts.AxisOpts(name=xaxis_name),
@@ -254,7 +254,7 @@ def get_g7_risk_report(df11,df12,df21,df22,df3,title_name='特征1风险分布',
         c1.set_series_opts(label_opts=opts.LabelOpts(is_show=is_show_label))
         c1.set_global_opts(
             title_opts=opts.TitleOpts(title=title_name, subtitle=subtitle_name),
-            legend_opts=opts.LegendOpts(is_show=False,type_='scroll',pos_left='20%',pos_right='20%'),
+            legend_opts=opts.LegendOpts(is_show=True,type_='scroll',pos_left='20%',pos_right='20%'),
             toolbox_opts=opts.ToolboxOpts(is_show=True),
             xaxis_opts=opts.AxisOpts(name=xaxis_name),
             yaxis_opts=opts.AxisOpts(name=yaxis_name,type_="value",split_number=4),

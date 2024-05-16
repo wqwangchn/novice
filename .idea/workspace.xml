@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/func_recall.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/data_base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/logins.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_loan_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_loan_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_rules_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_rules_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/sheet_summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/okash.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_loan_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_loan_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_rules_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_rules_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/sheet_summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/rule_base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211103" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211103" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211104" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20211104" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/base_blocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/base_blocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/ks_blocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/score_card/src/data_boxing/ks_blocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/test/test_rf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/test/test_rf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/tmp_classification/web_py/web_moniter.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py/web_moniter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shell/publish.sh" beforeDir="false" afterPath="$PROJECT_DIR$/shell/publish.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,10 +273,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zhangxuejing/wqwang/work/git_wq/novice/pynovice/gaode_map/trajectory_playback_v2.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -280,6 +291,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates" />
+      <recent name="$PROJECT_DIR$/pynovice/tmp_classification/web_py2" />
+      <recent name="$PROJECT_DIR$/pynovice/tmp_classification" />
+      <recent name="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
+      <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
       <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils" />
@@ -287,16 +305,9 @@
       <recent name="$PROJECT_DIR$/pynovice/algorithm" />
       <recent name="$PROJECT_DIR$/pynovice/data_base" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
-      <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations/utils" />
-      <recent name="$PROJECT_DIR$/pynovice/score_card/src/card_explanations" />
-      <recent name="$PROJECT_DIR$/pynovice/step_wise" />
-      <recent name="$PROJECT_DIR$/pynovice/test" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.rule_parser">
-    <configuration name="alg_rf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="anysis_distribution_plot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="novice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,12 +315,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/echarts_plot" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/algorithm/algorithm_ml/alg_rf.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/echarts_plot/anysis_distribution_plot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -318,7 +328,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="features" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="novice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -326,34 +336,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/tmp_classification/web_py2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/features.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="randomforest_blocks" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="novice" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/score_card/src/data_boxing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/score_card/model_rf_lr/randomforest_blocks.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -383,7 +370,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_rf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="novice" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -391,12 +378,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/tmp_classification/web_py2" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/test/test_rf.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="web_moniter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="novice" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pynovice/tmp_classification/web_py" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pynovice/tmp_classification/web_py/web_moniter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -406,19 +413,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.alg_rf" />
-      <item itemvalue="Python.features" />
-      <item itemvalue="Python.randomforest_blocks" />
+      <item itemvalue="Python.anysis_distribution_plot" />
       <item itemvalue="Python.rule_parser" />
-      <item itemvalue="Python.test_rf" />
+      <item itemvalue="Python.web_moniter" />
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.web_moniter" />
+        <item itemvalue="Python.anysis_distribution_plot" />
         <item itemvalue="Python.rule_parser" />
-        <item itemvalue="Python.features" />
-        <item itemvalue="Python.randomforest_blocks" />
-        <item itemvalue="Python.test_rf" />
-        <item itemvalue="Python.alg_rf" />
       </list>
     </recent_temporary>
   </component>
@@ -545,6 +552,17 @@
         <option value="3" />
         <option value="1" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="XDebuggerManager">
