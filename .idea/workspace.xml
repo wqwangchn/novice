@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bef847d5-3d1a-472a-9684-5387b4144bbf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/func_recall.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/data_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/logins.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_loan_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_loan_5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_rules_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/df_rules_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/new_user/sheet_summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/okash.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_loan_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_loan_5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_rules_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/df_rules_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/opesa/old_user/sheet_summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/templates/rule_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pynovice/tmp_classification/web_py2/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/echarts_plot/echarts_base_plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" beforeDir="false" afterPath="$PROJECT_DIR$/pynovice/knowledge_notes/一句话的事/20210220" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shell/publish.sh" beforeDir="false" afterPath="$PROJECT_DIR$/shell/publish.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,10 +393,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.anysis_distribution_plot" />
-      <item itemvalue="Python.rule_parser" />
-      <item itemvalue="Python.web_moniter" />
       <item itemvalue="Python.app" />
+      <item itemvalue="Python.rule_parser" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.web_moniter" />
     </list>
     <recent_temporary>
       <list>
